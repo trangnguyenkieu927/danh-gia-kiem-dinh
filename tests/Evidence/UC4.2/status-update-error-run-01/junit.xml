@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="1" assertions="1" errors="0" failures="1" skipped="0" time="0.482921">
+    <testcase name="test_TS_SHIP_024_error_rollback_on_status_update" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1685" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="1" time="0.482921">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_024_error_rollback_on_status_update&#13;
+Lỗi xử lý không được trả về HTTP 500 (SRS yêu cầu thông báo "Có lỗi xảy ra, vui lòng thử lại.").
+Failed asserting that 500 is less than 500.
+&#13;
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1717</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

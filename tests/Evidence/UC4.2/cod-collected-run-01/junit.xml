@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="1" assertions="10" errors="0" failures="0" skipped="0" time="1.182836">
+    <testcase name="test_TS_SHIP_011_cod_collected_and_reflected_in_dashboard" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="699" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="10" time="1.182836"/>
+  </testsuite>
+</testsuites>

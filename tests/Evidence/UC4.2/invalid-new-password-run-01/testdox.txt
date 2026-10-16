@@ -1,0 +1,7 @@
+UC4_2_Shipper (Tests\Feature\UC4_2_Shipper)
+ [x] TS SHIP 021 reject invalid new password with data set "021_01_5 chữ số (dưới biên)"
+ [x] TS SHIP 021 reject invalid new password with data set "021_02_256 chữ số (trên biên)"
+ [x] TS SHIP 021 reject invalid new password with data set "021_03_chứa chữ cái"
+ [x] TS SHIP 021 reject invalid new password with data set "021_04a_chứa khoảng trắng"
+ [x] TS SHIP 021 reject invalid new password with data set "021_04b_chứa ký tự đặc biệt"
+

@@ -1,0 +1,7 @@
+UC4_2_Shipper (Tests\Feature\UC4_2_Shipper)
+ [x] TS SHIP 025 timeout endpoint respects 3h threshold with data set "025_02a_chưa nhận hàng"
+ [x] TS SHIP 025 timeout endpoint respects 3h threshold with data set "025_03a_còn 2h"
+ [x] TS SHIP 025 timeout endpoint respects 3h threshold with data set "025_03b_còn ~1 phút"
+ [ ] TS SHIP 025 timeout endpoint respects 3h threshold with data set "025_04_đúng mốc 3h"
+ [ ] TS SHIP 025 timeout endpoint respects 3h threshold with data set "025_05_quá 3h 1 phút"
+

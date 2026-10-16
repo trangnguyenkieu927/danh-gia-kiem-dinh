@@ -1,0 +1,11 @@
+UC4_2_Shipper (Tests\Feature\UC4_2_Shipper)
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_01_họ tên rỗng"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_02_sđt rỗng"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_03_sđt 9 số"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_04_sđt 11 số"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_05_sđt có chữ"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_05b_sđt ký tự đặc biệt"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_07a_email thiếu @"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_07b_email thiếu miền"
+ [x] TS SHIP 017 rejects invalid profile and preserves db with data set "017_08_nhiều lỗi cùng lúc"
+

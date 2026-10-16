@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="1" assertions="7" errors="0" failures="0" skipped="0" time="0.410190">
+    <testcase name="test_TS_SHIP_018_readonly_fields_cannot_be_modified" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1280" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="7" time="0.410190"/>
+  </testsuite>
+</testsuites>

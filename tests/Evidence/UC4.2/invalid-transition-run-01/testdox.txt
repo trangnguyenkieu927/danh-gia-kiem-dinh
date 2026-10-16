@@ -1,0 +1,4 @@
+UC4_2_Shipper (Tests\Feature\UC4_2_Shipper)
+ [ ] TS SHIP 010 reject invalid status transition with data set "Chờ lấy → Đã giao (bỏ bước)"
+ [ ] TS SHIP 010 reject invalid status transition with data set "Đang giao → Chờ lấy (quay ngược)"
+
