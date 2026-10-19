@@ -1,0 +1,23 @@
+UC1_2_Login (Tests\Feature\UC1_2_Login)
+ [x] Login screen can be rendered
+ [x] UC1 2 FUNC 001 01 customer can login and redirects to customer dashboard
+ [x] UC1 2 FUNC 001 02 admin can login and redirects to admin dashboard
+ [x] UC1 2 FUNC 001 03 staff can login and redirects to admin dashboard
+ [x] UC1 2 FUNC 001 04 shipper can login and redirects to shipper dashboard
+ [x] UC1 2 FUNC 002 01 login fails when both fields empty
+ [x] UC1 2 FUNC 002 02 login fails when username is empty
+ [x] UC1 2 FUNC 002 03 login fails when password is empty
+ [x] UC1 2 FUNC 002 04 login fails when username contains only whitespace
+ [x] UC1 2 FUNC 003 01 login fails when username does not exist
+ [x] UC1 2 FUNC 003 02 login fails when password is incorrect
+ [x] UC1 2 FUNC 003 03 login fails when using email instead of username
+ [x] UC1 2 FUNC 003 04 login fails when using phone instead of username
+ [x] UC1 2 FUNC 004 01 unauthenticated user cannot access protected route
+ [x] UC1 2 FUNC 004 02 authenticated user can logout and session invalidated
+ [x] UC1 2 FUNC 005 01 customer cannot access admin revenue report
+ [x] UC1 2 FUNC 005 02 customer cannot access admin dashboard
+ [x] UC1 2 FUNC 005 03 customer cannot access shipper dashboard
+ [x] UC1 2 FUNC 005 04 staff cannot access admin only routes
+ [x] UC1 2 FUNC 005 05 shipper cannot access admin dashboard
+ [x] Cart session is preserved across session regeneration upon login
+
