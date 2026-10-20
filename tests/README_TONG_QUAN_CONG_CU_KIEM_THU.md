@@ -35,19 +35,20 @@ Toàn bộ các loại kiểm thử được phân nhóm chuyên biệt trong th
 ```text
 tests/
 │
-├── Feature/                          <-- [PHPUnit] Kiểm thử Tích hợp & Nghiệp vụ Backend (Laravel)
-│   ├── UC1_2_LoginTest.php           * UC1.2 (Nguyễn Kiều Trang): 20 tests (146 assertions) - 100% Passed
-│   ├── UC4_2_ShipperTest.php         * UC4.2 (Dương Hùng Mạnh): 31 tests nghiệp vụ giao hàng - 100% Passed
-│   ├── Auth/                         * Các test xác thực cơ sở mặc định của framework
-│   ├── ProfileTest.php               * Test cập nhật hồ sơ người dùng
-│   └── TrangChuTest.php              * Test hiển thị trang chủ
-│
-├── Unit/                             <-- [PHPUnit] Kiểm thử Đơn vị (Unit Test)
-│   └── ExampleTest.php
+├── PHPUnit/                          <-- [PHPUnit] Toàn bộ mã kiểm thử Backend (Feature & Unit)
+│   ├── Feature/                      * Kiểm thử tích hợp nghiệp vụ hệ thống
+│   │   ├── UC1_2_LoginTest.php       * UC1.2 (Nguyễn Kiều Trang): 20 tests (146 assertions) - 100% Passed
+│   │   ├── UC4_2_ShipperTest.php     * UC4.2 (Dương Hùng Mạnh): 43 tests nghiệp vụ giao hàng
+│   │   ├── Auth/                     * Các test xác thực cơ sở mặc định của framework
+│   │   ├── ProfileTest.php           * Test cập nhật hồ sơ người dùng
+│   │   └── TrangChuTest.php          * Test hiển thị trang chủ
+│   ├── Unit/                         * Kiểm thử đơn vị
+│   │   └── ExampleTest.php
+│   └── README.md                     * Cẩm nang kỹ thuật PHPUnit
 │
 ├── Playwright_UI/                    <-- [Playwright] Kiểm thử Tự động Giao diện & Luồng E2E
 │   ├── e2e/
-│   │   ├── uc1_2_login.spec.js       * 7 kịch bản E2E Đăng nhập, Header, RBAC - 100% Passed
+│   │   ├── uc1_2_login.spec.js       * 7 kịch bản E2E Đăng nhập, Header, RBAC của Trang - 100% Passed
 │   │   └── test_giao_dien.spec.js    * Kịch bản quét E2E Dashboard, Giỏ hàng, Chi tiết sản phẩm
 │   └── README.md                     * Hướng dẫn chạy và giải trình kỹ thuật Playwright
 │
