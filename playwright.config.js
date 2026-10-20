@@ -3,8 +3,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  // Thư mục chứa các bài kiểm thử của nhóm và Trang
-  testDir: './e2e',
+  // Thư mục chứa các bài kiểm thử E2E / UI của nhóm
+  testDir: './tests/Playwright_UI/e2e',
 
   // Hạn chế test tác động dữ liệu chạy đồng thời
   fullyParallel: false,

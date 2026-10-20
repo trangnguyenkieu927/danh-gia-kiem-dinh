@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "f8a7e3d1-92b4-4e12-8c15-flowerstore07",
+		"name": "RoseShop (FlowerStore) - API Test Suite (Nhom 07)",
+		"description": "Bộ kiểm thử API tự động cho hệ thống bán hoa trực tuyến RoseShop (Laravel 12). Bao gồm kiểm tra HTTP Status Code, thời gian phản hồi (Response Time Threshold) và phân quyền xác thực.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Khách Vãng Lai & Xác Thực",
+			"item": [
+				{
+					"name": "GET Danh Sách Sản Phẩm (Public API)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 OK\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Response time is less than 2000ms (Cloud DB threshold)\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{ "key": "Accept", "value": "application/json" }
+						],
+						"url": {
+							"raw": "{{base_url}}/api/sanpham",
+							"host": ["{{base_url}}"],
+							"path": ["api", "sanpham"]
+						}
+					}
+				},
+				{
+					"name": "POST Đăng Nhập Thành Công (Khách Hàng)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 302 Redirect hoặc 200 OK\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+									"});",
+									"pm.test(\"Session cookie is established\", function () {",
+									"    pm.expect(pm.cookies.has('laravel_session') || pm.cookies.has('XSRF-TOKEN')).to.be.true;",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{ "key": "ten_dang_nhap", "value": "kh27" },
+								{ "key": "password", "value": "123456" }
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": ["{{base_url}}"],
+							"path": ["login"]
+						}
+					}
+				},
+				{
+					"name": "POST Đăng Nhập Thất Bại (Sai Mật Khẩu)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 302 (Redirect back with errors)\", function () {",
+									"    pm.response.to.have.status(302);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{ "key": "ten_dang_nhap", "value": "kh27" },
+								{ "key": "password", "value": "wrongpassword999" }
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": ["{{base_url}}"],
+							"path": ["login"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Phân Quyền & Bảo Vệ Tuyến Đường (RBAC)",
+			"item": [
+				{
+					"name": "GET Trang Quản Trị (Chặn Khách Vãng Lai)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Chặn truy cập trái phép: chuyển hướng 302 về trang đăng nhập\", function () {",
+									"    pm.response.to.have.status(302);",
+									"    pm.expect(pm.response.headers.get('Location')).to.include('/login');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/admin/dashboard",
+							"host": ["{{base_url}}"],
+							"path": ["admin", "dashboard"]
+						}
+					}
+				},
+				{
+					"name": "GET Trang Shipper (Chặn Khách Vãng Lai)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Chặn truy cập shipper trái phép: redirect về /login\", function () {",
+									"    pm.response.to.have.status(302);",
+									"    pm.expect(pm.response.headers.get('Location')).to.include('/login');",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/shipper/don-hang",
+							"host": ["{{base_url}}"],
+							"path": ["shipper", "don-hang"]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
