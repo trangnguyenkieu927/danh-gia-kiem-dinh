@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="43" assertions="273" errors="0" failures="7" skipped="0" time="1.829264">
+    <testcase name="test_UC4_2_FUNC_005_01_shipper_cannot_view_other_shippers_order" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="45" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.288125"/>
+    <testcase name="test_UC4_2_FUNC_006_01_shipper_can_start_delivery_and_notify_customer" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="132" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="9" time="0.031400"/>
+    <testcase name="test_UC4_2_FUNC_007_01_shipper_can_notify_customer_arrived" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="251" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="9" time="0.019042"/>
+    <testcase name="test_UC4_2_FUNC_008_01_shipper_can_complete_cod_order" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="374" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="7" time="0.018602"/>
+    <testcase name="test_UC4_2_FUNC_009_01_reject_complete_on_delivered_order" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="475" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.020202"/>
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_010_reject_invalid_status_transition" tests="2" assertions="2" errors="0" failures="2" skipped="0" time="0.055296">
+      <testcase name="test_TS_SHIP_010_reject_invalid_status_transition with data set &quot;Chờ lấy → Đã giao (bỏ bước)&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="635" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="1" time="0.033610">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_010_reject_invalid_status_transition with data set "Chờ lấy → Đã giao (bỏ bước)"&#13;
+Expected response status code [422] but received 200.
+Failed asserting that 200 is identical to 422.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:175
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:661</failure>
+      </testcase>
+      <testcase name="test_TS_SHIP_010_reject_invalid_status_transition with data set &quot;Đang giao → Chờ lấy (quay ngược)&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="635" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="1" time="0.021686">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_010_reject_invalid_status_transition with data set "Đang giao → Chờ lấy (quay ngược)"&#13;
+Expected response status code [422] but received 200.
+Failed asserting that 200 is identical to 422.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:175
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:661</failure>
+      </testcase>
+    </testsuite>
+    <testcase name="test_TS_SHIP_011_cod_collected_and_reflected_in_dashboard" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="708" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="10" time="0.039631"/>
+    <testcase name="test_TS_SHIP_012_bank_transfer_order_not_counted_in_cod" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="781" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="11" time="0.030307"/>
+    <testcase name="test_TS_SHIP_013_cod_total_only_eligible_own_orders" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="942" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.031898"/>
+    <testcase name="test_TS_SHIP_014_shipper_cannot_self_confirm_cod_remittance" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1042" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.039353"/>
+    <testcase name="test_TS_SHIP_016_update_profile_with_valid_data" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1125" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="9" time="0.029466"/>
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db" tests="9" assertions="47" errors="0" failures="0" skipped="0" time="0.214630">
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_01_họ tên rỗng&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.019832"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_02_sđt rỗng&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.019843"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_03_sđt 9 số&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.019272"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_04_sđt 11 số&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.023928"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_05_sđt có chữ&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.022275"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_05b_sđt ký tự đặc biệt&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.019425"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_07a_email thiếu @&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.029058"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_07b_email thiếu miền&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.030321"/>
+      <testcase name="test_TS_SHIP_017_rejects_invalid_profile_and_preserves_db with data set &quot;017_08_nhiều lỗi cùng lúc&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1236" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="7" time="0.030676"/>
+    </testsuite>
+    <testcase name="test_TS_SHIP_018_readonly_fields_cannot_be_modified" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1283" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="7" time="0.024426"/>
+    <testcase name="test_TS_SHIP_019_change_password_with_valid_current_password" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1363" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.031394">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_019_change_password_with_valid_current_password&#13;
+Session is missing expected key [success_password].
+Failed asserting that false is true.&#13;
+&#13;
+The following errors occurred during the last request:
+
+Mật khẩu hiện tại không đúng.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1547
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1388</failure>
+    </testcase>
+    <testcase name="test_TS_SHIP_020_change_password_with_wrong_current_password" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1415" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="12" time="0.027671"/>
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_021_reject_invalid_new_password" tests="5" assertions="30" errors="0" failures="0" skipped="0" time="0.158968">
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_01_5 chữ số (dưới biên)&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1494" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.037112"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_02_256 chữ số (trên biên)&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1494" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.028376"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_03_chứa chữ cái&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1494" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.032892"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_04a_chứa khoảng trắng&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1494" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.036585"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_04b_chứa ký tự đặc biệt&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1494" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.024004"/>
+    </testsuite>
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_022_reject_password_confirmation_mismatch" tests="2" assertions="12" errors="0" failures="0" skipped="0" time="0.058998">
+      <testcase name="test_TS_SHIP_022_reject_password_confirmation_mismatch with data set &quot;022_01_khác hoàn toàn&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1552" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.030690"/>
+      <testcase name="test_TS_SHIP_022_reject_password_confirmation_mismatch with data set &quot;022_02_lệch 1 ký tự&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1552" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.028308"/>
+    </testsuite>
+    <testcase name="test_TS_SHIP_023_not_found_and_invalid_order_id" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1598" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="13" time="0.048006"/>
+    <testcase name="test_TS_SHIP_024_error_rollback_on_status_update" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1686" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="1" time="0.057342">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_024_error_rollback_on_status_update&#13;
+Lỗi xử lý không được trả về HTTP 500 (SRS yêu cầu thông báo "Có lỗi xảy ra, vui lòng thử lại.").
+Failed asserting that 500 is less than 500.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1718</failure>
+    </testcase>
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold" tests="5" assertions="13" errors="0" failures="2" skipped="0" time="0.213864">
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_02a_chưa nhận hàng&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1787" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.034387"/>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_03a_còn 2h&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1787" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.037448"/>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_03b_còn ~1 phút&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1787" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.051438"/>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_04_đúng mốc 3h&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1787" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="2" time="0.043323">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set "025_04_đúng mốc 3h"&#13;
+Unable to find JSON fragment: &#13;
+&#13;
+[{"status":"penalty_applied"}]&#13;
+&#13;
+within&#13;
+&#13;
+[{"elapsed_seconds":-10805.658075,"remaining":21605.658075,"status":"ok"}].
+Failed asserting that false is true.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\AssertableJsonString.php:144
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:948
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1820</failure>
+      </testcase>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_05_quá 3h 1 phút&quot;" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1787" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="2" time="0.047268">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set "025_05_quá 3h 1 phút"&#13;
+Unable to find JSON fragment: &#13;
+&#13;
+[{"status":"penalty_applied"}]&#13;
+&#13;
+within&#13;
+&#13;
+[{"elapsed_seconds":-10860.706062000001,"remaining":21660.706062,"status":"ok"}].
+Failed asserting that false is true.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\AssertableJsonString.php:144
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:948
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1820</failure>
+      </testcase>
+    </testsuite>
+    <testcase name="test_TS_SHIP_026_cancelled_order_cannot_be_updated" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1866" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="11" time="0.063658"/>
+    <testcase name="test_TS_SHIP_027_new_assignment_visible_and_notified" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1951" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="10" time="0.103351"/>
+    <testcase name="test_TS_SHIP_028_shipper_cannot_update_other_shippers_order" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="2063" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="18" time="0.076352"/>
+    <testcase name="test_TS_SHIP_029_cod_totals_before_and_after_admin_confirmation" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="2164" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="11" time="0.079695"/>
+    <testcase name="test_TS_SHIP_030_error_handling_and_retry_for_password_and_notification" file="E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="2260" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="5" time="0.067587">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_030_error_handling_and_retry_for_password_and_notification&#13;
+Session is missing expected key [success_password].
+Failed asserting that false is true.&#13;
+&#13;
+The following errors occurred during the last request:
+
+Mật khẩu hiện tại không đúng.
+&#13;
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+E:\đgkđ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:1547
+E:\đgkđ\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:2326</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

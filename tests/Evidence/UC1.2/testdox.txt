@@ -1,23 +1,22 @@
 UC1_2_Login (Tests\Feature\UC1_2_Login)
- [x] Login screen can be rendered
- [x] UC1 2 FUNC 001 01 customer can login and redirects to customer dashboard
- [x] UC1 2 FUNC 001 02 admin can login and redirects to admin dashboard
- [x] UC1 2 FUNC 001 03 staff can login and redirects to admin dashboard
- [x] UC1 2 FUNC 001 04 shipper can login and redirects to shipper dashboard
- [x] UC1 2 FUNC 002 01 login fails when both fields empty
- [x] UC1 2 FUNC 002 02 login fails when username is empty
- [x] UC1 2 FUNC 002 03 login fails when password is empty
- [x] UC1 2 FUNC 002 04 login fails when username contains only whitespace
- [x] UC1 2 FUNC 003 01 login fails when username does not exist
- [x] UC1 2 FUNC 003 02 login fails when password is incorrect
- [x] UC1 2 FUNC 003 03 login fails when using email instead of username
- [x] UC1 2 FUNC 003 04 login fails when using phone instead of username
- [x] UC1 2 FUNC 004 01 unauthenticated user cannot access protected route
- [x] UC1 2 FUNC 004 02 authenticated user can logout and session invalidated
- [x] UC1 2 FUNC 005 01 customer cannot access admin revenue report
- [x] UC1 2 FUNC 005 02 customer cannot access admin dashboard
- [x] UC1 2 FUNC 005 03 customer cannot access shipper dashboard
- [x] UC1 2 FUNC 005 04 staff cannot access admin only routes
- [x] UC1 2 FUNC 005 05 shipper cannot access admin dashboard
- [x] Cart session is preserved across session regeneration upon login
+ [x] TS AUTH 000 render login screen with all required elements
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_01_Khách hàng"
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_02_Quản trị viên (Admin)"
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_03_Nhân viên cửa hàng"
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_04_Nhân viên giao hàng"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_01_bỏ trống cả 2 trường"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_02_bỏ trống tên đăng nhập"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_03_bỏ trống mật khẩu"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_04_username toàn khoảng trắng"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_01_tài khoản không tồn tại"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_02_đúng tài khoản nhưng sai pass"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_03_thử dùng email thay username"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_04_thử dùng SĐT thay username"
+ [x] TS AUTH 004 session lifecycle unauthenticated guard and secure logout
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_01_khách hàng vào báo cáo doanh thu admin"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_02_khách hàng vào admin dashboard"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_03_khách hàng vào shipper dashboard"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_04_nhân viên vào quản lý người dùng admin"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_05_shipper vào admin dashboard"
+ [x] TS AUTH 006 cart session is preserved across session regeneration
 
