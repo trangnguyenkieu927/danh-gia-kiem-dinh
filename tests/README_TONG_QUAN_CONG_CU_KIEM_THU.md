@@ -35,15 +35,11 @@ Toàn bộ các loại kiểm thử được phân nhóm chuyên biệt trong th
 ```text
 tests/
 │
-├── PHPUnit/                          <-- [PHPUnit] Toàn bộ mã kiểm thử Backend (Feature & Unit)
-│   ├── Feature/                      * Kiểm thử tích hợp nghiệp vụ hệ thống
+├── PHPUnit/                          <-- [PHPUnit] Toàn bộ mã kiểm thử Backend độc quyền của Nhóm
+│   ├── Feature/                      * Kiểm thử tích hợp nghiệp vụ hệ thống theo Use Case
 │   │   ├── UC1_2_LoginTest.php       * UC1.2 (Nguyễn Kiều Trang): 20 tests (146 assertions) - 100% Passed
 │   │   ├── UC4_2_ShipperTest.php     * UC4.2 (Dương Hùng Mạnh): 43 tests nghiệp vụ giao hàng
-│   │   ├── Auth/                     * Các test xác thực cơ sở mặc định của framework
-│   │   ├── ProfileTest.php           * Test cập nhật hồ sơ người dùng
-│   │   └── TrangChuTest.php          * Test hiển thị trang chủ
-│   ├── Unit/                         * Kiểm thử đơn vị
-│   │   └── ExampleTest.php
+│   │   └── UC1_1_RegisterTest.php    * UC1.1 (Nguyễn Đức Trọng): Sẵn sàng tích hợp khi Trọng gửi code
 │   └── README.md                     * Cẩm nang kỹ thuật PHPUnit
 │
 ├── Playwright_UI/                    <-- [Playwright] Kiểm thử Tự động Giao diện & Luồng E2E
