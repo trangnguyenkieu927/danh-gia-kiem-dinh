@@ -3,7 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 /**
  * Master Playwright Configuration for RoseShop E2E Test Suite (Nhom 07)
- * Ho tro chay ca 3 Use Case:
+ * Tich hop Test Explorer cho ca 3 Use Case:
  * - UC1.1: Dang ky (Nguyen Duc Trong)
  * - UC1.2: Dang nhap (Nguyen Kieu Trang)
  * - UC4.2: Giao hang Shipper (Duong Hung Manh)
@@ -31,17 +31,17 @@ export default defineConfig({
 
   projects: [
     {
-      name: 'uc1.1-register',
+      name: 'UC1.1 - Đăng ký (Nguyễn Đức Trọng)',
       testMatch: 'UC1_1_Register.spec.js',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {
-      name: 'uc1.2-login',
+      name: 'UC1.2 - Đăng nhập (Nguyễn Kiều Trang)',
       testMatch: 'uc1_2_login.spec.js',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {
-      name: 'uc4.2-shipper',
+      name: 'UC4.2 - Giao hàng (Dương Hùng Mạnh)',
       testMatch: 'uc4_2_shipper.spec.js',
       use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
