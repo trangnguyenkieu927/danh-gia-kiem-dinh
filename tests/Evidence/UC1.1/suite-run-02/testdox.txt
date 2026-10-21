@@ -1,0 +1,34 @@
+UC1_1_Register (Tests\Feature\UC1_1_Register)
+ [ ] TC AUTH 002 01 register valid account
+ [ ] TC AUTH 011 02 rejects duplicate phone
+ [x] TC AUTH 004 02 rejects duplicate username
+ [ ] TC AUTH 008 02 rejects duplicate email
+ [x] TC AUTH 003 07 rejects empty username
+ [x] TC AUTH 006 02 rejects empty full name
+ [x] TC AUTH 007 04 rejects invalid email
+ [x] TC AUTH 009 04 rejects phone with 11 digits
+ [x] TC AUTH 009 03 rejects phone with 9 digits
+ [x] TC AUTH 010 04 rejects phone with letter
+ [x] TC AUTH 012 03 rejects password with 5 characters
+ [x] TC AUTH 013 03 rejects password confirmation mismatch
+ [x] TC AUTH 017 02 cannot register as admin
+ [x] TC AUTH 018 01 stores hashed password
+ [x] TC AUTH 020 01 rejects multiple invalid fields
+ [x] TC AUTH 019 01 rolls back when customer creation fails
+ [x] TC AUTH 014 01 rejects empty district
+ [x] TC AUTH 014 02 rejects empty ward
+ [x] TC AUTH 014 03 rejects empty address detail
+ [ ] TC AUTH 005 01 rejects username with at sign
+ [x] TC AUTH 003 08 rejects empty email
+ [x] TC AUTH 003 09 rejects empty phone
+ [x] TC AUTH 003 10 rejects empty password
+ [x] TC AUTH 003 11 rejects empty password confirmation
+ [x] TC AUTH BR01 01 blocks registration when authenticated
+ [ ] TC AUTH 015 API 01 rejects unknown district
+ [ ] TC AUTH 015 API 02 rejects ward from another district
+ [x] TC AUTH 002 02 accepts password with 7 characters
+ [x] TC AUTH 002 03 login with newly registered account
+ [x] TC AUTH 010 05 rejects phone with space
+ [x] TC AUTH 012 04 rejects password with 1 character
+ [x] TC AUTH 014 04 rejects all address fields empty
+

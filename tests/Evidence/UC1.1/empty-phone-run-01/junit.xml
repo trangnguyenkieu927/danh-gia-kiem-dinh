@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_1_RegisterTest" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" tests="1" assertions="22" errors="0" failures="0" skipped="0" time="0.241917">
+    <testcase name="test_TC_AUTH_003_09_rejects_empty_phone" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1943" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.241917"/>
+  </testsuite>
+</testsuites>

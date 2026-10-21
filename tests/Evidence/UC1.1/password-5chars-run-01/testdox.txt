@@ -1,0 +1,3 @@
+UC1_1_Register (Tests\Feature\UC1_1_Register)
+ [x] TC AUTH 012 03 rejects password with 5 characters
+

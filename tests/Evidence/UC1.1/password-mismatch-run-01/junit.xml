@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_1_RegisterTest" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" tests="1" assertions="22" errors="0" failures="0" skipped="0" time="0.338875">
+    <testcase name="test_TC_AUTH_013_03_rejects_password_confirmation_mismatch" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1095" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.338875"/>
+  </testsuite>
+</testsuites>

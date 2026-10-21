@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.552973999999999">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-16T04:54:23.708Z" hostname="chrome" tests="1" failures="0" skipped="0" time="3.41" errors="0">
+<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js" time="3.41">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-chrome\attachments\Thành-phố-mặc-định-Hà-Nội-562bd80b5b80891205e41fd60e4cea23a7b474a6.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

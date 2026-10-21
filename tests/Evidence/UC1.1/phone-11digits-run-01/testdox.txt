@@ -1,0 +1,3 @@
+UC1_1_Register (Tests\Feature\UC1_1_Register)
+ [x] TC AUTH 009 04 rejects phone with 11 digits
+

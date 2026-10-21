@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="20.843100999999997">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-16T04:48:31.526Z" hostname="chrome" tests="1" failures="0" skipped="0" time="19.551" errors="0">
+<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js" time="19.551">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-chrome\attachments\Biểu-mẫu-đăng-ký-122e7fa21eb5dd77521216c420964ecfb49d50c0.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
