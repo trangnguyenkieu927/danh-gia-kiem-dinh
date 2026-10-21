@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_2_LoginTest" file="E:\đgkđ\danh-gia-kiem-dinh\tests\PHPUnit\Feature\UC1_2_LoginTest.php" tests="1" assertions="7" errors="0" failures="0" skipped="0" time="0.406854">
+    <testcase name="test_TS_AUTH_006_cart_session_is_preserved_across_session_regeneration" file="E:\đgkđ\danh-gia-kiem-dinh\tests\PHPUnit\Feature\UC1_2_LoginTest.php" line="445" class="Tests\Feature\UC1_2_LoginTest" classname="Tests.Feature.UC1_2_LoginTest" assertions="7" time="0.406854"/>
+  </testsuite>
+</testsuites>

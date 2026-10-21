@@ -1,0 +1,3 @@
+UC1_2_Login (Tests\Feature\UC1_2_Login)
+ [x] TS AUTH 006 cart session is preserved across session regeneration
+

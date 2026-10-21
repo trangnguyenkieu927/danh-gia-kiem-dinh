@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_2_LoginTest" file="E:\đgkđ\danh-gia-kiem-dinh\tests\PHPUnit\Feature\UC1_2_LoginTest.php" tests="1" assertions="10" errors="0" failures="0" skipped="0" time="0.380927">
+    <testcase name="test_TS_AUTH_000_render_login_screen_with_all_required_elements" file="E:\đgkđ\danh-gia-kiem-dinh\tests\PHPUnit\Feature\UC1_2_LoginTest.php" line="108" class="Tests\Feature\UC1_2_LoginTest" classname="Tests.Feature.UC1_2_LoginTest" assertions="10" time="0.380927"/>
+  </testsuite>
+</testsuites>

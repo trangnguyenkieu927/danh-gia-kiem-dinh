@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_2_LoginTest" file="E:\đgkđ\danh-gia-kiem-dinh\tests\PHPUnit\Feature\UC1_2_LoginTest.php" tests="1" assertions="11" errors="0" failures="0" skipped="0" time="0.548864">
+    <testcase name="test_TS_AUTH_004_session_lifecycle_unauthenticated_guard_and_secure_logout" file="E:\đgkđ\danh-gia-kiem-dinh\tests\PHPUnit\Feature\UC1_2_LoginTest.php" line="347" class="Tests\Feature\UC1_2_LoginTest" classname="Tests.Feature.UC1_2_LoginTest" assertions="11" time="0.548864"/>
+  </testsuite>
+</testsuites>

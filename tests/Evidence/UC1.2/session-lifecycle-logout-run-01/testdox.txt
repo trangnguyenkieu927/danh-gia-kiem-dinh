@@ -1,0 +1,3 @@
+UC1_2_Login (Tests\Feature\UC1_2_Login)
+ [x] TS AUTH 004 session lifecycle unauthenticated guard and secure logout
+

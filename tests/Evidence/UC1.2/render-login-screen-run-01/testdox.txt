@@ -1,0 +1,3 @@
+UC1_2_Login (Tests\Feature\UC1_2_Login)
+ [x] TS AUTH 000 render login screen with all required elements
+

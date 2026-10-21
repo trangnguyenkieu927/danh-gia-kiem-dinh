@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.813582">
+<testsuite name="uc1_2_login.spec.js" timestamp="2026-10-21T05:02:47.219Z" hostname="chrome" tests="1" failures="0" skipped="0" time="2.034" errors="0">
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-01: Kiểm tra hiển thị đầy đủ các trường nhập liệu và nhãn chức năng" classname="uc1_2_login.spec.js" time="2.034">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\uc1_2_login-UC1-2---Kiểm-t-5776c-nhập-liệu-và-nhãn-chức-năng-chrome\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

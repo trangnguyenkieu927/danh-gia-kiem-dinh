@@ -1,0 +1,22 @@
+UC1_2_Login (Tests\Feature\UC1_2_Login)
+ [x] TS AUTH 000 render login screen with all required elements
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_01_Khách hàng"
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_02_Quản trị viên (Admin)"
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_03_Nhân viên cửa hàng"
+ [x] TS AUTH 001 valid login and role based redirection with data set "001_04_Nhân viên giao hàng"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_01_bỏ trống cả 2 trường"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_02_bỏ trống tên đăng nhập"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_03_bỏ trống mật khẩu"
+ [x] TS AUTH 002 reject empty and whitespace inputs with data set "002_04_username toàn khoảng trắng"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_01_tài khoản không tồn tại"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_02_đúng tài khoản nhưng sai pass"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_03_thử dùng email thay username"
+ [x] TS AUTH 003 reject invalid credentials with generic security message with data set "003_04_thử dùng SĐT thay username"
+ [x] TS AUTH 004 session lifecycle unauthenticated guard and secure logout
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_01_khách hàng vào báo cáo doanh thu admin"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_02_khách hàng vào admin dashboard"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_03_khách hàng vào shipper dashboard"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_04_nhân viên vào quản lý người dùng admin"
+ [x] TS AUTH 005 role based access control rejects unauthorized roles with data set "005_05_shipper vào admin dashboard"
+ [x] TS AUTH 006 cart session is preserved across session regeneration
+

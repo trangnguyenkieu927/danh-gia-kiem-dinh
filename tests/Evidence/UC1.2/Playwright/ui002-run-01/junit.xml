@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.395461">
+<testsuite name="uc1_2_login.spec.js" timestamp="2026-10-21T05:15:44.930Z" hostname="chrome" tests="1" failures="0" skipped="0" time="1.745" errors="0">
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-02: Kiểm tra chặn gửi biểu mẫu khi để trống các trường bắt buộc" classname="uc1_2_login.spec.js" time="1.745">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\uc1_2_login-UC1-2---Kiểm-t-9d7dc-ể-trống-các-trường-bắt-buộc-chrome\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
