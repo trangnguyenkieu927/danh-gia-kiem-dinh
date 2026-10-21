@@ -1,0 +1,86 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="30.116639">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T04:49:15.703Z" hostname="chrome" tests="1" failures="1" skipped="0" time="27.768" errors="0">
+<testcase name="UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap" classname="UC1_1_Register.spec.js" time="27.768">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\attachments\Trang-thực-tế-sau-khi-đăng-ký-6fd24c57e9e1134d1a3e40eeff5c7a17e92585eb.png]]
+
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\test-failed-1.png]]
+
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\error-context.md]]
+
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\trace.zip]]
+]]>
+</system-out>
+<failure message="Phải hiển thị thông báo đăng ký tài khoản thành công." type="expect.toBeVisible">
+<![CDATA[  [chrome] › UC1_1_Register.spec.js:1270:1 › UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap › Đối chiếu thông báo và điều hướng theo SRS 
+
+    Error: Phải hiển thị thông báo đăng ký tài khoản thành công.
+
+    expect(locator).toBeVisible() failed
+
+    Locator: getByText('Đăng ký tài khoản thành công', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Phải hiển thị thông báo đăng ký tài khoản thành công. getByText('Đăng ký tài khoản thành công', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Đăng ký tài khoản thành công', { exact: true })
+
+
+      1387 |       }),
+      1388 |       'Phải hiển thị thông báo đăng ký tài khoản thành công.'
+    > 1389 |     ).toBeVisible({ timeout: 5_000 });
+           |       ^
+      1390 |
+      1391 |     await expect.soft(
+      1392 |       page,
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1389:7
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1383:3
+
+    Error: Theo SRS, đăng ký thành công phải chuyển về trang Đăng nhập.
+
+    expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/login\/?$/
+    Received string:  "http://127.0.0.1:8000/customer/dashboard"
+    Timeout: 5000ms
+
+    Call log:
+      - Theo SRS, đăng ký thành công phải chuyển về trang Đăng nhập. with timeout 5000ms
+        13 × locator resolved to <html lang="vi">…</html>
+           - unexpected value "http://127.0.0.1:8000/customer/dashboard"
+
+
+      1392 |       page,
+      1393 |       'Theo SRS, đăng ký thành công phải chuyển về trang Đăng nhập.'
+    > 1394 |     ).toHaveURL(/\/login\/?$/, { timeout: 5_000 });
+           |       ^
+      1395 |   });
+      1396 | });
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1394:7
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1383:3
+
+    attachment #3: Trang thực tế sau khi đăng ký (image/png) ───────────────────────────────────────
+    ..\tests\Evidence\UC1.1\Playwright\ui011-run-01\artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\attachments\Trang-thực-tế-sau-khi-đăng-ký-6fd24c57e9e1134d1a3e40eeff5c7a17e92585eb.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\tests\Evidence\UC1.1\Playwright\ui011-run-01\artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\tests\Evidence\UC1.1\Playwright\ui011-run-01\artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\tests\Evidence\UC1.1\Playwright\ui011-run-01\artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\tests\Evidence\UC1.1\Playwright\ui011-run-01\artifacts\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-chrome\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

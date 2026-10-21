@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.378465">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T04:28:49.095Z" hostname="chrome" tests="1" failures="0" skipped="0" time="2.955" errors="0">
+<testcase name="UC1.1_UI_007 - Bo trong Ho va ten" classname="UC1_1_Register.spec.js" time="2.955">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-chrome\attachments\Biểu-mẫu-khi-thiếu-Họ-và-tên-69f8181a062caf7cacfcb50670ea6620ee4ac475.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

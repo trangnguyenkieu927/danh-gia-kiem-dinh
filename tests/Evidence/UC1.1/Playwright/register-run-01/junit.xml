@@ -1,0 +1,16 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="3" errors="0" time="0.05847000000000003">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T03:07:21.782Z" hostname="chrome" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>

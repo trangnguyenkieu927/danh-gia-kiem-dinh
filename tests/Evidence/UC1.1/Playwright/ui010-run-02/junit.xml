@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="5.3778109999999995">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T04:47:04.897Z" hostname="chrome" tests="1" failures="0" skipped="0" time="4.118" errors="0">
+<testcase name="UC1.1_UI_010 - Giu thong tin hop le sau loi dang ky" classname="UC1_1_Register.spec.js" time="4.118">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-chrome\attachments\Biểu-mẫu-sau-lỗi-trùng-tên-đăng-nhập-e6b055997ba9626effcd330c89821dad378650dd.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
