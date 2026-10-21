@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.5744689999999997">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T03:26:09.887Z" hostname="chrome" tests="1" failures="0" skipped="0" time="2.566" errors="0">
+<testcase name="UC1.1_UI_005 - Danh sach Xa Phuong theo Quan Huyen" classname="UC1_1_Register.spec.js" time="2.566">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-chrome\attachments\Hà-Đông---Yên-Nghĩa-f8c812b2fdc987aa4c7968d0576522f739e8cf61.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,60 +1,217 @@
-<testsuites id="" name="" tests="13" failures="0" skipped="13" errors="0" time="0.075053">
-<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T05:39:29.248Z" hostname="uc1.1-register" tests="3" failures="0" skipped="3" time="0" errors="0">
-<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js">
-<skipped>
-</skipped>
+<testsuites id="" name="" tests="12" failures="3" skipped="0" errors="0" time="26.467437000000004">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T05:43:38.822Z" hostname="uc1.1-register" tests="12" failures="3" skipped="0" time="21.88" errors="0">
+<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js" time="2.098">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-uc1-1-register\attachments\Biểu-mẫu-đăng-ký-b66c7d2e9269b68cc2882fbc167a6563fba9c653.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js" time="1.389">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-uc1-1-register\attachments\Nút-và-liên-kết-đăng-ký-55c0a58e5373a1b63bf171b05afd0146465f40d4.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js" time="1.713">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-uc1-1-register\attachments\Thành-phố-mặc-định-Hà-Nội-5d3da434e9e4f1637344ed09bf80a003bf74c494.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-</testsuite>
-<testsuite name="uc1_2_login.spec.js" timestamp="2026-10-21T05:39:29.248Z" hostname="uc1.2-login" tests="7" failures="0" skipped="7" time="0" errors="0">
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-01: Kiểm tra hiển thị đầy đủ các trường nhập liệu và nhãn chức năng" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_004 - Danh sach va lua chon Quan Huyen" classname="UC1_1_Register.spec.js" time="2.367">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-uc1-1-register\attachments\Quận-Huyện-đã-chọn-Hà-Đông-782138cde3755dd9426cef6dcc3f9bc72f592a76.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-02: Kiểm tra chặn gửi biểu mẫu khi để trống các trường bắt buộc" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_005 - Danh sach Xa Phuong theo Quan Huyen" classname="UC1_1_Register.spec.js" time="2.387">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-uc1-1-register\attachments\Hà-Đông---Yên-Nghĩa-f97f88e7183ebfe23bffede968aec01d49f58ac1.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-03: Hiển thị thông báo lỗi màu đỏ khi sai thông tin, tự động xóa ô mật khẩu" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_006 - Che mat khau va xac nhan mat khau" classname="UC1_1_Register.spec.js" time="2.615">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-uc1-1-register\attachments\Hai-trường-mật-khẩu-ở-chế-độ-che-49eb77c8f58ee06f9120a3799ecd16b864483d92.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-04: Đăng nhập tài khoản Khách hàng thành công, hiển thị Header người dùng" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_007 - Bo trong Ho va ten" classname="UC1_1_Register.spec.js" time="2.684">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-uc1-1-register\attachments\Biểu-mẫu-khi-thiếu-Họ-và-tên-c49fdd1268d11bde0270a70a547bc12a1873c4e3.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-05: Đăng nhập tài khoản Admin, điều hướng chính xác đến trang quản trị" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_008 - Email sai dinh dang" classname="UC1_1_Register.spec.js" time="2.631">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-uc1-1-register\attachments\Biểu-mẫu-khi-email-sai-định-dạng-842ae5f72429f9c1249c29fbff0959aeee63a27a.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-06: Chặn truy cập trang yêu cầu đăng nhập và tự động chuyển hướng về /login" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai" classname="UC1_1_Register.spec.js" time="0.281">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\error-context.md]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toMatch(expected)" type="expect.toMatch">
+<![CDATA[  [uc1.1-register] › UC1_1_Register.spec.js:976:1 › UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai 
+
+    TypeError: expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      984 |     existingPhone,
+      985 |     'Cần đặt PW_EXISTING_PHONE bằng số điện thoại đã tồn tại trong CSDL test.'
+    > 986 |   ).toMatch(/^[0-9]{10}$/);
+          |     ^
+      987 |
+      988 |   // Tên đăng nhập và email mới để chỉ kiểm tra trùng số điện thoại.
+      989 |   const suffix = `${Date.now()}_${Math.floor(Math.random() * 100000)}`;
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:986:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 </testcase>
-<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-07: Đăng xuất tài khoản, hủy phiên làm việc và trở lại trạng thái Khách vãng lai" classname="uc1_2_login.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_010 - Giu thong tin hop le sau loi dang ky" classname="UC1_1_Register.spec.js" time="1.011">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\error-context.md]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\trace.zip]]
+]]>
+</system-out>
+<failure message="Đặt PW_EXISTING_USERNAME bằng tên đăng nhập đã tồn tại." type="expect.toBeTruthy">
+<![CDATA[  [uc1.1-register] › UC1_1_Register.spec.js:1117:1 › UC1.1_UI_010 - Giu thong tin hop le sau loi dang ky 
+
+    Error: Đặt PW_EXISTING_USERNAME bằng tên đăng nhập đã tồn tại.
+
+    expect(received).toBeTruthy()
+
+    Received: undefined
+
+      1126 |     existingUsername,
+      1127 |     'Đặt PW_EXISTING_USERNAME bằng tên đăng nhập đã tồn tại.'
+    > 1128 |   ).toBeTruthy();
+           |     ^
+      1129 |
+      1130 |   expect(
+      1131 |     newPhone,
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1128:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 </testcase>
-</testsuite>
-<testsuite name="uc4_2_shipper.spec.js" timestamp="2026-10-21T05:39:29.248Z" hostname="uc4.2-shipper" tests="3" failures="0" skipped="3" time="0" errors="0">
-<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-01: Chặn khách vãng lai truy cập giao diện Shipper, chuyển hướng về đăng nhập" classname="uc4_2_shipper.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap" classname="UC1_1_Register.spec.js" time="0.999">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\error-context.md]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(received).toMatch(expected)" type="expect.toMatch">
+<![CDATA[  [uc1.1-register] › UC1_1_Register.spec.js:1270:1 › UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap 
+
+    TypeError: expect(received).toMatch(expected)
+
+    Matcher error: received value must be a string
+
+    Received has value: undefined
+
+      1279 |     newPhone,
+      1280 |     'Đặt PW_NEW_PHONE bằng số điện thoại mới gồm đúng 10 chữ số.'
+    > 1281 |   ).toMatch(/^[0-9]{10}$/);
+           |     ^
+      1282 |
+      1283 |   const suffix = `${Date.now()}_${Math.floor(Math.random() * 100000)}`;
+      1284 |
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1281:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
 </testcase>
-<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-02: Đăng nhập Shipper thành công, hiển thị đầy đủ bảng điều khiển và thông tin giao hàng" classname="uc4_2_shipper.spec.js">
-<skipped>
-</skipped>
-</testcase>
-<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-03: Điều hướng liên kết Hồ sơ cá nhân và Trung tâm thông báo của Shipper" classname="uc4_2_shipper.spec.js">
-<skipped>
-</skipped>
+<testcase name="UC1.1_UI_012 - Chuyen sang trang Dang nhap" classname="UC1_1_Register.spec.js" time="1.705">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-uc1-1-register\attachments\Trang-Đăng-nhập-sau-khi-nhấn-liên-kết-45f270e6ebff83e25769752443dc8c36c7c7d2c6.png]]
+
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-uc1-1-register\test-finished-1.png]]
+]]>
+</system-out>
 </testcase>
 </testsuite>
 </testsuites>

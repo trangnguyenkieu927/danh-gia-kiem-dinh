@@ -1,0 +1,135 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="34.46834200000001">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T04:32:13.049Z" hostname="chrome" tests="1" failures="1" skipped="0" time="32.131" errors="0">
+<testcase name="UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai" classname="UC1_1_Register.spec.js" time="32.131">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\test-failed-1.png]]
+
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\error-context.md]]
+
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\trace.zip]]
+]]>
+</system-out>
+<failure message="Đăng ký trùng số điện thoại phải quay về trang đăng ký." type="expect.toHaveURL">
+<![CDATA[  [chrome] › UC1_1_Register.spec.js:976:1 › UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai › Gửi đăng ký và kiểm tra phản hồi giao diện 
+
+    Error: Đăng ký trùng số điện thoại phải quay về trang đăng ký.
+
+    expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/register\/?$/
+    Received string:  "http://127.0.0.1:8000/customer/dashboard"
+    Timeout: 10000ms
+
+    Call log:
+      - Đăng ký trùng số điện thoại phải quay về trang đăng ký. with timeout 10000ms
+        23 × locator resolved to <html lang="vi">…</html>
+           - unexpected value "http://127.0.0.1:8000/customer/dashboard"
+
+
+      1071 |       page,
+      1072 |       'Đăng ký trùng số điện thoại phải quay về trang đăng ký.'
+    > 1073 |     ).toHaveURL(/\/register\/?$/);
+           |       ^
+      1074 |
+      1075 |     await expect.soft(
+      1076 |       form,
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1073:7
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1042:3
+
+    Test timeout of 30000ms exceeded.
+
+    Error: Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin.
+
+    expect(locator).toBeVisible() failed
+
+    Locator: locator('form').filter({ has: locator('input[name="ten_dang_nhap"]') })
+    Expected: visible
+    Error: element(s) not found
+
+    Call log:
+      - Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin. locator('form').filter({ has: locator('input[name="ten_dang_nhap"]') }) with timeout 10000ms
+      - waiting for locator('form').filter({ has: locator('input[name="ten_dang_nhap"]') })
+      - Test ended.
+
+
+      1076 |       form,
+      1077 |       'Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin.'
+    > 1078 |     ).toBeVisible();
+           |       ^
+      1079 |
+      1080 |     // Không cố định câu chữ khi SRS chưa quy định thông báo chính xác.
+      1081 |     // Thông báo phải nêu số điện thoại đã tồn tại/được sử dụng.
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1078:7
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1042:3
+
+    Error: Phải hiển thị thông báo về số điện thoại đã tồn tại.
+
+    expect(locator).toBeVisible() failed
+
+    Locator:  locator('p').filter({ hasText: /số điện thoại.*(đã|tồn tại|trùng|sử dụng)/i }).first()
+    Expected: visible
+    Received: undefined
+
+
+      1087 |       phoneError.first(),
+      1088 |       'Phải hiển thị thông báo về số điện thoại đã tồn tại.'
+    > 1089 |     ).toBeVisible();
+           |       ^
+      1090 |
+      1091 |     await expect.soft(
+      1092 |       page.getByText('Đăng ký tài khoản thành công', { exact: true })
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1089:7
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1042:3
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  getByText('Đăng ký tài khoản thành công', { exact: true })
+    Expected: not visible
+    Received: visible
+
+
+      1091 |     await expect.soft(
+      1092 |       page.getByText('Đăng ký tài khoản thành công', { exact: true })
+    > 1093 |     ).not.toBeVisible();
+           |           ^
+      1094 |   });
+      1095 |
+      1096 |   await test.step('Lưu kết quả thực tế', async () => {
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1093:11
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1042:3
+
+    Error: page.screenshot: Target page, context or browser has been closed
+
+      1104 |     );
+      1105 |
+    > 1106 |     await page.screenshot({
+           |                ^
+      1107 |       path: screenshotPath,
+      1108 |       fullPage: true,
+      1109 |     });
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1106:16
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1096:3
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\tests\Evidence\UC1.1\Playwright\ui009-run-01\artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: Địa chỉ trang sau đăng ký (text/plain) ──────────────────────────────────────────
+    http://127.0.0.1:8000/customer/dashboard
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\tests\Evidence\UC1.1\Playwright\ui009-run-01\artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\tests\Evidence\UC1.1\Playwright\ui009-run-01\artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\tests\Evidence\UC1.1\Playwright\ui009-run-01\artifacts\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-chrome\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

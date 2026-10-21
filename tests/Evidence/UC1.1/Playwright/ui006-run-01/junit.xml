@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.536561000000001">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T04:27:34.580Z" hostname="chrome" tests="1" failures="0" skipped="0" time="2.803" errors="0">
+<testcase name="UC1.1_UI_006 - Che mat khau va xac nhan mat khau" classname="UC1_1_Register.spec.js" time="2.803">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-chrome\attachments\Hai-trường-mật-khẩu-ở-chế-độ-che-8dc107d5ad4ddc455cf7390891e55348c036f552.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

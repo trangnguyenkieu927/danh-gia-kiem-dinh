@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.662013000000001">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T04:30:50.419Z" hostname="chrome" tests="1" failures="0" skipped="0" time="3.103" errors="0">
+<testcase name="UC1.1_UI_008 - Email sai dinh dang" classname="UC1_1_Register.spec.js" time="3.103">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-chrome\attachments\Biểu-mẫu-khi-email-sai-định-dạng-df1206c846f0ac47901ad43eefe73fbde9f30cd8.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

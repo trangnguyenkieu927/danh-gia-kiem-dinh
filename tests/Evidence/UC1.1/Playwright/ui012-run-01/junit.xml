@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.158295">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T05:40:07.333Z" hostname="chrome" tests="1" failures="0" skipped="0" time="1.769" errors="0">
+<testcase name="UC1.1_UI_012 - Chuyen sang trang Dang nhap" classname="UC1_1_Register.spec.js" time="1.769">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-chrome\attachments\Trang-Đăng-nhập-sau-khi-nhấn-liên-kết-05747009a16b01d3dfbbad8ca8eed0213db20ad5.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

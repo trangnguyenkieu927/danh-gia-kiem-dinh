@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.29616">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T03:19:52.812Z" hostname="chrome" tests="1" failures="0" skipped="0" time="2.276" errors="0">
+<testcase name="UC1.1_UI_004 - Danh sach va lua chon Quan Huyen" classname="UC1_1_Register.spec.js" time="2.276">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-chrome\attachments\Quận-Huyện-đã-chọn-Hà-Đông-5256dcae632c537decc7a6ee901596a0aeeace37.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
