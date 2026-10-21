@@ -4,7 +4,12 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "test:ui:all": "playwright test",
+    "test:ui:uc1.1": "playwright test --config=playwright.register.config.js",
+    "test:ui:uc1.2": "playwright test --config=playwright.login.config.js",
+    "test:ui:uc4.2": "playwright test --config=playwright.shipper.config.js",
+    "test:ui:report": "playwright show-report"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

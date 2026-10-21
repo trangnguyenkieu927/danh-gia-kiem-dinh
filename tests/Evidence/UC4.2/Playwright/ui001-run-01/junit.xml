@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.464741">
+<testsuite name="uc4_2_shipper.spec.js" timestamp="2026-10-21T05:26:12.405Z" hostname="chrome" tests="1" failures="0" skipped="0" time="1.956" errors="0">
+<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-01: Chặn khách vãng lai truy cập giao diện Shipper, chuyển hướng về đăng nhập" classname="uc4_2_shipper.spec.js" time="1.956">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\uc4_2_shipper-UC4-2---Kiểm-99c4f-r-chuyển-hướng-về-đăng-nhập-chrome\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

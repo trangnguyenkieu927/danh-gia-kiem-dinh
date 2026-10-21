@@ -1,61 +1,49 @@
-
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
+/**
+ * Master Playwright Configuration for RoseShop E2E Test Suite (Nhom 07)
+ * Ho tro chay ca 3 Use Case:
+ * - UC1.1: Dang ky (Nguyen Duc Trong)
+ * - UC1.2: Dang nhap (Nguyen Kieu Trang)
+ * - UC4.2: Giao hang Shipper (Duong Hung Manh)
+ */
 export default defineConfig({
-  // Thư mục chứa các bài kiểm thử E2E / UI của nhóm
-  testDir: './tests/Playwright_UI/e2e',
-
-  // Hạn chế test tác động dữ liệu chạy đồng thời
+  testDir: './e2e',
   fullyParallel: false,
+  workers: 1,
+  retries: 0,
+  timeout: 30_000,
+  expect: { timeout: 10_000 },
 
-  // Không cho phép test.only xuất hiện trên CI
-  forbidOnly: !!process.env.CI,
-
-  // Thử lại khi chạy trên GitHub Actions
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-
-  // Báo cáo kết quả kiểm thử
   reporter: [
     ['list'],
-    ['html', {
-      open: 'never',
-      outputFolder: 'playwright-report'
-    }],
-    ['junit', {
-      outputFile: 'test-results/junit.xml'
-    }]
+    ['html', { outputFolder: 'tests/Evidence/Playwright-Report-Master', open: 'never' }],
+    ['junit', { outputFile: 'tests/Evidence/Playwright-Master-junit.xml' }],
   ],
 
-  // Cấu hình chung cho tất cả bài kiểm thử
   use: {
-    baseURL: process.env.BASE_URL || 'http://127.0.0.1:8000',
-
-    screenshot: 'only-on-failure',
+    baseURL: process.env.PW_BASE_URL || 'http://127.0.0.1:8000',
     trace: 'retain-on-failure',
-    video: 'retain-on-failure',
-
-    actionTimeout: 10000
+    screenshot: 'on',
+    video: 'off',
   },
 
-  // Trình duyệt kiểm thử
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] }
+      name: 'uc1.1-register',
+      testMatch: 'UC1_1_Register.spec.js',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] }
+      name: 'uc1.2-login',
+      testMatch: 'uc1_2_login.spec.js',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     },
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] }
-    }
-  ]
-
-  // Laravel cần được chạy trước khi thực thi test.
-  // Có thể cấu hình webServer riêng sau khi xác minh
-  // cách khởi động ứng dụng của nhóm.
+      name: 'uc4.2-shipper',
+      testMatch: 'uc4_2_shipper.spec.js',
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' },
+    },
+  ],
 });

@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.743174999999999">
+<testsuite name="uc4_2_shipper.spec.js" timestamp="2026-10-21T05:34:10.711Z" hostname="chrome" tests="1" failures="0" skipped="0" time="8.873" errors="0">
+<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-02: Đăng nhập Shipper thành công, hiển thị đầy đủ bảng điều khiển và thông tin giao hàng" classname="uc4_2_shipper.spec.js" time="8.873">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\uc4_2_shipper-UC4-2---Kiểm-dfa09-hiển-và-thông-tin-giao-hàng-chrome\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="13.160493">
+<testsuite name="uc4_2_shipper.spec.js" timestamp="2026-10-21T05:34:35.921Z" hostname="chrome" tests="1" failures="0" skipped="0" time="11.58" errors="0">
+<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-03: Điều hướng liên kết Hồ sơ cá nhân và Trung tâm thông báo của Shipper" classname="uc4_2_shipper.spec.js" time="11.58">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\uc4_2_shipper-UC4-2---Kiểm-668bd-g-tâm-thông-báo-của-Shipper-chrome\test-finished-1.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
