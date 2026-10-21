@@ -9,7 +9,10 @@
 /.idea
 /.nova
 /.phpunit.cache
-/.vscode
+# /.vscode (tracked for shared Playwright Test Explorer settings)
+/.vscode/*
+!/.vscode/settings.json
+!/.vscode/extensions.json
 /.zed
 /auth.json
 /node_modules
