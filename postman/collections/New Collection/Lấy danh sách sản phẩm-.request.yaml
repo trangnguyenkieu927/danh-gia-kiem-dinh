@@ -1,0 +1,5 @@
+$kind: http-request
+name: Lấy danh sách sản phẩm.
+url: http://127.0.0.1:8000/api/sanpham
+method: GET
+order: 1791359140625

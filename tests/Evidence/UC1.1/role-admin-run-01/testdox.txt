@@ -1,0 +1,3 @@
+UC1_1_Register (Tests\Feature\UC1_1_Register)
+ [x] TC AUTH 017 02 cannot register as admin
+

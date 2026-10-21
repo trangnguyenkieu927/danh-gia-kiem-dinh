@@ -1,0 +1,3 @@
+UC1_1_Register (Tests\Feature\UC1_1_Register)
+ [x] UC1 1 FUNC 015 01 defaults city to hanoi
+

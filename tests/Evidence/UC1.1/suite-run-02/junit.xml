@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_1_RegisterTest" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" tests="32" assertions="598" errors="0" failures="6" skipped="0" time="0.888598">
+    <testcase name="test_TC_AUTH_002_01_register_valid_account" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="75" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="14" time="0.286961">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_002_01_register_valid_account&#13;
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'...caster.trycloudflare.com/login'
++'...caster.trycloudflare.com/customer/dashboard'
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponseAssert.php:45
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:432
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:206
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:156</failure>
+    </testcase>
+    <testcase name="test_TC_AUTH_011_02_rejects_duplicate_phone" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="166" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="9" time="0.017829">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_011_02_rejects_duplicate_phone&#13;
+Failed asserting that table [nguoi_dung] matches expected entries count of 1. Entries found: 2.
+.
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:94
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:250</failure>
+    </testcase>
+    <testcase name="test_TC_AUTH_004_02_rejects_duplicate_username" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="286" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="26" time="0.020021"/>
+    <testcase name="test_TC_AUTH_008_02_rejects_duplicate_email" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="417" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="9" time="0.022059">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_008_02_rejects_duplicate_email&#13;
+Failed asserting that table [nguoi_dung] matches expected entries count of 1. Entries found: 2.
+.
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:94
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:500</failure>
+    </testcase>
+    <testcase name="test_TC_AUTH_003_07_rejects_empty_username" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="550" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.016972"/>
+    <testcase name="test_TC_AUTH_006_02_rejects_empty_full_name" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="624" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.014839"/>
+    <testcase name="test_TC_AUTH_007_04_rejects_invalid_email" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="702" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.016218"/>
+    <testcase name="test_TC_AUTH_009_04_rejects_phone_with_11_digits" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="780" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.018178"/>
+    <testcase name="test_TC_AUTH_009_03_rejects_phone_with_9_digits" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="859" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.016517"/>
+    <testcase name="test_TC_AUTH_010_04_rejects_phone_with_letter" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="938" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.016380"/>
+    <testcase name="test_TC_AUTH_012_03_rejects_password_with_5_characters" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1017" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.017212"/>
+    <testcase name="test_TC_AUTH_013_03_rejects_password_confirmation_mismatch" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1095" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.017541"/>
+    <testcase name="test_TC_AUTH_017_02_cannot_register_as_admin" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1173" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="12" time="0.019644"/>
+    <testcase name="test_TC_AUTH_018_01_stores_hashed_password" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1259" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="12" time="0.022399"/>
+    <testcase name="test_TC_AUTH_020_01_rejects_multiple_invalid_fields" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1341" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.015671"/>
+    <testcase name="test_TC_AUTH_019_01_rolls_back_when_customer_creation_fails" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1419" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="25" time="0.017835"/>
+    <testcase name="test_TC_AUTH_014_01_rejects_empty_district" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1555" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.018677"/>
+    <testcase name="test_TC_AUTH_014_02_rejects_empty_ward" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1634" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.022799"/>
+    <testcase name="test_TC_AUTH_014_03_rejects_empty_address_detail" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1712" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.018213"/>
+    <testcase name="test_TC_AUTH_005_01_rejects_username_with_at_sign" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1791" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="5" time="0.032011">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_005_01_rejects_username_with_at_sign&#13;
+Failed asserting that table [nguoi_dung] matches expected entries count of 0. Entries found: 1.
+.
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:94
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:1814</failure>
+    </testcase>
+    <testcase name="test_TC_AUTH_003_08_rejects_empty_email" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1869" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.023319"/>
+    <testcase name="test_TC_AUTH_003_09_rejects_empty_phone" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1943" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.018706"/>
+    <testcase name="test_TC_AUTH_003_10_rejects_empty_password" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2016" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.015692"/>
+    <testcase name="test_TC_AUTH_003_11_rejects_empty_password_confirmation" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2093" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="22" time="0.019043"/>
+    <testcase name="test_TC_AUTH_BR01_01_blocks_registration_when_authenticated" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2173" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="20" time="0.025574"/>
+    <testcase name="test_TC_AUTH_015_API_01_rejects_unknown_district" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2298" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="5" time="0.022870">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_015_API_01_rejects_unknown_district&#13;
+Failed asserting that table [nguoi_dung] matches expected entries count of 0. Entries found: 1.
+.
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:94
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:2321</failure>
+    </testcase>
+    <testcase name="test_TC_AUTH_015_API_02_rejects_ward_from_another_district" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2373" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="5" time="0.019028">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_015_API_02_rejects_ward_from_another_district&#13;
+Failed asserting that table [nguoi_dung] matches expected entries count of 0. Entries found: 1.
+.
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:94
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:2396</failure>
+    </testcase>
+    <testcase name="test_TC_AUTH_002_02_accepts_password_with_7_characters" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2457" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="12" time="0.019495"/>
+    <testcase name="test_TC_AUTH_002_03_login_with_newly_registered_account" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2542" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="14" time="0.020406"/>
+    <testcase name="test_TC_AUTH_010_05_rejects_phone_with_space" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2605" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.021865"/>
+    <testcase name="test_TC_AUTH_012_04_rejects_password_with_1_character" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2668" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.016338"/>
+    <testcase name="test_TC_AUTH_014_04_rejects_all_address_fields_empty" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="2731" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="23" time="0.018288"/>
+  </testsuite>
+</testsuites>

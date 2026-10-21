@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC1_1_RegisterTest" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" tests="1" assertions="5" errors="0" failures="1" skipped="0" time="0.276232">
+    <testcase name="test_TC_AUTH_005_01_rejects_username_with_at_sign" file="D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php" line="1791" class="Tests\Feature\UC1_1_RegisterTest" classname="Tests.Feature.UC1_1_RegisterTest" assertions="5" time="0.276232">
+      <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC1_1_RegisterTest::test_TC_AUTH_005_01_rejects_username_with_at_sign&#13;
+Failed asserting that table [nguoi_dung] matches expected entries count of 0. Entries found: 1.
+.
+&#13;
+D:\trích lỏ\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Foundation\Testing\Concerns\InteractsWithDatabase.php:94
+D:\trích lỏ\danh-gia-kiem-dinh\tests\Feature\UC1_1_RegisterTest.php:1814</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

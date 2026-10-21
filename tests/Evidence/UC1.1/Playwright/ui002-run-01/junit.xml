@@ -1,0 +1,11 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.11225">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-16T04:51:30.477Z" hostname="chrome" tests="1" failures="0" skipped="0" time="2.169" errors="0">
+<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js" time="2.169">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|artifacts\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-chrome\attachments\Nút-và-liên-kết-đăng-ký-98fb7bf480e96116360197ca3c7e35d017a30232.png]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
