@@ -1,3 +1,4 @@
+// @ts-check
 import { defineConfig, devices } from '@playwright/test';
 
 const runId = process.env.PW_RUN_ID || 'register-run-01';
@@ -33,6 +34,7 @@ export default defineConfig({
   use: {
     baseURL: process.env.PW_BASE_URL || 'http://127.0.0.1:8000',
 
+    // Bắt đầu bằng phiên chưa đăng nhập.
     storageState: {
       cookies: [],
       origins: [],

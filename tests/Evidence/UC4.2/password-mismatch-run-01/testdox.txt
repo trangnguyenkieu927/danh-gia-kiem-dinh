@@ -1,0 +1,4 @@
+UC4_2_Shipper (Tests\Feature\UC4_2_Shipper)
+ [x] TS SHIP 022 reject password confirmation mismatch with data set "022_01_khác hoàn toàn"
+ [x] TS SHIP 022 reject password confirmation mismatch with data set "022_02_lệch 1 ký tự"
+

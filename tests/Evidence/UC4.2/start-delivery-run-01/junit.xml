@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="1" assertions="9" errors="0" failures="0" skipped="0" time="0.500934">
+    <testcase name="test_UC4_2_FUNC_006_01_shipper_can_start_delivery_and_notify_customer" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="126" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="9" time="0.500934"/>
+  </testsuite>
+</testsuites>

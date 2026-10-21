@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="1" assertions="13" errors="0" failures="0" skipped="0" time="0.452930">
+    <testcase name="test_TS_SHIP_023_not_found_and_invalid_order_id" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1596" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="13" time="0.452930"/>
+  </testsuite>
+</testsuites>

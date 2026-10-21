@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="5" assertions="13" errors="0" failures="2" skipped="0" time="0.654997">
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold" tests="5" assertions="13" errors="0" failures="2" skipped="0" time="0.654997">
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_02a_chưa nhận hàng&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1786" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.434585"/>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_03a_còn 2h&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1786" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.045229"/>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_03b_còn ~1 phút&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1786" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="3" time="0.062460"/>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_04_đúng mốc 3h&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1786" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="2" time="0.078021">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set "025_04_đúng mốc 3h"&#13;
+Unable to find JSON fragment: &#13;
+&#13;
+[{"status":"penalty_applied"}]&#13;
+&#13;
+within&#13;
+&#13;
+[{"elapsed_seconds":-10805.24528,"remaining":21605.24528,"status":"ok"}].
+Failed asserting that false is true.
+&#13;
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\AssertableJsonString.php:144
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:948
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1819</failure>
+      </testcase>
+      <testcase name="test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set &quot;025_05_quá 3h 1 phút&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1786" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="2" time="0.034702">
+        <failure type="PHPUnit\Framework\ExpectationFailedException">Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_025_timeout_endpoint_respects_3h_threshold with data set "025_05_quá 3h 1 phút"&#13;
+Unable to find JSON fragment: &#13;
+&#13;
+[{"status":"penalty_applied"}]&#13;
+&#13;
+within&#13;
+&#13;
+[{"elapsed_seconds":-10860.294192,"remaining":21660.294192,"status":"ok"}].
+Failed asserting that false is true.
+&#13;
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\AssertableJsonString.php:144
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\vendor\laravel\framework\src\Illuminate\Testing\TestResponse.php:948
+C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php:1819</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testsuites>

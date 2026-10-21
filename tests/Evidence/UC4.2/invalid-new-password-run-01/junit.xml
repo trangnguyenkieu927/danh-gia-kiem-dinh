@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests\Feature\UC4_2_ShipperTest" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" tests="5" assertions="30" errors="0" failures="0" skipped="0" time="0.559739">
+    <testsuite name="Tests\Feature\UC4_2_ShipperTest::test_TS_SHIP_021_reject_invalid_new_password" tests="5" assertions="30" errors="0" failures="0" skipped="0" time="0.559739">
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_01_5 chữ số (dưới biên)&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1492" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.428048"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_02_256 chữ số (trên biên)&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1492" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.038134"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_03_chứa chữ cái&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1492" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.036402"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_04a_chứa khoảng trắng&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1492" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.028290"/>
+      <testcase name="test_TS_SHIP_021_reject_invalid_new_password with data set &quot;021_04b_chứa ký tự đặc biệt&quot;" file="C:\Users\trung\Documents\DanhGiaKiemDinh\danh-gia-kiem-dinh\tests\Feature\UC4_2_ShipperTest.php" line="1492" class="Tests\Feature\UC4_2_ShipperTest" classname="Tests.Feature.UC4_2_ShipperTest" assertions="6" time="0.028863"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
