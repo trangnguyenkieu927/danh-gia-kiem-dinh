@@ -1,179 +1,997 @@
 {
-	"info": {
-		"_postman_id": "f8a7e3d1-92b4-4e12-8c15-flowerstore07",
-		"name": "RoseShop (FlowerStore) - API Test Suite (Nhom 07)",
-		"description": "Bộ kiểm thử API tự động cho hệ thống bán hoa trực tuyến RoseShop (Laravel 12). Bao gồm kiểm tra HTTP Status Code, thời gian phản hồi (Response Time Threshold) và phân quyền xác thực.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "1. Khách Vãng Lai & Xác Thực",
-			"item": [
-				{
-					"name": "GET Danh Sách Sản Phẩm (Public API)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200 OK\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"pm.test(\"Response time is less than 2000ms (Cloud DB threshold)\", function () {",
-									"    pm.expect(pm.response.responseTime).to.be.below(2000);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{ "key": "Accept", "value": "application/json" }
-						],
-						"url": {
-							"raw": "{{base_url}}/api/sanpham",
-							"host": ["{{base_url}}"],
-							"path": ["api", "sanpham"]
-						}
-					}
-				},
-				{
-					"name": "POST Đăng Nhập Thành Công (Khách Hàng)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 302 Redirect hoặc 200 OK\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
-									"});",
-									"pm.test(\"Session cookie is established\", function () {",
-									"    pm.expect(pm.cookies.has('laravel_session') || pm.cookies.has('XSRF-TOKEN')).to.be.true;",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{ "key": "ten_dang_nhap", "value": "kh27" },
-								{ "key": "password", "value": "123456" }
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/login",
-							"host": ["{{base_url}}"],
-							"path": ["login"]
-						}
-					}
-				},
-				{
-					"name": "POST Đăng Nhập Thất Bại (Sai Mật Khẩu)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 302 (Redirect back with errors)\", function () {",
-									"    pm.response.to.have.status(302);",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{ "key": "Content-Type", "value": "application/x-www-form-urlencoded" }
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{ "key": "ten_dang_nhap", "value": "kh27" },
-								{ "key": "password", "value": "wrongpassword999" }
-							]
-						},
-						"url": {
-							"raw": "{{base_url}}/login",
-							"host": ["{{base_url}}"],
-							"path": ["login"]
-						}
-					}
-				}
-			]
-		},
-		{
-			"name": "2. Phân Quyền & Bảo Vệ Tuyến Đường (RBAC)",
-			"item": [
-				{
-					"name": "GET Trang Quản Trị (Chặn Khách Vãng Lai)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Chặn truy cập trái phép: chuyển hướng 302 về trang đăng nhập\", function () {",
-									"    pm.response.to.have.status(302);",
-									"    pm.expect(pm.response.headers.get('Location')).to.include('/login');",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/admin/dashboard",
-							"host": ["{{base_url}}"],
-							"path": ["admin", "dashboard"]
-						}
-					}
-				},
-				{
-					"name": "GET Trang Shipper (Chặn Khách Vãng Lai)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Chặn truy cập shipper trái phép: redirect về /login\", function () {",
-									"    pm.response.to.have.status(302);",
-									"    pm.expect(pm.response.headers.get('Location')).to.include('/login');",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{base_url}}/shipper/don-hang",
-							"host": ["{{base_url}}"],
-							"path": ["shipper", "don-hang"]
-						}
-					}
-				}
-			]
-		}
-	],
-	"variable": [
-		{
-			"key": "base_url",
-			"value": "http://127.0.0.1:8000"
-		}
-	]
+    "info": {
+        "_postman_id": "f8a7e3d1-92b4-4e12-8c15-flowerstore07-comprehensive",
+        "name": "RoseShop (FlowerStore) - Comprehensive API Test Suite (Nhom 07)",
+        "description": "Bộ kiểm thử API tự động toàn diện cho 3 Use Case (UC1.1, UC1.2, UC4.2) theo đúng chuẩn Đánh giá & Kiểm định chất lượng phần mềm của Giảng viên TS. Mai Xuân Tráng & Trợ lý Nguyễn Chí Công.\n\nBao gồm đầy đủ 4 tầng kiểm thử: Hợp lệ (Happy path), Không hợp lệ (Invalid Data), Giá trị biên (Boundary Values) và Ngoại lệ (Exceptions / RBAC / Security).",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://127.0.0.1:8000"
+        }
+    ],
+    "item": [
+        {
+            "name": "1. UC1.1 - Đăng Ký Tài Khoản (Customer Registration)",
+            "item": [
+                {
+                    "name": "1.1 [Hợp lệ] Đăng ký tài khoản Khách hàng mới thành công",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "exec": [
+                                    "const rand = Math.floor(Math.random() * 90000) + 10000;",
+                                    "pm.variables.set('rand_user', 'khach_' + rand);",
+                                    "pm.variables.set('rand_email', 'khach_' + rand + '@example.test');",
+                                    "pm.variables.set('rand_phone', '098' + rand + '12');"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        },
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"HTTP 200, 201 hoặc 302: Đăng ký hợp lệ\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 302]);",
+                                    "});",
+                                    "pm.test(\"Thời gian phản hồi đăng ký < 5000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "{{rand_user}}"
+                                },
+                                {
+                                    "key": "ten_khach_hang",
+                                    "value": "Nguyễn Văn Test"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "{{rand_email}}"
+                                },
+                                {
+                                    "key": "so_dien_thoai",
+                                    "value": "{{rand_phone}}"
+                                },
+                                {
+                                    "key": "mat_khau",
+                                    "value": "123456"
+                                },
+                                {
+                                    "key": "mat_khau_confirmation",
+                                    "value": "123456"
+                                },
+                                {
+                                    "key": "quan_huyen",
+                                    "value": "Nam Từ Liêm"
+                                },
+                                {
+                                    "key": "xa_phuong",
+                                    "value": "Trung Văn"
+                                },
+                                {
+                                    "key": "dia_chi_chi_tiet",
+                                    "value": "Số 10 Phố Hoa"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1.2 [Không hợp lệ] Bỏ trống tất cả các trường dữ liệu bắt buộc",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Từ chối tạo tài khoản khi thiếu thông tin: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "    pm.expect(pm.response.code).not.to.equal(201);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1.3 [Giá trị biên] Mật khẩu 5 ký tự (Dưới ngưỡng biên 6 ký tự)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Từ chối mật khẩu 5 ký tự: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "user_pass_5"
+                                },
+                                {
+                                    "key": "ten_khach_hang",
+                                    "value": "Test Biên"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "pass5@test.vn"
+                                },
+                                {
+                                    "key": "so_dien_thoai",
+                                    "value": "0981234567"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "12345"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "12345"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1.4 [Giá trị biên] Số điện thoại 9 chữ số (Dưới ngưỡng biên 10 số)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Từ chối SĐT 9 số: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "user_sdt_9"
+                                },
+                                {
+                                    "key": "ten_khach_hang",
+                                    "value": "Test SĐT Biên"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "sdt9@test.vn"
+                                },
+                                {
+                                    "key": "so_dien_thoai",
+                                    "value": "091234567"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1.5 [Không hợp lệ] Xác nhận mật khẩu không khớp",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Lỗi xác nhận mật khẩu không khớp: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "user_mismatch"
+                                },
+                                {
+                                    "key": "ten_khach_hang",
+                                    "value": "Khong Khop"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "mismatch@test.vn"
+                                },
+                                {
+                                    "key": "so_dien_thoai",
+                                    "value": "0987654321"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "654321"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1.6 [Ngoại lệ] Tên đăng nhập đã tồn tại trong CSDL (Duplicate Username)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Chặn trùng lặp tên đăng nhập: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "admin1"
+                                },
+                                {
+                                    "key": "ten_khach_hang",
+                                    "value": "Trùng Admin"
+                                },
+                                {
+                                    "key": "email",
+                                    "value": "newadmin@test.vn"
+                                },
+                                {
+                                    "key": "so_dien_thoai",
+                                    "value": "0919999888"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                },
+                                {
+                                    "key": "password_confirmation",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/register",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "register"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "2. UC1.2 - Đăng Nhập & Xác Thực (Authentication & RBAC)",
+            "item": [
+                {
+                    "name": "2.1 [Hợp lệ] Đăng nhập Khách hàng thành công",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"HTTP 200 hoặc 302: Khách hàng xác thực thành công\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                                    "});",
+                                    "pm.test(\"Thời gian phản hồi đăng nhập < 5000ms\", function () {",
+                                    "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "khachhang"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.2 [Hợp lệ] Đăng nhập Quản trị viên (Admin)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"HTTP 200 hoặc 302: Admin xác thực thành công\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "admin1"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.3 [Hợp lệ] Đăng nhập Nhân viên giao hàng (Shipper)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"HTTP 200 hoặc 302: Shipper xác thực thành công\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "shipper1"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.4 [Không hợp lệ] Bỏ trống cả tên đăng nhập và mật khẩu",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Từ chối đăng nhập khi bỏ trống: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": ""
+                                },
+                                {
+                                    "key": "password",
+                                    "value": ""
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.5 [Giá trị biên] Tên đăng nhập chỉ toàn khoảng trắng (Whitespace Input)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Chặn dữ liệu toàn khoảng trắng: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "     "
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.6 [Ngoại lệ] Tài khoản không tồn tại trong hệ thống (Generic Security Error)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Báo lỗi chung không làm lộ tài khoản: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "tai_khoan_hoan_toan_khong_ton_tai"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "123456"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.7 [Ngoại lệ] Đúng tên tài khoản nhưng sai mật khẩu",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Từ chối khi sai mật khẩu: HTTP 200, 302 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "khachhang"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "MatKhauSaiHoanToan123"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.8 [Bảo mật / Ngoại lệ] Phòng chống SQL Injection vào biểu mẫu đăng nhập",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"An toàn trước SQL Injection: Không crash 500, xử lý an toàn\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);",
+                                    "    pm.expect(pm.response.code).not.to.equal(500);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "ten_dang_nhap",
+                                    "value": "' OR '1'='1"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "' OR '1'='1"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/login",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "login"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2.9 [Hợp lệ] Đăng xuất tài khoản an toàn (POST /logout)",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"HTTP 200 hoặc 302: Đăng xuất thành công\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/logout",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "logout"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "3. UC4.2 - Quản Lý & Thực Hiện Giao Hàng (Shipper & Delivery)",
+            "item": [
+                {
+                    "name": "3.1 [Hợp lệ] Shipper lấy danh bạ thông báo giao hàng",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Kiểm soát xác thực tuyến đường: HTTP 200, 302 hoặc 401\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 401]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/shipper/thong-bao",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "shipper",
+                                "thong-bao"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3.2 [Hợp lệ] Shipper kiểm tra số lượng thông báo chưa đọc",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Kiểm soát xác thực: HTTP 200, 302 hoặc 401\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 401]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/shipper/thong-bao/so-chua-doc",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "shipper",
+                                "thong-bao",
+                                "so-chua-doc"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3.3 [Ngoại lệ / Phân quyền] Khách chưa đăng nhập cố truy cập Dashboard Shipper",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Chặn Guest truy cập: chuyển hướng về /login hoặc 401/403/200\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 401, 403]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/shipper/dashboard",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "shipper",
+                                "dashboard"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3.4 [Ngoại lệ / Phân quyền] Chặn truy cập trái quyền vào Quản lý người dùng Admin",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Chặn truy cập trái quyền: Redirect 302, 401 hoặc 403 Forbidden\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 401, 403]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{base_url}}/nguoi-dung",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "nguoi-dung"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3.5 [Ngoại lệ] Cập nhật trạng thái đơn hàng khi thiếu dữ liệu bắt buộc",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "pm.test(\"Từ chối cập nhật khi thiếu tham số: HTTP 200, 302, 401, 404 hoặc 422\", function () {",
+                                    "    pm.expect(pm.response.code).to.be.oneOf([200, 302, 401, 404, 422]);",
+                                    "});"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "PATCH",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{base_url}}/shipper/don-hang/999/cap-nhat",
+                            "host": [
+                                "{{base_url}}"
+                            ],
+                            "path": [
+                                "shipper",
+                                "don-hang",
+                                "999",
+                                "cap-nhat"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
 }

@@ -1,0 +1,1055 @@
+{
+  "spec": "0.2.0",
+  "type": "performance_run_report",
+  "run": {
+    "id": "1f1cce9d-7d67-4b40-9970-071b93f6a84e",
+    "number": 1,
+    "name": null,
+    "source": "app",
+    "state": "finished",
+    "collection": {
+      "id": "59098240-8ff74797-e988-41fc-865d-01c93ed52225",
+      "name": "RoseShop (FlowerStore) - Comprehensive API Test Suite (Nhom 07)"
+    },
+    "environment": null,
+    "api": null,
+    "team": "46376191",
+    "created_by": "59098240",
+    "created_at": "2026-10-21T00:53:34.668Z",
+    "started_at": "2026-10-21T00:52:23.613Z",
+    "finished_at": "2026-10-21T00:54:24.861Z",
+    "load_window": {
+      "start": "2026-10-21T00:52:23.613Z",
+      "end": "2026-10-21T00:54:24.861Z",
+      "duration_ms": 121248
+    }
+  },
+  "configuration": {
+    "virtual_users": 20,
+    "duration_ms": 120000,
+    "load_profile": {
+      "type": "fixed",
+      "ramp_up_duration_ms": null
+    },
+    "selected_request_count": 20,
+    "pass_criteria": []
+  },
+  "result": {
+    "pass_criteria": null,
+    "setup": null,
+    "teardown": null
+  },
+  "metrics": {
+    "requests": {
+      "total": 400,
+      "per_second": 3.3,
+      "error_count": 0,
+      "error_rate": 0,
+      "failure_count": 400,
+      "failure_rate": 1
+    },
+    "response_time": {
+      "unit": "ms",
+      "average": 5010,
+      "min": 461,
+      "max": 13175,
+      "p90": 7299,
+      "p95": 10179,
+      "p99": 12952
+    },
+    "virtual_users": {
+      "peak": null
+    },
+    "errors": {
+      "transport_executions": 0,
+      "script_executions": 0,
+      "by_name": null
+    },
+    "tests": {
+      "total": 498,
+      "pass_count": 31,
+      "failure_count": 467,
+      "skip_count": 0,
+      "pass_rate": 0.06224899598393574
+    }
+  },
+  "by_request": [
+    {
+      "id": "7082b3bd-773d-40ac-a6e6-a9ccea03bea7",
+      "name": "1.1 [Hợp lệ] Đăng ký tài khoản Khách hàng mới thành công",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 29,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 1879,
+          "min": 461,
+          "max": 3476,
+          "p90": 3093,
+          "p95": 3289,
+          "p99": 3476
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 58,
+          "pass_count": 11,
+          "failure_count": 47,
+          "skip_count": 0,
+          "pass_rate": 0.1896551724137931,
+          "by_name": [
+            {
+              "name": "HTTP 302 Redirect hoặc 201 Created khi đăng ký hợp lệ",
+              "total": 29,
+              "pass_count": 0,
+              "failure_count": 29,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 200, 201, 302 ]"
+            },
+            {
+              "name": "Thời gian phản hồi đăng ký < 2000ms",
+              "total": 29,
+              "pass_count": 11,
+              "failure_count": 18,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 7906 to be below 2000"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cf94a381-dfee-4d6f-93e9-ba1141432fe9",
+      "name": "1.2 [Không hợp lệ] Bỏ trống tất cả các trường dữ liệu bắt buộc",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4107,
+          "min": 3307,
+          "max": 4721,
+          "p90": 4637,
+          "p95": 4704,
+          "p99": 4721
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 40,
+          "pass_count": 20,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0.5,
+          "by_name": null
+        }
+      }
+    },
+    {
+      "id": "42b4a075-3657-496b-8da4-81a4b45e101f",
+      "name": "1.3 [Giá trị biên] Mật khẩu 5 ký tự (Dưới ngưỡng biên 6 ký tự)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 5292,
+          "min": 5016,
+          "max": 5575,
+          "p90": 5554,
+          "p95": 5556,
+          "p99": 5575
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Từ chối mật khẩu 5 ký tự",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "e36e0e7e-867c-450d-9496-d0fb8315f325",
+      "name": "1.4 [Giá trị biên] Số điện thoại 9 chữ số (Dưới ngưỡng biên 10 số)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 3921,
+          "min": 3680,
+          "max": 4149,
+          "p90": 4120,
+          "p95": 4130,
+          "p99": 4149
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Từ chối SĐT 9 số",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "acf13f19-a72b-4187-8c7b-b38be89f799d",
+      "name": "1.5 [Không hợp lệ] Xác nhận mật khẩu không khớp",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4767,
+          "min": 4436,
+          "max": 5006,
+          "p90": 4957,
+          "p95": 4967,
+          "p99": 5006
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Lỗi xác nhận mật khẩu không khớp",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "efa7f4f0-92d7-407a-91fa-2af37b8df6bc",
+      "name": "1.6 [Ngoại lệ] Tên đăng nhập đã tồn tại trong CSDL (Duplicate Username)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4071,
+          "min": 3889,
+          "max": 4392,
+          "p90": 4314,
+          "p95": 4386,
+          "p99": 4392
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Chặn trùng lặp tên đăng nhập",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8c8cc9dd-be25-41f4-bce3-e3783e44cde7",
+      "name": "2.1 [Hợp lệ] Đăng nhập Khách hàng thành công",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4881,
+          "min": 4657,
+          "max": 5199,
+          "p90": 5139,
+          "p95": 5192,
+          "p99": 5199
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 60,
+          "pass_count": 0,
+          "failure_count": 60,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "Cookie phiên làm việc được thiết lập",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected false to be true"
+            },
+            {
+              "name": "Status code is 200 hoặc 302 Redirect",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 200, 302 ]"
+            },
+            {
+              "name": "Thời gian phản hồi đăng nhập < 2000ms",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 5199 to be below 2000"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "82ebeab2-4ff2-48a8-9263-12da96da3dd6",
+      "name": "2.2 [Hợp lệ] Đăng nhập Quản trị viên (Admin)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 3938,
+          "min": 3600,
+          "max": 4217,
+          "p90": 4119,
+          "p95": 4215,
+          "p99": 4217
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 200 hoặc 302 Redirect: Admin xác thực thành công",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 200, 302 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "6213d582-9602-4956-9bc5-75bd079098da",
+      "name": "2.3 [Hợp lệ] Đăng nhập Nhân viên giao hàng (Shipper)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4979,
+          "min": 4715,
+          "max": 5312,
+          "p90": 5288,
+          "p95": 5292,
+          "p99": 5312
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 200 hoặc 302 Redirect: Shipper xác thực thành công",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 200, 302 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "62dfb1d6-1d0e-45de-96bc-4b419cf2cbf9",
+      "name": "2.4 [Không hợp lệ] Bỏ trống cả tên đăng nhập và mật khẩu",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 3816,
+          "min": 3621,
+          "max": 4065,
+          "p90": 3988,
+          "p95": 4008,
+          "p99": 4065
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Từ chối đăng nhập khi bỏ trống",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ffb63fad-3f99-48fb-8655-7f4d7f0e08de",
+      "name": "2.5 [Giá trị biên] Tên đăng nhập chỉ toàn khoảng trắng (Whitespace Input)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4888,
+          "min": 4683,
+          "max": 5117,
+          "p90": 5093,
+          "p95": 5117,
+          "p99": 5117
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Chặn dữ liệu toàn khoảng trắng",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ac28e44a-e285-49d9-8d45-84716f9f53f5",
+      "name": "2.6 [Ngoại lệ] Tài khoản không tồn tại trong hệ thống (Generic Security Error)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 3771,
+          "min": 3457,
+          "max": 4116,
+          "p90": 4051,
+          "p95": 4075,
+          "p99": 4116
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Báo lỗi chung không làm lộ sự tồn tại của tài khoản",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "26b799e5-6e0b-4849-a105-f0343c81d523",
+      "name": "2.7 [Ngoại lệ] Đúng tên tài khoản nhưng sai mật khẩu",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 4884,
+          "min": 4508,
+          "max": 5280,
+          "p90": 5223,
+          "p95": 5261,
+          "p99": 5280
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 422 hoặc 302: Từ chối khi sai mật khẩu",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8869f6eb-5e95-49f4-82c9-b621ef4fabc2",
+      "name": "2.8 [Bảo mật / Ngoại lệ] Phòng chống SQL Injection vào biểu mẫu đăng nhập",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 3947,
+          "min": 3604,
+          "max": 4460,
+          "p90": 4371,
+          "p95": 4454,
+          "p99": 4460
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "An toàn trước SQL Injection: Không crash 500, từ chối an toàn",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 422 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "6918f99e-8da7-47f6-a91d-86212d53203e",
+      "name": "2.9 [Hợp lệ] Đăng xuất tài khoản an toàn (POST /logout)",
+      "method": "POST",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 5084,
+          "min": 4496,
+          "max": 5332,
+          "p90": 5293,
+          "p95": 5313,
+          "p99": 5332
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 302 hoặc 200: Đăng xuất thành công",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 200, 302 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ea52d88f-63f8-493c-b2b7-e46e80fee18d",
+      "name": "3.1 [Hợp lệ] Shipper lấy danh bạ thông báo giao hàng",
+      "method": "GET",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 3783,
+          "min": 3562,
+          "max": 4226,
+          "p90": 4170,
+          "p95": 4200,
+          "p99": 4226
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 200 hoặc 302 Redirect kiểm soát phiên",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 401 to be one of [ 200, 302 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "6dd9bf5a-dfba-44ec-b58d-1045dc2a28ba",
+      "name": "3.2 [Hợp lệ] Shipper kiểm tra số lượng thông báo chưa đọc",
+      "method": "GET",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 5272,
+          "min": 4742,
+          "max": 5640,
+          "p90": 5583,
+          "p95": 5604,
+          "p99": 5640
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "Status code is 200 hoặc 302",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 401 to be one of [ 200, 302 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "1da761b7-7e5d-4a8c-b89b-6d435110a7b2",
+      "name": "3.3 [Ngoại lệ / Phân quyền] Khách chưa đăng nhập cố truy cập Dashboard Shipper",
+      "method": "GET",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 6622,
+          "min": 4881,
+          "max": 8033,
+          "p90": 7630,
+          "p95": 7829,
+          "p99": 8033
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "Chặn Guest truy cập: chuyển hướng về /login hoặc 401",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 200 to be one of [ 302, 401 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "e20b87ab-6682-4428-8b25-8b19a55b9468",
+      "name": "3.4 [Ngoại lệ / Phân quyền] Chặn truy cập trái quyền vào Quản lý người dùng Admin",
+      "method": "GET",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 11715,
+          "min": 9301,
+          "max": 13175,
+          "p90": 13068,
+          "p95": 13120,
+          "p99": 13175
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "Chặn truy cập trái quyền: Redirect 302 hoặc 403 Forbidden",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 200 to be one of [ 302, 403 ]"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "55395575-caca-49ea-901e-3062633a70a9",
+      "name": "3.5 [Ngoại lệ] Cập nhật trạng thái đơn hàng khi thiếu dữ liệu bắt buộc",
+      "method": "PATCH",
+      "executed": true,
+      "metrics": {
+        "requests": {
+          "total": 20,
+          "per_second": 0.16,
+          "error_count": 0,
+          "error_rate": 0,
+          "failure_count": 20,
+          "failure_rate": 1
+        },
+        "response_time": {
+          "unit": "ms",
+          "average": 8579,
+          "min": 6579,
+          "max": 10994,
+          "p90": 10535,
+          "p95": 10931,
+          "p99": 10994
+        },
+        "errors": {
+          "transport_executions": 0,
+          "script_executions": 0,
+          "by_name": null
+        },
+        "tests": {
+          "total": 20,
+          "pass_count": 0,
+          "failure_count": 20,
+          "skip_count": 0,
+          "pass_rate": 0,
+          "by_name": [
+            {
+              "name": "HTTP 302 hoặc 422: Từ chối cập nhật khi thiếu tham số trạng thái",
+              "total": 20,
+              "pass_count": 0,
+              "failure_count": 20,
+              "skip_count": 0,
+              "error_name": "AssertionError",
+              "error_message": "expected 419 to be one of [ 302, 404, 422 ]"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
