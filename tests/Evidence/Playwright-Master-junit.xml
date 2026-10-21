@@ -1,0 +1,60 @@
+<testsuites id="" name="" tests="13" failures="0" skipped="13" errors="0" time="0.075053">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T05:39:29.248Z" hostname="uc1.1-register" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="uc1_2_login.spec.js" timestamp="2026-10-21T05:39:29.248Z" hostname="uc1.2-login" tests="7" failures="0" skipped="7" time="0" errors="0">
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-01: Kiểm tra hiển thị đầy đủ các trường nhập liệu và nhãn chức năng" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-02: Kiểm tra chặn gửi biểu mẫu khi để trống các trường bắt buộc" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-03: Hiển thị thông báo lỗi màu đỏ khi sai thông tin, tự động xóa ô mật khẩu" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-04: Đăng nhập tài khoản Khách hàng thành công, hiển thị Header người dùng" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-05: Đăng nhập tài khoản Admin, điều hướng chính xác đến trang quản trị" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-06: Chặn truy cập trang yêu cầu đăng nhập và tự động chuyển hướng về /login" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC1.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Đăng nhập (RoseShop) › TC-UI-LOGIN-07: Đăng xuất tài khoản, hủy phiên làm việc và trở lại trạng thái Khách vãng lai" classname="uc1_2_login.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="uc4_2_shipper.spec.js" timestamp="2026-10-21T05:39:29.248Z" hostname="uc4.2-shipper" tests="3" failures="0" skipped="3" time="0" errors="0">
+<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-01: Chặn khách vãng lai truy cập giao diện Shipper, chuyển hướng về đăng nhập" classname="uc4_2_shipper.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-02: Đăng nhập Shipper thành công, hiển thị đầy đủ bảng điều khiển và thông tin giao hàng" classname="uc4_2_shipper.spec.js">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="UC4.2 - Kiểm thử Tự động Giao diện &amp; Luồng E2E Giao hàng Shipper (RoseShop) › TC-UI-SHIP-03: Điều hướng liên kết Hồ sơ cá nhân và Trung tâm thông báo của Shipper" classname="uc4_2_shipper.spec.js">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
