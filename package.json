@@ -9,7 +9,7 @@
     "test:ui:uc1.1": "playwright test --config=playwright.register.config.js",
     "test:ui:uc1.2": "playwright test --config=playwright.login.config.js",
     "test:ui:uc4.2": "playwright test --config=playwright.shipper.config.js",
-    "test:ui:report": "playwright show-report"
+    "test:ui:report": "playwright show-report tests/Evidence/Playwright-Report-Master"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

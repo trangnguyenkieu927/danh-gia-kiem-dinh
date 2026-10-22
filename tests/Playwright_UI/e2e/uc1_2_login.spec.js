@@ -27,7 +27,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-01 (Ánh xạ SRS §4.1.2 & Excel ui_UC1.2)
    * Mục tiêu: Đảm bảo giao diện hiển thị đúng, đủ các input, label và nút chức năng.
    */
-  test('TC-UI-LOGIN-01: Kiểm tra hiển thị đầy đủ các trường nhập liệu và nhãn chức năng', async ({ page }) => {
+  test('UC1.2_UI_001 - Kiểm tra hiển thị đầy đủ các trường nhập liệu và nhãn chức năng', async ({ page }) => {
     // 1. Kiểm tra tiêu đề trang
     await expect(page).toHaveTitle(/Laravel|Đăng nhập|RoseShop|Hoa Tươi/i);
 
@@ -61,7 +61,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-02 (Ánh xạ ca FUNC_002_01 / FUNC_002_02)
    * Mục tiêu: Khi bỏ trống, trình duyệt phải kích hoạt validation message, không gửi HTTP POST vô nghĩa lên server.
    */
-  test('TC-UI-LOGIN-02: Kiểm tra chặn gửi biểu mẫu khi để trống các trường bắt buộc', async ({ page }) => {
+  test('UC1.2_UI_002 - Kiểm tra chặn gửi biểu mẫu khi để trống các trường bắt buộc', async ({ page }) => {
     const usernameInput = page.locator('#ten_dang_nhap');
     const submitBtn = page.getByRole('button', { name: /Đăng nhập/i });
 
@@ -84,7 +84,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-03 (Ánh xạ ca FUNC_003_01 / FUNC_003_02)
    * Mục tiêu: Khi sai thông tin, hiển thị lỗi đỏ, giữ lại username cũ, reset mật khẩu để bảo mật.
    */
-  test('TC-UI-LOGIN-03: Hiển thị thông báo lỗi màu đỏ khi sai thông tin, tự động xóa ô mật khẩu', async ({ page }) => {
+  test('UC1.2_UI_003 - Hiển thị thông báo lỗi màu đỏ khi sai thông tin, tự động xóa ô mật khẩu', async ({ page }) => {
     const usernameInput = page.locator('#ten_dang_nhap');
     const passwordInput = page.locator('#password');
     const submitBtn = page.getByRole('button', { name: /Đăng nhập/i });
@@ -113,7 +113,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-04 (Ánh xạ ca FUNC_001_01 & Chuẩn E2E State Transformation)
    * Mục tiêu: Khách đăng nhập -> chuyển về dashboard -> Header ẩn nút Đăng nhập, hiện nút Đăng xuất & Tên người dùng.
    */
-  test('TC-UI-LOGIN-04: Đăng nhập tài khoản Khách hàng thành công, hiển thị Header người dùng', async ({ page }) => {
+  test('UC1.2_UI_004 - Đăng nhập tài khoản Khách hàng thành công, hiển thị Header người dùng', async ({ page }) => {
     // Sử dụng tài khoản mẫu thực tế của hệ thống
     await page.locator('#ten_dang_nhap').fill('khachhang');
     await page.locator('#password').fill('123456');
@@ -141,7 +141,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-05 (Ánh xạ ca FUNC_001_02 & RBAC UI Routing)
    * Mục tiêu: Quản trị viên đăng nhập -> Tự động chuyển hướng chính xác đến /admin/dashboard.
    */
-  test('TC-UI-LOGIN-05: Đăng nhập tài khoản Admin, điều hướng chính xác đến trang quản trị', async ({ page }) => {
+  test('UC1.2_UI_005 - Đăng nhập tài khoản Admin, điều hướng chính xác đến trang quản trị', async ({ page }) => {
     await page.locator('#ten_dang_nhap').fill('admin1');
     await page.locator('#password').fill('123456');
     await page.getByRole('button', { name: /Đăng nhập/i }).click();
@@ -160,7 +160,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-06 (Ánh xạ ca FUNC_004_01)
    * Mục tiêu: Cố tình truy cập trang giỏ hàng/thanh toán khi chưa đăng nhập -> Hệ thống tự động đẩy về /login.
    */
-  test('TC-UI-LOGIN-06: Chặn truy cập trang yêu cầu đăng nhập và tự động chuyển hướng về /login', async ({ page }) => {
+  test('UC1.2_UI_006 - Chặn truy cập trang yêu cầu đăng nhập và tự động chuyển hướng về /login', async ({ page }) => {
     // Người dùng chưa đăng nhập cố truy cập trực tiếp giỏ hàng
     await page.goto('/customer/gio-hang');
     await page.waitForLoadState('domcontentloaded');
@@ -177,7 +177,7 @@ test.describe('UC1.2 - Kiểm thử Tự động Giao diện & Luồng E2E Đăn
    * Mã ca: TC-UI-LOGIN-07 (Ánh xạ ca FUNC_004_02 & Security Lifecycle)
    * Mục tiêu: Đang đăng nhập -> Bấm nút Đăng xuất -> Chuyển về trang chủ, khôi phục giao diện khách vãng lai.
    */
-  test('TC-UI-LOGIN-07: Đăng xuất tài khoản, hủy phiên làm việc và trở lại trạng thái Khách vãng lai', async ({ page }) => {
+  test('UC1.2_UI_007 - Đăng xuất tài khoản, hủy phiên làm việc và trở lại trạng thái Khách vãng lai', async ({ page }) => {
     // 1. Đăng nhập trước
     await page.locator('#ten_dang_nhap').fill('khachhang');
     await page.locator('#password').fill('123456');
