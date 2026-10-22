@@ -1,0 +1,1296 @@
+{
+  "info": {
+    "_postman_id": "fca32b63-a4d3-4969-922d-1d25555996af",
+    "name": "FlowerStore — UC1.1 API 01–06 (SRS assertions)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "# Chạy một lượt 6 ca đăng ký bằng Postman\n\n## Import và chạy\n\n1. Giữ ứng dụng chạy tại http://127.0.0.1:8000 bằng `php artisan serve`.\n2. Trong Postman Desktop, bấm Import > Files và chọn `FlowerStore_Register_01_06.postman_collection.json`. Đây là collection mới; không cần sửa collection cũ bị lỗi tải.\n3. Mở một request trong collection mới > Cookies > Domains Allowlist (hoặc Manage Domains) > thêm `127.0.0.1`, không thêm http:// hoặc :8000. Việc này cho phép script xóa cookie của đúng domain trước mỗi ca. Không bật Disable cookie jar.\n4. Collection Variables đã có base_url=http://127.0.0.1:8000, district=Hà Đông, ward=Yên Nghĩa. Chỉ đổi nếu môi trường/danh mục thực tế khác. duplicate_username để trống: ca 06 tự dùng username từ ca 01. Có thể nhập username đã xác nhận tồn tại nếu muốn chạy riêng ca 06.\n5. Bấm collection > Run; chọn đủ sáu request theo thứ tự 01 tới 06; Iterations=1, Delay=500 ms. Nếu có tùy chọn dừng khi test fail thì tắt để ca 01 Failed không chặn các ca còn lại. Chạy ở máy local, không chọn cloud run cho địa chỉ 127.0.0.1.\n6. Bấm Run collection, lưu/chụp kết quả Runner, từng assertion và response cần phân tích. Nếu có Export results hãy xuất JSON. Không sửa Expected để làm xanh.\n\n## Bộ này làm gì?\n\nSáu request POST là sáu ca chính. Before request của mỗi ca tự xóa cookie, GET /register lấy CSRF mới, rồi gửi POST. Vì vậy thực tế có thêm sáu GET chuẩn bị (khi chuẩn bị đều thành công). Setup thất bại thì POST tương ứng bị bỏ qua, không được tính là đã kiểm thử chức năng.\n\n01: Username/email sinh mới, SĐT ngẫu nhiên 10 số, mật khẩu 123456, xác nhận 123456. Kiểm tra 302 /login theo SRS và thời gian <=3000 ms theo ngưỡng đề xuất. Lỗi hiện tại về /customer/dashboard sẽ được ghi FAILED. Cookie mới giúp không dùng nhầm phiên đã đăng nhập từ lần chạy trước.\n\n02: Không có dữ liệu nghiệp vụ; chỉ gửi _token để đi qua bảo vệ CSRF. Kiểm tra 422 JSON và đủ tám trường bắt buộc được backend kiểm tra. Đây không phải body rỗng tuyệt đối vì vẫn có CSRF.\n\n03: Chỉ sai mật khẩu 5 ký tự, hai giá trị mật khẩu khớp nhau; BR-6.\n\n04: Chỉ sai SĐT 091234567 (9 chữ số); BR-5.\n\n05: Chỉ sai xác nhận mật khẩu, 123456 và 654321; BR-7.\n\n06: Chỉ trùng tên đăng nhập, dùng lại ứng viên từ ca 01; BR-2. 302 ở ca 01 chưa chứng minh lưu DB; ca 06 phải trả đúng lỗi unique mới chứng minh việc tên đó bị từ chối. Không coi việc gán biến fixture là bằng chứng dữ liệu đã tồn tại.\n\nCa 02–06 kiểm tra chính xác HTTP 422, JSON errors, đúng các trường lỗi và thông báo của ca đơn lỗi. Nếu cấu trúc phản hồi hoặc câu chữ khác, giữ kết quả và kiểm tra code/SRS trước khi chỉnh. Không chấp nhận chung 200/302/422.\n\n## Kết quả và giới hạn\n\n- collection Variables có `suite_results` chứa tóm tắt từ các POST đã chạy; Postman Console có dòng FLOWERSTORE_REGISTER_RESULT cho từng ca. Username ca 01 nằm ở reg01_last_username. Không ghi mật khẩu trong bản tóm tắt.\n- Ca 01 không kiểm tra thông báo trên giao diện /login vì không theo redirect; không kết luận đã bao phủ toàn bộ luồng SRS.\n- Bộ này không truy vấn DB. Sau chạy cần đối chiếu tài khoản/hồ sơ nếu báo cáo muốn khẳng định việc lưu đúng vai trò hoặc không tạo dữ liệu từ ca bị từ chối.\n- SĐT ngẫu nhiên có xác suất trùng dữ liệu có sẵn; nếu lỗi trùng SĐT xuất hiện ở ca khác thì chuẩn bị số chưa dùng rồi chạy lại. Không sửa ứng dụng để test Passed.\n- Ngưỡng 3000 ms chỉ là kiểm tra phản hồi một request theo mục tiêu đề xuất, không phải bằng chứng khả năng chịu tải. Không dùng số này thay báo cáo JMeter.\n- Lần chạy có thể tạo một tài khoản khách hàng thử nghiệm ở ca 01. Không tự động xóa tài khoản. Chỉ chạy trên môi trường thử nghiệm đã được phép.\n- Gói đã kiểm tra JSON, cú pháp và luồng script bằng phản hồi giả lập; chưa thực thi trên Postman/FlowerStore của bạn. Không có kết quả Passed thực tế được tạo sẵn.\n\n## Đối chiếu DB sau chạy (chỉ đọc)\n\nTrong terminal dự án: `php artisan tinker`. Thay USERNAME_TU_REG01_LAST_USERNAME bằng giá trị thực tế trong collection Variables:\n\n```php\n$u = \\App\\Models\\NguoiDung::where('ten_dang_nhap', 'USERNAME_TU_REG01_LAST_USERNAME')->first();\n$u?->only(['ma_nguoi_dung', 'ten_dang_nhap', 'vai_tro']);\n$u?->khachHang?->only(['ma_khach_hang', 'ten_khach_hang', 'email', 'so_dien_thoai', 'dia_chi']);\n```\n\nĐối chiếu dữ liệu ca bị từ chối theo username/email trong suite_results. Ca 06 dùng username cũ nên kiểm tra không có bản ghi mới theo email mới, đồng thời hồ sơ cũ không đổi. Muốn chứng minh toàn bộ dữ liệu cũ giữ nguyên phải chụp trạng thái trước và sau; bộ này không tự làm bước đó.\n\nNếu báo SETUP FAILED: kiểm tra domain allowlist, ứng dụng đang chạy, địa chỉ GET và token. Nếu không có assertion: kiểm tra chọn đúng collection mới và đã chạy đủ request. Không bỏ bước chuẩn bị để chạy POST với CSRF cũ.\n\n`CODE_01_06.md` chứa đúng các script đã nhúng trong collection để xem lại; không cần dán thủ công.\n"
+  },
+  "protocolProfileBehavior": {
+    "followRedirects": false,
+    "disableCookies": false
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    },
+    {
+      "key": "district",
+      "value": "Hà Đông",
+      "type": "string"
+    },
+    {
+      "key": "ward",
+      "value": "Yên Nghĩa",
+      "type": "string"
+    },
+    {
+      "key": "duplicate_username",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "suite_registered_username",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "reg01_last_username",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "suite_results",
+      "value": "[]",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "API_UC1.1_01 — [Hợp lệ] Đăng ký tài khoản mới — SRS redirect /login",
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "disableCookies": false
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_01';",
+              "const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\\/+$/, '');",
+              "pm.variables.set('base_url', base);",
+              "pm.variables.set('setup_ready', 'false');",
+              "pm.variables.set('register_csrf', '');",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    pm.collectionVariables.unset('suite_registered_username');",
+              "    pm.collectionVariables.set('suite_results', '[]');",
+              "}",
+              "function stopSetup(message) {",
+              "    pm.test(caseId + ' | SETUP FAILED', function () { throw new Error(message); });",
+              "    console.error(caseId + ': ' + message);",
+              "    pm.execution.skipRequest();",
+              "}",
+              "await (async function () {",
+              "    const jar = pm.cookies.jar();",
+              "    await new Promise((resolve, reject) => jar.clear(base + '/', error => error ? reject(error) : resolve()));",
+              "    const response = await pm.sendRequest({url: base + '/register', method: 'GET', header: {Accept: 'text/html'}});",
+              "    if (response.code !== 200) throw new Error('GET /register must return 200; actual ' + response.code);",
+              "    const html = response.text();",
+              "    if (!/name=[\"']ten_dang_nhap[\"']/.test(html)) throw new Error('GET did not return registration form; inspect guest session');",
+              "    const input = (html.match(/<input\\b[^>]*>/gi) || []).find(tag => /\\bname=[\"']_token[\"']/.test(tag));",
+              "    const match = input && input.match(/\\bvalue=[\"']([^\"']+)[\"']/);",
+              "    const token = match ? match[1] : '';",
+              "    if (!token) throw new Error('CSRF _token missing in register HTML');",
+              "    pm.variables.set('register_csrf', token);",
+              "    const unique = pm.variables.replaceIn('{{$guid}}').replace(/-/g, '');",
+              "    const data = {",
+              "        ten_dang_nhap: 'api_' + unique,",
+              "        ten_khach_hang: 'Nguyễn Đức Trọng',",
+              "        email: 'api_' + unique + '@example.com',",
+              "        so_dien_thoai: '09' + String(Math.floor(Math.random()*100000000)).padStart(8,'0'),",
+              "        quan_huyen: pm.collectionVariables.get('district'),",
+              "        xa_phuong: pm.collectionVariables.get('ward'),",
+              "        dia_chi_chi_tiet: 'Xuân Mai Complex',",
+              "        mat_khau: '123456',",
+              "        mat_khau_confirmation: '123456'",
+              "    };",
+              "    if (caseId === 'API_UC1.1_03') { data.mat_khau = '12345'; data.mat_khau_confirmation = '12345'; }",
+              "    if (caseId === 'API_UC1.1_04') data.so_dien_thoai = '091234567';",
+              "    if (caseId === 'API_UC1.1_05') data.mat_khau_confirmation = '654321';",
+              "    if (caseId === 'API_UC1.1_06') {",
+              "        const duplicate = pm.collectionVariables.get('duplicate_username') || pm.collectionVariables.get('suite_registered_username');",
+              "        if (!duplicate) throw new Error('No duplicate fixture: run case 01 first or set duplicate_username to an existing account');",
+              "        data.ten_dang_nhap = duplicate;",
+              "    }",
+              "    Object.keys(data).forEach(key => pm.variables.set(key, data[key]));",
+              "    pm.variables.set('case_data', JSON.stringify(caseId === 'API_UC1.1_02' ? {} : data));",
+              "    pm.variables.set('setup_ready', 'true');",
+              "    pm.test(caseId + ' | SETUP: guest GET 200 and fresh CSRF', function () {});",
+              "})().catch(error => stopSetup(String(error.message || error) + '. Check app, Cookies > Domains Allowlist (127.0.0.1), and cookie jar settings.'));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_01';",
+              "const checks = [];",
+              "function check(name, assertion) {",
+              "    pm.test(caseId + ' | ' + name, function () {",
+              "        try { assertion(); checks.push({name, passed:true}); }",
+              "        catch(error) { checks.push({name, passed:false, message:error.message}); throw error; }",
+              "    });",
+              "}",
+              "function requireThat(condition, message) { if (!condition) throw new Error(message); }",
+              "const status = pm.response.code;",
+              "const location = pm.response.headers.get('Location') || '';",
+              "const redirectPath = location.replace(/^https?:\\/\\/[^/]+/i, '').split(/[?#]/)[0].replace(/\\/+$/, '');",
+              "let payload = null;",
+              "try { payload = pm.response.json(); } catch(error) {}",
+              "const data = JSON.parse(pm.variables.get('case_data') || '{}');",
+              "check('SETUP completed before POST', function () { requireThat(pm.variables.get('setup_ready') === 'true', 'Setup was not completed'); });",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    // Fixture for case 06. This is a candidate, not proof of database persistence.",
+              "    if (status === 302 && ['/login','/customer/dashboard'].includes(redirectPath))",
+              "        pm.collectionVariables.set('suite_registered_username', data.ten_dang_nhap);",
+              "    pm.collectionVariables.set('reg01_last_username', data.ten_dang_nhap);",
+              "    check('HTTP 302', function () { requireThat(status === 302, 'Expected 302; actual ' + status); });",
+              "    check('SRS redirect to /login', function () {",
+              "        requireThat(status === 302 && redirectPath === '/login', 'Expected 302 to /login; actual ' + status + ' ' + location);",
+              "    });",
+              "    check('Response time <= 3000 ms (proposed threshold)', function () {",
+              "        requireThat(pm.response.responseTime <= 3000, 'Actual response time: ' + pm.response.responseTime + ' ms');",
+              "    });",
+              "} else {",
+              "    check('HTTP 422 validation response', function () { requireThat(status === 422, 'Expected 422; actual ' + status + ' ' + location); });",
+              "    check('JSON validation errors object', function () {",
+              "        requireThat(/application\\/json/i.test(pm.response.headers.get('Content-Type') || ''), 'Response is not application/json');",
+              "        requireThat(payload && payload.errors && typeof payload.errors === 'object' && !Array.isArray(payload.errors), 'Missing errors object');",
+              "    });",
+              "    const required = ['ten_dang_nhap','ten_khach_hang','email','so_dien_thoai','quan_huyen','xa_phuong','dia_chi_chi_tiet','mat_khau'];",
+              "    const expectedKeys = caseId === 'API_UC1.1_02' ? required : [caseId === 'API_UC1.1_04' ? 'so_dien_thoai' : caseId === 'API_UC1.1_06' ? 'ten_dang_nhap' : 'mat_khau'];",
+              "    check('Only the expected fields contain validation errors', function () {",
+              "        requireThat(payload && payload.errors, 'Missing errors object');",
+              "        const actual = Object.keys(payload.errors).sort();",
+              "        requireThat(JSON.stringify(actual) === JSON.stringify([...expectedKeys].sort()), 'Expected fields ' + expectedKeys.join(', ') + '; actual ' + actual.join(', '));",
+              "        expectedKeys.forEach(key => requireThat(Array.isArray(payload.errors[key]) && payload.errors[key].length > 0, 'Missing error messages for ' + key));",
+              "    });",
+              "    const messages = {",
+              "        'API_UC1.1_03': ['mat_khau','Mật khẩu phải có ít nhất 6 ký tự.'],",
+              "        'API_UC1.1_04': ['so_dien_thoai','Số điện thoại phải đúng 10 chữ số.'],",
+              "        'API_UC1.1_05': ['mat_khau','Xác nhận mật khẩu không khớp.'],",
+              "        'API_UC1.1_06': ['ten_dang_nhap','Tên đăng nhập đã tồn tại.']",
+              "    };",
+              "    if (messages[caseId]) {",
+              "        const [field,message] = messages[caseId];",
+              "        check('Correct business validation message', function () {",
+              "            requireThat(payload && payload.errors && Array.isArray(payload.errors[field]) && payload.errors[field].includes(message), 'Expected ' + field + ': ' + message);",
+              "        });",
+              "    }",
+              "    check('No success redirect', function () {",
+              "        requireThat(status === 422 && !location, 'Expected validation rejection without redirect; actual ' + status + ' ' + location);",
+              "    });",
+              "}",
+              "const record = {",
+              "    caseId, status, location, responseTimeMs:pm.response.responseTime,",
+              "    input: {...data, mat_khau:undefined, mat_khau_confirmation:undefined},",
+              "    errors:payload && payload.errors || null,",
+              "    checks, result:checks.every(x=>x.passed)?'PASSED_HTTP_ASSERTIONS':'FAILED',",
+              "    dbVerification:'Not performed by this collection; reconcile account and customer profile separately'",
+              "};",
+              "let results=[];",
+              "try {results=JSON.parse(pm.collectionVariables.get('suite_results') || '[]');} catch(error) {}",
+              "results.push(record);",
+              "pm.collectionVariables.set('suite_results',JSON.stringify(results,null,2));",
+              "console.log('FLOWERSTORE_REGISTER_RESULT',JSON.stringify(record));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_token",
+              "value": "{{register_csrf}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_dang_nhap",
+              "value": "{{ten_dang_nhap}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_khach_hang",
+              "value": "{{ten_khach_hang}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "so_dien_thoai",
+              "value": "{{so_dien_thoai}}",
+              "type": "text"
+            },
+            {
+              "key": "quan_huyen",
+              "value": "{{quan_huyen}}",
+              "type": "text"
+            },
+            {
+              "key": "xa_phuong",
+              "value": "{{xa_phuong}}",
+              "type": "text"
+            },
+            {
+              "key": "dia_chi_chi_tiet",
+              "value": "{{dia_chi_chi_tiet}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau",
+              "value": "{{mat_khau}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau_confirmation",
+              "value": "{{mat_khau_confirmation}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{base_url}}/register",
+        "description": "Pre-request clears cookies, GETs /register and extracts CSRF. POST is the main test. Cookie domain allowlist is required. Case 02 has only CSRF, no business data. No DB verification is performed."
+      }
+    },
+    {
+      "name": "API_UC1.1_02 — [Không hợp lệ] Bỏ trống toàn bộ dữ liệu đăng ký",
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "disableCookies": false
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_02';",
+              "const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\\/+$/, '');",
+              "pm.variables.set('base_url', base);",
+              "pm.variables.set('setup_ready', 'false');",
+              "pm.variables.set('register_csrf', '');",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    pm.collectionVariables.unset('suite_registered_username');",
+              "    pm.collectionVariables.set('suite_results', '[]');",
+              "}",
+              "function stopSetup(message) {",
+              "    pm.test(caseId + ' | SETUP FAILED', function () { throw new Error(message); });",
+              "    console.error(caseId + ': ' + message);",
+              "    pm.execution.skipRequest();",
+              "}",
+              "await (async function () {",
+              "    const jar = pm.cookies.jar();",
+              "    await new Promise((resolve, reject) => jar.clear(base + '/', error => error ? reject(error) : resolve()));",
+              "    const response = await pm.sendRequest({url: base + '/register', method: 'GET', header: {Accept: 'text/html'}});",
+              "    if (response.code !== 200) throw new Error('GET /register must return 200; actual ' + response.code);",
+              "    const html = response.text();",
+              "    if (!/name=[\"']ten_dang_nhap[\"']/.test(html)) throw new Error('GET did not return registration form; inspect guest session');",
+              "    const input = (html.match(/<input\\b[^>]*>/gi) || []).find(tag => /\\bname=[\"']_token[\"']/.test(tag));",
+              "    const match = input && input.match(/\\bvalue=[\"']([^\"']+)[\"']/);",
+              "    const token = match ? match[1] : '';",
+              "    if (!token) throw new Error('CSRF _token missing in register HTML');",
+              "    pm.variables.set('register_csrf', token);",
+              "    const unique = pm.variables.replaceIn('{{$guid}}').replace(/-/g, '');",
+              "    const data = {",
+              "        ten_dang_nhap: 'api_' + unique,",
+              "        ten_khach_hang: 'Nguyễn Đức Trọng',",
+              "        email: 'api_' + unique + '@example.com',",
+              "        so_dien_thoai: '09' + String(Math.floor(Math.random()*100000000)).padStart(8,'0'),",
+              "        quan_huyen: pm.collectionVariables.get('district'),",
+              "        xa_phuong: pm.collectionVariables.get('ward'),",
+              "        dia_chi_chi_tiet: 'Xuân Mai Complex',",
+              "        mat_khau: '123456',",
+              "        mat_khau_confirmation: '123456'",
+              "    };",
+              "    if (caseId === 'API_UC1.1_03') { data.mat_khau = '12345'; data.mat_khau_confirmation = '12345'; }",
+              "    if (caseId === 'API_UC1.1_04') data.so_dien_thoai = '091234567';",
+              "    if (caseId === 'API_UC1.1_05') data.mat_khau_confirmation = '654321';",
+              "    if (caseId === 'API_UC1.1_06') {",
+              "        const duplicate = pm.collectionVariables.get('duplicate_username') || pm.collectionVariables.get('suite_registered_username');",
+              "        if (!duplicate) throw new Error('No duplicate fixture: run case 01 first or set duplicate_username to an existing account');",
+              "        data.ten_dang_nhap = duplicate;",
+              "    }",
+              "    Object.keys(data).forEach(key => pm.variables.set(key, data[key]));",
+              "    pm.variables.set('case_data', JSON.stringify(caseId === 'API_UC1.1_02' ? {} : data));",
+              "    pm.variables.set('setup_ready', 'true');",
+              "    pm.test(caseId + ' | SETUP: guest GET 200 and fresh CSRF', function () {});",
+              "})().catch(error => stopSetup(String(error.message || error) + '. Check app, Cookies > Domains Allowlist (127.0.0.1), and cookie jar settings.'));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_02';",
+              "const checks = [];",
+              "function check(name, assertion) {",
+              "    pm.test(caseId + ' | ' + name, function () {",
+              "        try { assertion(); checks.push({name, passed:true}); }",
+              "        catch(error) { checks.push({name, passed:false, message:error.message}); throw error; }",
+              "    });",
+              "}",
+              "function requireThat(condition, message) { if (!condition) throw new Error(message); }",
+              "const status = pm.response.code;",
+              "const location = pm.response.headers.get('Location') || '';",
+              "const redirectPath = location.replace(/^https?:\\/\\/[^/]+/i, '').split(/[?#]/)[0].replace(/\\/+$/, '');",
+              "let payload = null;",
+              "try { payload = pm.response.json(); } catch(error) {}",
+              "const data = JSON.parse(pm.variables.get('case_data') || '{}');",
+              "check('SETUP completed before POST', function () { requireThat(pm.variables.get('setup_ready') === 'true', 'Setup was not completed'); });",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    // Fixture for case 06. This is a candidate, not proof of database persistence.",
+              "    if (status === 302 && ['/login','/customer/dashboard'].includes(redirectPath))",
+              "        pm.collectionVariables.set('suite_registered_username', data.ten_dang_nhap);",
+              "    pm.collectionVariables.set('reg01_last_username', data.ten_dang_nhap);",
+              "    check('HTTP 302', function () { requireThat(status === 302, 'Expected 302; actual ' + status); });",
+              "    check('SRS redirect to /login', function () {",
+              "        requireThat(status === 302 && redirectPath === '/login', 'Expected 302 to /login; actual ' + status + ' ' + location);",
+              "    });",
+              "    check('Response time <= 3000 ms (proposed threshold)', function () {",
+              "        requireThat(pm.response.responseTime <= 3000, 'Actual response time: ' + pm.response.responseTime + ' ms');",
+              "    });",
+              "} else {",
+              "    check('HTTP 422 validation response', function () { requireThat(status === 422, 'Expected 422; actual ' + status + ' ' + location); });",
+              "    check('JSON validation errors object', function () {",
+              "        requireThat(/application\\/json/i.test(pm.response.headers.get('Content-Type') || ''), 'Response is not application/json');",
+              "        requireThat(payload && payload.errors && typeof payload.errors === 'object' && !Array.isArray(payload.errors), 'Missing errors object');",
+              "    });",
+              "    const required = ['ten_dang_nhap','ten_khach_hang','email','so_dien_thoai','quan_huyen','xa_phuong','dia_chi_chi_tiet','mat_khau'];",
+              "    const expectedKeys = caseId === 'API_UC1.1_02' ? required : [caseId === 'API_UC1.1_04' ? 'so_dien_thoai' : caseId === 'API_UC1.1_06' ? 'ten_dang_nhap' : 'mat_khau'];",
+              "    check('Only the expected fields contain validation errors', function () {",
+              "        requireThat(payload && payload.errors, 'Missing errors object');",
+              "        const actual = Object.keys(payload.errors).sort();",
+              "        requireThat(JSON.stringify(actual) === JSON.stringify([...expectedKeys].sort()), 'Expected fields ' + expectedKeys.join(', ') + '; actual ' + actual.join(', '));",
+              "        expectedKeys.forEach(key => requireThat(Array.isArray(payload.errors[key]) && payload.errors[key].length > 0, 'Missing error messages for ' + key));",
+              "    });",
+              "    const messages = {",
+              "        'API_UC1.1_03': ['mat_khau','Mật khẩu phải có ít nhất 6 ký tự.'],",
+              "        'API_UC1.1_04': ['so_dien_thoai','Số điện thoại phải đúng 10 chữ số.'],",
+              "        'API_UC1.1_05': ['mat_khau','Xác nhận mật khẩu không khớp.'],",
+              "        'API_UC1.1_06': ['ten_dang_nhap','Tên đăng nhập đã tồn tại.']",
+              "    };",
+              "    if (messages[caseId]) {",
+              "        const [field,message] = messages[caseId];",
+              "        check('Correct business validation message', function () {",
+              "            requireThat(payload && payload.errors && Array.isArray(payload.errors[field]) && payload.errors[field].includes(message), 'Expected ' + field + ': ' + message);",
+              "        });",
+              "    }",
+              "    check('No success redirect', function () {",
+              "        requireThat(status === 422 && !location, 'Expected validation rejection without redirect; actual ' + status + ' ' + location);",
+              "    });",
+              "}",
+              "const record = {",
+              "    caseId, status, location, responseTimeMs:pm.response.responseTime,",
+              "    input: {...data, mat_khau:undefined, mat_khau_confirmation:undefined},",
+              "    errors:payload && payload.errors || null,",
+              "    checks, result:checks.every(x=>x.passed)?'PASSED_HTTP_ASSERTIONS':'FAILED',",
+              "    dbVerification:'Not performed by this collection; reconcile account and customer profile separately'",
+              "};",
+              "let results=[];",
+              "try {results=JSON.parse(pm.collectionVariables.get('suite_results') || '[]');} catch(error) {}",
+              "results.push(record);",
+              "pm.collectionVariables.set('suite_results',JSON.stringify(results,null,2));",
+              "console.log('FLOWERSTORE_REGISTER_RESULT',JSON.stringify(record));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_token",
+              "value": "{{register_csrf}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{base_url}}/register",
+        "description": "Pre-request clears cookies, GETs /register and extracts CSRF. POST is the main test. Cookie domain allowlist is required. Case 02 has only CSRF, no business data. No DB verification is performed."
+      }
+    },
+    {
+      "name": "API_UC1.1_03 — [Giá trị biên] Mật khẩu 5 ký tự — BR-6",
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "disableCookies": false
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_03';",
+              "const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\\/+$/, '');",
+              "pm.variables.set('base_url', base);",
+              "pm.variables.set('setup_ready', 'false');",
+              "pm.variables.set('register_csrf', '');",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    pm.collectionVariables.unset('suite_registered_username');",
+              "    pm.collectionVariables.set('suite_results', '[]');",
+              "}",
+              "function stopSetup(message) {",
+              "    pm.test(caseId + ' | SETUP FAILED', function () { throw new Error(message); });",
+              "    console.error(caseId + ': ' + message);",
+              "    pm.execution.skipRequest();",
+              "}",
+              "await (async function () {",
+              "    const jar = pm.cookies.jar();",
+              "    await new Promise((resolve, reject) => jar.clear(base + '/', error => error ? reject(error) : resolve()));",
+              "    const response = await pm.sendRequest({url: base + '/register', method: 'GET', header: {Accept: 'text/html'}});",
+              "    if (response.code !== 200) throw new Error('GET /register must return 200; actual ' + response.code);",
+              "    const html = response.text();",
+              "    if (!/name=[\"']ten_dang_nhap[\"']/.test(html)) throw new Error('GET did not return registration form; inspect guest session');",
+              "    const input = (html.match(/<input\\b[^>]*>/gi) || []).find(tag => /\\bname=[\"']_token[\"']/.test(tag));",
+              "    const match = input && input.match(/\\bvalue=[\"']([^\"']+)[\"']/);",
+              "    const token = match ? match[1] : '';",
+              "    if (!token) throw new Error('CSRF _token missing in register HTML');",
+              "    pm.variables.set('register_csrf', token);",
+              "    const unique = pm.variables.replaceIn('{{$guid}}').replace(/-/g, '');",
+              "    const data = {",
+              "        ten_dang_nhap: 'api_' + unique,",
+              "        ten_khach_hang: 'Nguyễn Đức Trọng',",
+              "        email: 'api_' + unique + '@example.com',",
+              "        so_dien_thoai: '09' + String(Math.floor(Math.random()*100000000)).padStart(8,'0'),",
+              "        quan_huyen: pm.collectionVariables.get('district'),",
+              "        xa_phuong: pm.collectionVariables.get('ward'),",
+              "        dia_chi_chi_tiet: 'Xuân Mai Complex',",
+              "        mat_khau: '123456',",
+              "        mat_khau_confirmation: '123456'",
+              "    };",
+              "    if (caseId === 'API_UC1.1_03') { data.mat_khau = '12345'; data.mat_khau_confirmation = '12345'; }",
+              "    if (caseId === 'API_UC1.1_04') data.so_dien_thoai = '091234567';",
+              "    if (caseId === 'API_UC1.1_05') data.mat_khau_confirmation = '654321';",
+              "    if (caseId === 'API_UC1.1_06') {",
+              "        const duplicate = pm.collectionVariables.get('duplicate_username') || pm.collectionVariables.get('suite_registered_username');",
+              "        if (!duplicate) throw new Error('No duplicate fixture: run case 01 first or set duplicate_username to an existing account');",
+              "        data.ten_dang_nhap = duplicate;",
+              "    }",
+              "    Object.keys(data).forEach(key => pm.variables.set(key, data[key]));",
+              "    pm.variables.set('case_data', JSON.stringify(caseId === 'API_UC1.1_02' ? {} : data));",
+              "    pm.variables.set('setup_ready', 'true');",
+              "    pm.test(caseId + ' | SETUP: guest GET 200 and fresh CSRF', function () {});",
+              "})().catch(error => stopSetup(String(error.message || error) + '. Check app, Cookies > Domains Allowlist (127.0.0.1), and cookie jar settings.'));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_03';",
+              "const checks = [];",
+              "function check(name, assertion) {",
+              "    pm.test(caseId + ' | ' + name, function () {",
+              "        try { assertion(); checks.push({name, passed:true}); }",
+              "        catch(error) { checks.push({name, passed:false, message:error.message}); throw error; }",
+              "    });",
+              "}",
+              "function requireThat(condition, message) { if (!condition) throw new Error(message); }",
+              "const status = pm.response.code;",
+              "const location = pm.response.headers.get('Location') || '';",
+              "const redirectPath = location.replace(/^https?:\\/\\/[^/]+/i, '').split(/[?#]/)[0].replace(/\\/+$/, '');",
+              "let payload = null;",
+              "try { payload = pm.response.json(); } catch(error) {}",
+              "const data = JSON.parse(pm.variables.get('case_data') || '{}');",
+              "check('SETUP completed before POST', function () { requireThat(pm.variables.get('setup_ready') === 'true', 'Setup was not completed'); });",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    // Fixture for case 06. This is a candidate, not proof of database persistence.",
+              "    if (status === 302 && ['/login','/customer/dashboard'].includes(redirectPath))",
+              "        pm.collectionVariables.set('suite_registered_username', data.ten_dang_nhap);",
+              "    pm.collectionVariables.set('reg01_last_username', data.ten_dang_nhap);",
+              "    check('HTTP 302', function () { requireThat(status === 302, 'Expected 302; actual ' + status); });",
+              "    check('SRS redirect to /login', function () {",
+              "        requireThat(status === 302 && redirectPath === '/login', 'Expected 302 to /login; actual ' + status + ' ' + location);",
+              "    });",
+              "    check('Response time <= 3000 ms (proposed threshold)', function () {",
+              "        requireThat(pm.response.responseTime <= 3000, 'Actual response time: ' + pm.response.responseTime + ' ms');",
+              "    });",
+              "} else {",
+              "    check('HTTP 422 validation response', function () { requireThat(status === 422, 'Expected 422; actual ' + status + ' ' + location); });",
+              "    check('JSON validation errors object', function () {",
+              "        requireThat(/application\\/json/i.test(pm.response.headers.get('Content-Type') || ''), 'Response is not application/json');",
+              "        requireThat(payload && payload.errors && typeof payload.errors === 'object' && !Array.isArray(payload.errors), 'Missing errors object');",
+              "    });",
+              "    const required = ['ten_dang_nhap','ten_khach_hang','email','so_dien_thoai','quan_huyen','xa_phuong','dia_chi_chi_tiet','mat_khau'];",
+              "    const expectedKeys = caseId === 'API_UC1.1_02' ? required : [caseId === 'API_UC1.1_04' ? 'so_dien_thoai' : caseId === 'API_UC1.1_06' ? 'ten_dang_nhap' : 'mat_khau'];",
+              "    check('Only the expected fields contain validation errors', function () {",
+              "        requireThat(payload && payload.errors, 'Missing errors object');",
+              "        const actual = Object.keys(payload.errors).sort();",
+              "        requireThat(JSON.stringify(actual) === JSON.stringify([...expectedKeys].sort()), 'Expected fields ' + expectedKeys.join(', ') + '; actual ' + actual.join(', '));",
+              "        expectedKeys.forEach(key => requireThat(Array.isArray(payload.errors[key]) && payload.errors[key].length > 0, 'Missing error messages for ' + key));",
+              "    });",
+              "    const messages = {",
+              "        'API_UC1.1_03': ['mat_khau','Mật khẩu phải có ít nhất 6 ký tự.'],",
+              "        'API_UC1.1_04': ['so_dien_thoai','Số điện thoại phải đúng 10 chữ số.'],",
+              "        'API_UC1.1_05': ['mat_khau','Xác nhận mật khẩu không khớp.'],",
+              "        'API_UC1.1_06': ['ten_dang_nhap','Tên đăng nhập đã tồn tại.']",
+              "    };",
+              "    if (messages[caseId]) {",
+              "        const [field,message] = messages[caseId];",
+              "        check('Correct business validation message', function () {",
+              "            requireThat(payload && payload.errors && Array.isArray(payload.errors[field]) && payload.errors[field].includes(message), 'Expected ' + field + ': ' + message);",
+              "        });",
+              "    }",
+              "    check('No success redirect', function () {",
+              "        requireThat(status === 422 && !location, 'Expected validation rejection without redirect; actual ' + status + ' ' + location);",
+              "    });",
+              "}",
+              "const record = {",
+              "    caseId, status, location, responseTimeMs:pm.response.responseTime,",
+              "    input: {...data, mat_khau:undefined, mat_khau_confirmation:undefined},",
+              "    errors:payload && payload.errors || null,",
+              "    checks, result:checks.every(x=>x.passed)?'PASSED_HTTP_ASSERTIONS':'FAILED',",
+              "    dbVerification:'Not performed by this collection; reconcile account and customer profile separately'",
+              "};",
+              "let results=[];",
+              "try {results=JSON.parse(pm.collectionVariables.get('suite_results') || '[]');} catch(error) {}",
+              "results.push(record);",
+              "pm.collectionVariables.set('suite_results',JSON.stringify(results,null,2));",
+              "console.log('FLOWERSTORE_REGISTER_RESULT',JSON.stringify(record));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_token",
+              "value": "{{register_csrf}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_dang_nhap",
+              "value": "{{ten_dang_nhap}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_khach_hang",
+              "value": "{{ten_khach_hang}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "so_dien_thoai",
+              "value": "{{so_dien_thoai}}",
+              "type": "text"
+            },
+            {
+              "key": "quan_huyen",
+              "value": "{{quan_huyen}}",
+              "type": "text"
+            },
+            {
+              "key": "xa_phuong",
+              "value": "{{xa_phuong}}",
+              "type": "text"
+            },
+            {
+              "key": "dia_chi_chi_tiet",
+              "value": "{{dia_chi_chi_tiet}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau",
+              "value": "{{mat_khau}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau_confirmation",
+              "value": "{{mat_khau_confirmation}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{base_url}}/register",
+        "description": "Pre-request clears cookies, GETs /register and extracts CSRF. POST is the main test. Cookie domain allowlist is required. Case 02 has only CSRF, no business data. No DB verification is performed."
+      }
+    },
+    {
+      "name": "API_UC1.1_04 — [Giá trị biên] Số điện thoại 9 chữ số — BR-5",
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "disableCookies": false
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_04';",
+              "const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\\/+$/, '');",
+              "pm.variables.set('base_url', base);",
+              "pm.variables.set('setup_ready', 'false');",
+              "pm.variables.set('register_csrf', '');",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    pm.collectionVariables.unset('suite_registered_username');",
+              "    pm.collectionVariables.set('suite_results', '[]');",
+              "}",
+              "function stopSetup(message) {",
+              "    pm.test(caseId + ' | SETUP FAILED', function () { throw new Error(message); });",
+              "    console.error(caseId + ': ' + message);",
+              "    pm.execution.skipRequest();",
+              "}",
+              "await (async function () {",
+              "    const jar = pm.cookies.jar();",
+              "    await new Promise((resolve, reject) => jar.clear(base + '/', error => error ? reject(error) : resolve()));",
+              "    const response = await pm.sendRequest({url: base + '/register', method: 'GET', header: {Accept: 'text/html'}});",
+              "    if (response.code !== 200) throw new Error('GET /register must return 200; actual ' + response.code);",
+              "    const html = response.text();",
+              "    if (!/name=[\"']ten_dang_nhap[\"']/.test(html)) throw new Error('GET did not return registration form; inspect guest session');",
+              "    const input = (html.match(/<input\\b[^>]*>/gi) || []).find(tag => /\\bname=[\"']_token[\"']/.test(tag));",
+              "    const match = input && input.match(/\\bvalue=[\"']([^\"']+)[\"']/);",
+              "    const token = match ? match[1] : '';",
+              "    if (!token) throw new Error('CSRF _token missing in register HTML');",
+              "    pm.variables.set('register_csrf', token);",
+              "    const unique = pm.variables.replaceIn('{{$guid}}').replace(/-/g, '');",
+              "    const data = {",
+              "        ten_dang_nhap: 'api_' + unique,",
+              "        ten_khach_hang: 'Nguyễn Đức Trọng',",
+              "        email: 'api_' + unique + '@example.com',",
+              "        so_dien_thoai: '09' + String(Math.floor(Math.random()*100000000)).padStart(8,'0'),",
+              "        quan_huyen: pm.collectionVariables.get('district'),",
+              "        xa_phuong: pm.collectionVariables.get('ward'),",
+              "        dia_chi_chi_tiet: 'Xuân Mai Complex',",
+              "        mat_khau: '123456',",
+              "        mat_khau_confirmation: '123456'",
+              "    };",
+              "    if (caseId === 'API_UC1.1_03') { data.mat_khau = '12345'; data.mat_khau_confirmation = '12345'; }",
+              "    if (caseId === 'API_UC1.1_04') data.so_dien_thoai = '091234567';",
+              "    if (caseId === 'API_UC1.1_05') data.mat_khau_confirmation = '654321';",
+              "    if (caseId === 'API_UC1.1_06') {",
+              "        const duplicate = pm.collectionVariables.get('duplicate_username') || pm.collectionVariables.get('suite_registered_username');",
+              "        if (!duplicate) throw new Error('No duplicate fixture: run case 01 first or set duplicate_username to an existing account');",
+              "        data.ten_dang_nhap = duplicate;",
+              "    }",
+              "    Object.keys(data).forEach(key => pm.variables.set(key, data[key]));",
+              "    pm.variables.set('case_data', JSON.stringify(caseId === 'API_UC1.1_02' ? {} : data));",
+              "    pm.variables.set('setup_ready', 'true');",
+              "    pm.test(caseId + ' | SETUP: guest GET 200 and fresh CSRF', function () {});",
+              "})().catch(error => stopSetup(String(error.message || error) + '. Check app, Cookies > Domains Allowlist (127.0.0.1), and cookie jar settings.'));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_04';",
+              "const checks = [];",
+              "function check(name, assertion) {",
+              "    pm.test(caseId + ' | ' + name, function () {",
+              "        try { assertion(); checks.push({name, passed:true}); }",
+              "        catch(error) { checks.push({name, passed:false, message:error.message}); throw error; }",
+              "    });",
+              "}",
+              "function requireThat(condition, message) { if (!condition) throw new Error(message); }",
+              "const status = pm.response.code;",
+              "const location = pm.response.headers.get('Location') || '';",
+              "const redirectPath = location.replace(/^https?:\\/\\/[^/]+/i, '').split(/[?#]/)[0].replace(/\\/+$/, '');",
+              "let payload = null;",
+              "try { payload = pm.response.json(); } catch(error) {}",
+              "const data = JSON.parse(pm.variables.get('case_data') || '{}');",
+              "check('SETUP completed before POST', function () { requireThat(pm.variables.get('setup_ready') === 'true', 'Setup was not completed'); });",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    // Fixture for case 06. This is a candidate, not proof of database persistence.",
+              "    if (status === 302 && ['/login','/customer/dashboard'].includes(redirectPath))",
+              "        pm.collectionVariables.set('suite_registered_username', data.ten_dang_nhap);",
+              "    pm.collectionVariables.set('reg01_last_username', data.ten_dang_nhap);",
+              "    check('HTTP 302', function () { requireThat(status === 302, 'Expected 302; actual ' + status); });",
+              "    check('SRS redirect to /login', function () {",
+              "        requireThat(status === 302 && redirectPath === '/login', 'Expected 302 to /login; actual ' + status + ' ' + location);",
+              "    });",
+              "    check('Response time <= 3000 ms (proposed threshold)', function () {",
+              "        requireThat(pm.response.responseTime <= 3000, 'Actual response time: ' + pm.response.responseTime + ' ms');",
+              "    });",
+              "} else {",
+              "    check('HTTP 422 validation response', function () { requireThat(status === 422, 'Expected 422; actual ' + status + ' ' + location); });",
+              "    check('JSON validation errors object', function () {",
+              "        requireThat(/application\\/json/i.test(pm.response.headers.get('Content-Type') || ''), 'Response is not application/json');",
+              "        requireThat(payload && payload.errors && typeof payload.errors === 'object' && !Array.isArray(payload.errors), 'Missing errors object');",
+              "    });",
+              "    const required = ['ten_dang_nhap','ten_khach_hang','email','so_dien_thoai','quan_huyen','xa_phuong','dia_chi_chi_tiet','mat_khau'];",
+              "    const expectedKeys = caseId === 'API_UC1.1_02' ? required : [caseId === 'API_UC1.1_04' ? 'so_dien_thoai' : caseId === 'API_UC1.1_06' ? 'ten_dang_nhap' : 'mat_khau'];",
+              "    check('Only the expected fields contain validation errors', function () {",
+              "        requireThat(payload && payload.errors, 'Missing errors object');",
+              "        const actual = Object.keys(payload.errors).sort();",
+              "        requireThat(JSON.stringify(actual) === JSON.stringify([...expectedKeys].sort()), 'Expected fields ' + expectedKeys.join(', ') + '; actual ' + actual.join(', '));",
+              "        expectedKeys.forEach(key => requireThat(Array.isArray(payload.errors[key]) && payload.errors[key].length > 0, 'Missing error messages for ' + key));",
+              "    });",
+              "    const messages = {",
+              "        'API_UC1.1_03': ['mat_khau','Mật khẩu phải có ít nhất 6 ký tự.'],",
+              "        'API_UC1.1_04': ['so_dien_thoai','Số điện thoại phải đúng 10 chữ số.'],",
+              "        'API_UC1.1_05': ['mat_khau','Xác nhận mật khẩu không khớp.'],",
+              "        'API_UC1.1_06': ['ten_dang_nhap','Tên đăng nhập đã tồn tại.']",
+              "    };",
+              "    if (messages[caseId]) {",
+              "        const [field,message] = messages[caseId];",
+              "        check('Correct business validation message', function () {",
+              "            requireThat(payload && payload.errors && Array.isArray(payload.errors[field]) && payload.errors[field].includes(message), 'Expected ' + field + ': ' + message);",
+              "        });",
+              "    }",
+              "    check('No success redirect', function () {",
+              "        requireThat(status === 422 && !location, 'Expected validation rejection without redirect; actual ' + status + ' ' + location);",
+              "    });",
+              "}",
+              "const record = {",
+              "    caseId, status, location, responseTimeMs:pm.response.responseTime,",
+              "    input: {...data, mat_khau:undefined, mat_khau_confirmation:undefined},",
+              "    errors:payload && payload.errors || null,",
+              "    checks, result:checks.every(x=>x.passed)?'PASSED_HTTP_ASSERTIONS':'FAILED',",
+              "    dbVerification:'Not performed by this collection; reconcile account and customer profile separately'",
+              "};",
+              "let results=[];",
+              "try {results=JSON.parse(pm.collectionVariables.get('suite_results') || '[]');} catch(error) {}",
+              "results.push(record);",
+              "pm.collectionVariables.set('suite_results',JSON.stringify(results,null,2));",
+              "console.log('FLOWERSTORE_REGISTER_RESULT',JSON.stringify(record));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_token",
+              "value": "{{register_csrf}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_dang_nhap",
+              "value": "{{ten_dang_nhap}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_khach_hang",
+              "value": "{{ten_khach_hang}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "so_dien_thoai",
+              "value": "{{so_dien_thoai}}",
+              "type": "text"
+            },
+            {
+              "key": "quan_huyen",
+              "value": "{{quan_huyen}}",
+              "type": "text"
+            },
+            {
+              "key": "xa_phuong",
+              "value": "{{xa_phuong}}",
+              "type": "text"
+            },
+            {
+              "key": "dia_chi_chi_tiet",
+              "value": "{{dia_chi_chi_tiet}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau",
+              "value": "{{mat_khau}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau_confirmation",
+              "value": "{{mat_khau_confirmation}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{base_url}}/register",
+        "description": "Pre-request clears cookies, GETs /register and extracts CSRF. POST is the main test. Cookie domain allowlist is required. Case 02 has only CSRF, no business data. No DB verification is performed."
+      }
+    },
+    {
+      "name": "API_UC1.1_05 — [Không hợp lệ] Xác nhận mật khẩu không khớp — BR-7",
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "disableCookies": false
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_05';",
+              "const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\\/+$/, '');",
+              "pm.variables.set('base_url', base);",
+              "pm.variables.set('setup_ready', 'false');",
+              "pm.variables.set('register_csrf', '');",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    pm.collectionVariables.unset('suite_registered_username');",
+              "    pm.collectionVariables.set('suite_results', '[]');",
+              "}",
+              "function stopSetup(message) {",
+              "    pm.test(caseId + ' | SETUP FAILED', function () { throw new Error(message); });",
+              "    console.error(caseId + ': ' + message);",
+              "    pm.execution.skipRequest();",
+              "}",
+              "await (async function () {",
+              "    const jar = pm.cookies.jar();",
+              "    await new Promise((resolve, reject) => jar.clear(base + '/', error => error ? reject(error) : resolve()));",
+              "    const response = await pm.sendRequest({url: base + '/register', method: 'GET', header: {Accept: 'text/html'}});",
+              "    if (response.code !== 200) throw new Error('GET /register must return 200; actual ' + response.code);",
+              "    const html = response.text();",
+              "    if (!/name=[\"']ten_dang_nhap[\"']/.test(html)) throw new Error('GET did not return registration form; inspect guest session');",
+              "    const input = (html.match(/<input\\b[^>]*>/gi) || []).find(tag => /\\bname=[\"']_token[\"']/.test(tag));",
+              "    const match = input && input.match(/\\bvalue=[\"']([^\"']+)[\"']/);",
+              "    const token = match ? match[1] : '';",
+              "    if (!token) throw new Error('CSRF _token missing in register HTML');",
+              "    pm.variables.set('register_csrf', token);",
+              "    const unique = pm.variables.replaceIn('{{$guid}}').replace(/-/g, '');",
+              "    const data = {",
+              "        ten_dang_nhap: 'api_' + unique,",
+              "        ten_khach_hang: 'Nguyễn Đức Trọng',",
+              "        email: 'api_' + unique + '@example.com',",
+              "        so_dien_thoai: '09' + String(Math.floor(Math.random()*100000000)).padStart(8,'0'),",
+              "        quan_huyen: pm.collectionVariables.get('district'),",
+              "        xa_phuong: pm.collectionVariables.get('ward'),",
+              "        dia_chi_chi_tiet: 'Xuân Mai Complex',",
+              "        mat_khau: '123456',",
+              "        mat_khau_confirmation: '123456'",
+              "    };",
+              "    if (caseId === 'API_UC1.1_03') { data.mat_khau = '12345'; data.mat_khau_confirmation = '12345'; }",
+              "    if (caseId === 'API_UC1.1_04') data.so_dien_thoai = '091234567';",
+              "    if (caseId === 'API_UC1.1_05') data.mat_khau_confirmation = '654321';",
+              "    if (caseId === 'API_UC1.1_06') {",
+              "        const duplicate = pm.collectionVariables.get('duplicate_username') || pm.collectionVariables.get('suite_registered_username');",
+              "        if (!duplicate) throw new Error('No duplicate fixture: run case 01 first or set duplicate_username to an existing account');",
+              "        data.ten_dang_nhap = duplicate;",
+              "    }",
+              "    Object.keys(data).forEach(key => pm.variables.set(key, data[key]));",
+              "    pm.variables.set('case_data', JSON.stringify(caseId === 'API_UC1.1_02' ? {} : data));",
+              "    pm.variables.set('setup_ready', 'true');",
+              "    pm.test(caseId + ' | SETUP: guest GET 200 and fresh CSRF', function () {});",
+              "})().catch(error => stopSetup(String(error.message || error) + '. Check app, Cookies > Domains Allowlist (127.0.0.1), and cookie jar settings.'));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_05';",
+              "const checks = [];",
+              "function check(name, assertion) {",
+              "    pm.test(caseId + ' | ' + name, function () {",
+              "        try { assertion(); checks.push({name, passed:true}); }",
+              "        catch(error) { checks.push({name, passed:false, message:error.message}); throw error; }",
+              "    });",
+              "}",
+              "function requireThat(condition, message) { if (!condition) throw new Error(message); }",
+              "const status = pm.response.code;",
+              "const location = pm.response.headers.get('Location') || '';",
+              "const redirectPath = location.replace(/^https?:\\/\\/[^/]+/i, '').split(/[?#]/)[0].replace(/\\/+$/, '');",
+              "let payload = null;",
+              "try { payload = pm.response.json(); } catch(error) {}",
+              "const data = JSON.parse(pm.variables.get('case_data') || '{}');",
+              "check('SETUP completed before POST', function () { requireThat(pm.variables.get('setup_ready') === 'true', 'Setup was not completed'); });",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    // Fixture for case 06. This is a candidate, not proof of database persistence.",
+              "    if (status === 302 && ['/login','/customer/dashboard'].includes(redirectPath))",
+              "        pm.collectionVariables.set('suite_registered_username', data.ten_dang_nhap);",
+              "    pm.collectionVariables.set('reg01_last_username', data.ten_dang_nhap);",
+              "    check('HTTP 302', function () { requireThat(status === 302, 'Expected 302; actual ' + status); });",
+              "    check('SRS redirect to /login', function () {",
+              "        requireThat(status === 302 && redirectPath === '/login', 'Expected 302 to /login; actual ' + status + ' ' + location);",
+              "    });",
+              "    check('Response time <= 3000 ms (proposed threshold)', function () {",
+              "        requireThat(pm.response.responseTime <= 3000, 'Actual response time: ' + pm.response.responseTime + ' ms');",
+              "    });",
+              "} else {",
+              "    check('HTTP 422 validation response', function () { requireThat(status === 422, 'Expected 422; actual ' + status + ' ' + location); });",
+              "    check('JSON validation errors object', function () {",
+              "        requireThat(/application\\/json/i.test(pm.response.headers.get('Content-Type') || ''), 'Response is not application/json');",
+              "        requireThat(payload && payload.errors && typeof payload.errors === 'object' && !Array.isArray(payload.errors), 'Missing errors object');",
+              "    });",
+              "    const required = ['ten_dang_nhap','ten_khach_hang','email','so_dien_thoai','quan_huyen','xa_phuong','dia_chi_chi_tiet','mat_khau'];",
+              "    const expectedKeys = caseId === 'API_UC1.1_02' ? required : [caseId === 'API_UC1.1_04' ? 'so_dien_thoai' : caseId === 'API_UC1.1_06' ? 'ten_dang_nhap' : 'mat_khau'];",
+              "    check('Only the expected fields contain validation errors', function () {",
+              "        requireThat(payload && payload.errors, 'Missing errors object');",
+              "        const actual = Object.keys(payload.errors).sort();",
+              "        requireThat(JSON.stringify(actual) === JSON.stringify([...expectedKeys].sort()), 'Expected fields ' + expectedKeys.join(', ') + '; actual ' + actual.join(', '));",
+              "        expectedKeys.forEach(key => requireThat(Array.isArray(payload.errors[key]) && payload.errors[key].length > 0, 'Missing error messages for ' + key));",
+              "    });",
+              "    const messages = {",
+              "        'API_UC1.1_03': ['mat_khau','Mật khẩu phải có ít nhất 6 ký tự.'],",
+              "        'API_UC1.1_04': ['so_dien_thoai','Số điện thoại phải đúng 10 chữ số.'],",
+              "        'API_UC1.1_05': ['mat_khau','Xác nhận mật khẩu không khớp.'],",
+              "        'API_UC1.1_06': ['ten_dang_nhap','Tên đăng nhập đã tồn tại.']",
+              "    };",
+              "    if (messages[caseId]) {",
+              "        const [field,message] = messages[caseId];",
+              "        check('Correct business validation message', function () {",
+              "            requireThat(payload && payload.errors && Array.isArray(payload.errors[field]) && payload.errors[field].includes(message), 'Expected ' + field + ': ' + message);",
+              "        });",
+              "    }",
+              "    check('No success redirect', function () {",
+              "        requireThat(status === 422 && !location, 'Expected validation rejection without redirect; actual ' + status + ' ' + location);",
+              "    });",
+              "}",
+              "const record = {",
+              "    caseId, status, location, responseTimeMs:pm.response.responseTime,",
+              "    input: {...data, mat_khau:undefined, mat_khau_confirmation:undefined},",
+              "    errors:payload && payload.errors || null,",
+              "    checks, result:checks.every(x=>x.passed)?'PASSED_HTTP_ASSERTIONS':'FAILED',",
+              "    dbVerification:'Not performed by this collection; reconcile account and customer profile separately'",
+              "};",
+              "let results=[];",
+              "try {results=JSON.parse(pm.collectionVariables.get('suite_results') || '[]');} catch(error) {}",
+              "results.push(record);",
+              "pm.collectionVariables.set('suite_results',JSON.stringify(results,null,2));",
+              "console.log('FLOWERSTORE_REGISTER_RESULT',JSON.stringify(record));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_token",
+              "value": "{{register_csrf}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_dang_nhap",
+              "value": "{{ten_dang_nhap}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_khach_hang",
+              "value": "{{ten_khach_hang}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "so_dien_thoai",
+              "value": "{{so_dien_thoai}}",
+              "type": "text"
+            },
+            {
+              "key": "quan_huyen",
+              "value": "{{quan_huyen}}",
+              "type": "text"
+            },
+            {
+              "key": "xa_phuong",
+              "value": "{{xa_phuong}}",
+              "type": "text"
+            },
+            {
+              "key": "dia_chi_chi_tiet",
+              "value": "{{dia_chi_chi_tiet}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau",
+              "value": "{{mat_khau}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau_confirmation",
+              "value": "{{mat_khau_confirmation}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{base_url}}/register",
+        "description": "Pre-request clears cookies, GETs /register and extracts CSRF. POST is the main test. Cookie domain allowlist is required. Case 02 has only CSRF, no business data. No DB verification is performed."
+      }
+    },
+    {
+      "name": "API_UC1.1_06 — [Không hợp lệ] Tên đăng nhập đã tồn tại — BR-2",
+      "protocolProfileBehavior": {
+        "followRedirects": false,
+        "disableCookies": false
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_06';",
+              "const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\\/+$/, '');",
+              "pm.variables.set('base_url', base);",
+              "pm.variables.set('setup_ready', 'false');",
+              "pm.variables.set('register_csrf', '');",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    pm.collectionVariables.unset('suite_registered_username');",
+              "    pm.collectionVariables.set('suite_results', '[]');",
+              "}",
+              "function stopSetup(message) {",
+              "    pm.test(caseId + ' | SETUP FAILED', function () { throw new Error(message); });",
+              "    console.error(caseId + ': ' + message);",
+              "    pm.execution.skipRequest();",
+              "}",
+              "await (async function () {",
+              "    const jar = pm.cookies.jar();",
+              "    await new Promise((resolve, reject) => jar.clear(base + '/', error => error ? reject(error) : resolve()));",
+              "    const response = await pm.sendRequest({url: base + '/register', method: 'GET', header: {Accept: 'text/html'}});",
+              "    if (response.code !== 200) throw new Error('GET /register must return 200; actual ' + response.code);",
+              "    const html = response.text();",
+              "    if (!/name=[\"']ten_dang_nhap[\"']/.test(html)) throw new Error('GET did not return registration form; inspect guest session');",
+              "    const input = (html.match(/<input\\b[^>]*>/gi) || []).find(tag => /\\bname=[\"']_token[\"']/.test(tag));",
+              "    const match = input && input.match(/\\bvalue=[\"']([^\"']+)[\"']/);",
+              "    const token = match ? match[1] : '';",
+              "    if (!token) throw new Error('CSRF _token missing in register HTML');",
+              "    pm.variables.set('register_csrf', token);",
+              "    const unique = pm.variables.replaceIn('{{$guid}}').replace(/-/g, '');",
+              "    const data = {",
+              "        ten_dang_nhap: 'api_' + unique,",
+              "        ten_khach_hang: 'Nguyễn Đức Trọng',",
+              "        email: 'api_' + unique + '@example.com',",
+              "        so_dien_thoai: '09' + String(Math.floor(Math.random()*100000000)).padStart(8,'0'),",
+              "        quan_huyen: pm.collectionVariables.get('district'),",
+              "        xa_phuong: pm.collectionVariables.get('ward'),",
+              "        dia_chi_chi_tiet: 'Xuân Mai Complex',",
+              "        mat_khau: '123456',",
+              "        mat_khau_confirmation: '123456'",
+              "    };",
+              "    if (caseId === 'API_UC1.1_03') { data.mat_khau = '12345'; data.mat_khau_confirmation = '12345'; }",
+              "    if (caseId === 'API_UC1.1_04') data.so_dien_thoai = '091234567';",
+              "    if (caseId === 'API_UC1.1_05') data.mat_khau_confirmation = '654321';",
+              "    if (caseId === 'API_UC1.1_06') {",
+              "        const duplicate = pm.collectionVariables.get('duplicate_username') || pm.collectionVariables.get('suite_registered_username');",
+              "        if (!duplicate) throw new Error('No duplicate fixture: run case 01 first or set duplicate_username to an existing account');",
+              "        data.ten_dang_nhap = duplicate;",
+              "    }",
+              "    Object.keys(data).forEach(key => pm.variables.set(key, data[key]));",
+              "    pm.variables.set('case_data', JSON.stringify(caseId === 'API_UC1.1_02' ? {} : data));",
+              "    pm.variables.set('setup_ready', 'true');",
+              "    pm.test(caseId + ' | SETUP: guest GET 200 and fresh CSRF', function () {});",
+              "})().catch(error => stopSetup(String(error.message || error) + '. Check app, Cookies > Domains Allowlist (127.0.0.1), and cookie jar settings.'));"
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "const caseId = 'API_UC1.1_06';",
+              "const checks = [];",
+              "function check(name, assertion) {",
+              "    pm.test(caseId + ' | ' + name, function () {",
+              "        try { assertion(); checks.push({name, passed:true}); }",
+              "        catch(error) { checks.push({name, passed:false, message:error.message}); throw error; }",
+              "    });",
+              "}",
+              "function requireThat(condition, message) { if (!condition) throw new Error(message); }",
+              "const status = pm.response.code;",
+              "const location = pm.response.headers.get('Location') || '';",
+              "const redirectPath = location.replace(/^https?:\\/\\/[^/]+/i, '').split(/[?#]/)[0].replace(/\\/+$/, '');",
+              "let payload = null;",
+              "try { payload = pm.response.json(); } catch(error) {}",
+              "const data = JSON.parse(pm.variables.get('case_data') || '{}');",
+              "check('SETUP completed before POST', function () { requireThat(pm.variables.get('setup_ready') === 'true', 'Setup was not completed'); });",
+              "if (caseId === 'API_UC1.1_01') {",
+              "    // Fixture for case 06. This is a candidate, not proof of database persistence.",
+              "    if (status === 302 && ['/login','/customer/dashboard'].includes(redirectPath))",
+              "        pm.collectionVariables.set('suite_registered_username', data.ten_dang_nhap);",
+              "    pm.collectionVariables.set('reg01_last_username', data.ten_dang_nhap);",
+              "    check('HTTP 302', function () { requireThat(status === 302, 'Expected 302; actual ' + status); });",
+              "    check('SRS redirect to /login', function () {",
+              "        requireThat(status === 302 && redirectPath === '/login', 'Expected 302 to /login; actual ' + status + ' ' + location);",
+              "    });",
+              "    check('Response time <= 3000 ms (proposed threshold)', function () {",
+              "        requireThat(pm.response.responseTime <= 3000, 'Actual response time: ' + pm.response.responseTime + ' ms');",
+              "    });",
+              "} else {",
+              "    check('HTTP 422 validation response', function () { requireThat(status === 422, 'Expected 422; actual ' + status + ' ' + location); });",
+              "    check('JSON validation errors object', function () {",
+              "        requireThat(/application\\/json/i.test(pm.response.headers.get('Content-Type') || ''), 'Response is not application/json');",
+              "        requireThat(payload && payload.errors && typeof payload.errors === 'object' && !Array.isArray(payload.errors), 'Missing errors object');",
+              "    });",
+              "    const required = ['ten_dang_nhap','ten_khach_hang','email','so_dien_thoai','quan_huyen','xa_phuong','dia_chi_chi_tiet','mat_khau'];",
+              "    const expectedKeys = caseId === 'API_UC1.1_02' ? required : [caseId === 'API_UC1.1_04' ? 'so_dien_thoai' : caseId === 'API_UC1.1_06' ? 'ten_dang_nhap' : 'mat_khau'];",
+              "    check('Only the expected fields contain validation errors', function () {",
+              "        requireThat(payload && payload.errors, 'Missing errors object');",
+              "        const actual = Object.keys(payload.errors).sort();",
+              "        requireThat(JSON.stringify(actual) === JSON.stringify([...expectedKeys].sort()), 'Expected fields ' + expectedKeys.join(', ') + '; actual ' + actual.join(', '));",
+              "        expectedKeys.forEach(key => requireThat(Array.isArray(payload.errors[key]) && payload.errors[key].length > 0, 'Missing error messages for ' + key));",
+              "    });",
+              "    const messages = {",
+              "        'API_UC1.1_03': ['mat_khau','Mật khẩu phải có ít nhất 6 ký tự.'],",
+              "        'API_UC1.1_04': ['so_dien_thoai','Số điện thoại phải đúng 10 chữ số.'],",
+              "        'API_UC1.1_05': ['mat_khau','Xác nhận mật khẩu không khớp.'],",
+              "        'API_UC1.1_06': ['ten_dang_nhap','Tên đăng nhập đã tồn tại.']",
+              "    };",
+              "    if (messages[caseId]) {",
+              "        const [field,message] = messages[caseId];",
+              "        check('Correct business validation message', function () {",
+              "            requireThat(payload && payload.errors && Array.isArray(payload.errors[field]) && payload.errors[field].includes(message), 'Expected ' + field + ': ' + message);",
+              "        });",
+              "    }",
+              "    check('No success redirect', function () {",
+              "        requireThat(status === 422 && !location, 'Expected validation rejection without redirect; actual ' + status + ' ' + location);",
+              "    });",
+              "}",
+              "const record = {",
+              "    caseId, status, location, responseTimeMs:pm.response.responseTime,",
+              "    input: {...data, mat_khau:undefined, mat_khau_confirmation:undefined},",
+              "    errors:payload && payload.errors || null,",
+              "    checks, result:checks.every(x=>x.passed)?'PASSED_HTTP_ASSERTIONS':'FAILED',",
+              "    dbVerification:'Not performed by this collection; reconcile account and customer profile separately'",
+              "};",
+              "let results=[];",
+              "try {results=JSON.parse(pm.collectionVariables.get('suite_results') || '[]');} catch(error) {}",
+              "results.push(record);",
+              "pm.collectionVariables.set('suite_results',JSON.stringify(results,null,2));",
+              "console.log('FLOWERSTORE_REGISTER_RESULT',JSON.stringify(record));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "_token",
+              "value": "{{register_csrf}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_dang_nhap",
+              "value": "{{ten_dang_nhap}}",
+              "type": "text"
+            },
+            {
+              "key": "ten_khach_hang",
+              "value": "{{ten_khach_hang}}",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "{{email}}",
+              "type": "text"
+            },
+            {
+              "key": "so_dien_thoai",
+              "value": "{{so_dien_thoai}}",
+              "type": "text"
+            },
+            {
+              "key": "quan_huyen",
+              "value": "{{quan_huyen}}",
+              "type": "text"
+            },
+            {
+              "key": "xa_phuong",
+              "value": "{{xa_phuong}}",
+              "type": "text"
+            },
+            {
+              "key": "dia_chi_chi_tiet",
+              "value": "{{dia_chi_chi_tiet}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau",
+              "value": "{{mat_khau}}",
+              "type": "text"
+            },
+            {
+              "key": "mat_khau_confirmation",
+              "value": "{{mat_khau_confirmation}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{base_url}}/register",
+        "description": "Pre-request clears cookies, GETs /register and extracts CSRF. POST is the main test. Cookie domain allowlist is required. Case 02 has only CSRF, no business data. No DB verification is performed."
+      }
+    }
+  ]
+}
