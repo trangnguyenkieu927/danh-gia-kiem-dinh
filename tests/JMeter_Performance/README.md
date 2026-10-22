@@ -17,15 +17,20 @@ Tài liệu hướng dẫn chạy kiểm thử hiệu năng, độ trễ và kh�
 ## 🚀 2. Hướng Dẫn Thực Thi
 
 ### Cách 1: Chạy bằng giao diện đồ họa JMeter GUI:
-1. Khởi động Apache JMeter (`jmeter.bat` trên Windows).
-2. Nhấn `File -> Open` và chọn `FlowerStore_LoadTest_Plan.jmx`.
-3. Nhấn nút **Start (màu xanh lá)** để chạy.
+1. Mở file thực thi JMeter trên máy:
+   ```text
+   E:\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\jmeter.bat
+   ```
+2. Nhấn `File -> Open` và chọn `tests/JMeter_Performance/FlowerStore_LoadTest_Plan.jmx`.
+3. Nhấn nút **Start (màu xanh lá ▶)** để chạy.
 4. Xem kết quả trực quan tại **View Results Tree** và **Summary Report**.
 
-### Cách 2: Chạy Non-GUI Mode và tự động sinh Dashboard HTML:
+### Cách 2: Chạy dòng lệnh Non-GUI Mode và tự động sinh Dashboard HTML:
+Mở PowerShell tại thư mục dự án và chạy:
 ```powershell
-jmeter -n -t tests/JMeter_Performance/FlowerStore_LoadTest_Plan.jmx -l tests/Evidence/jmeter-results.jtl -e -o tests/Evidence/jmeter-dashboard-report
+& "E:\apache-jmeter-5.6.3\apache-jmeter-5.6.3\bin\jmeter.bat" -n -t tests/JMeter_Performance/FlowerStore_LoadTest_Plan.jmx -l tests/Evidence/jmeter-results.jtl -e -o tests/Evidence/jmeter-dashboard-report
 ```
+*Lưu ý: Nếu thư mục `tests/Evidence/jmeter-dashboard-report` hoặc file `.jtl` đã tồn tại từ lần chạy trước, hãy xóa chúng đi trước khi chạy lại.*
 
 ---
 
