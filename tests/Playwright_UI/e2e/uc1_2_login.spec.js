@@ -8,7 +8,7 @@ import { test, expect } from '@playwright/test';
  * 
  * BÀI THỰC HÀNH TỰ ĐỘNG HÓA GIAO DIỆN (UI/E2E TEST SUITE)
  * USE CASE: UC1.2 - ĐĂNG NHẬP VÀ ĐIỀU HƯỚNG PHÂN QUYỀN
- * Sinh viên thực hiện: Nguyễn Kiều Trang
+ * Đơn vị thực hiện: Nhóm 07
  * Mã nguồn: RoseShop (FlowerStore) - Laravel 12
  * Framework kiểm thử: Playwright Test
  * ============================================================================

@@ -8,7 +8,7 @@ import { test, expect } from '@playwright/test';
  * 
  * BÀI THỰC HÀNH TỰ ĐỘNG HÓA GIAO DIỆN (UI/E2E TEST SUITE)
  * USE CASE: UC4.2 - QUẢN LÝ GIAO HÀNG (SHIPPER DASHBOARD)
- * Sinh viên thực hiện: Dương Hùng Mạnh
+ * Đơn vị thực hiện: Nhóm 07
  * Mã nguồn: RoseShop (FlowerStore) - Laravel 12
  * Framework kiểm thử: Playwright Test
  * Ánh xạ chuẩn bộ ca kiểm thử Excel: ui_UC4.2 (UC4.2_UI_001 -> UC4.2_UI_012)
