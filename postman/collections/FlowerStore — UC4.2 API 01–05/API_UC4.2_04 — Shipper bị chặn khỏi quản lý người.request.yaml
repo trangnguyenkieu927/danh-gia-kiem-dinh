@@ -1,0 +1,128 @@
+$kind: http-request
+name: API_UC4.2_04 — Shipper bị chặn khỏi quản lý người dùng Admin
+description: Independent case; automatic guest/role login setup. See collection description for fixtures and provisional contract assumptions.
+url: "{{base_url}}{{admin_users_path}}"
+method: GET
+headers:
+  Accept: application/json
+auth:
+  type: noauth
+scripts:
+  - type: beforeRequest
+    code: |-
+      const id = 'API_UC4.2_04';
+      const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\/+$/, '');
+      const jar = pm.cookies.jar();
+      const call = action => new Promise((resolve,reject)=>action((error,value)=>error?reject(error):resolve(value)));
+      const need = (condition,message)=>{if(!condition)throw new Error(message);};
+      const send = request=>pm.sendRequest(request);
+      const get = (path,accept='application/json')=>send({url:base+path,method:'GET',header:{Accept:accept}});
+      function tokenFrom(html){
+          for(const tag of html.match(/<(?:input|meta)\b[^>]*>/gi)||[]){
+              if(/\bname=["']_token["']/.test(tag)){const m=tag.match(/\bvalue=["']([^"']+)["']/);if(m)return m[1];}
+              if(/\bname=["']csrf-token["']/.test(tag)){const m=tag.match(/\bcontent=["']([^"']+)["']/);if(m)return m[1];}
+          }return '';
+      }
+      function pathOf(response){return String(response.headers.get('Location')||'').replace(/^https?:\/\/[^/]+/i,'').split(/[?#]/)[0].replace(/\/+$/,'');}
+      async function loginRole(role){
+          await call(cb=>jar.clear(base+'/',cb));
+          const page=await get('/login','text/html');
+          need(page.code===200,'GET login must return 200; actual '+page.code);
+          const token=tokenFrom(page.text());need(token,'Missing login CSRF');
+          const username=String(pm.collectionVariables.get(role+'_username')||'');
+          const password=String(pm.collectionVariables.get(role+'_password')||'');
+          need(username&&password,'Missing '+role+' test credentials');
+          const login=await send({url:base+'/login',method:'POST',header:{Accept:'application/json',Referer:base+'/login'},body:{mode:'urlencoded',urlencoded:[{key:'_token',value:token},{key:'ten_dang_nhap',value:username},{key:'password',value:password}]}});
+          const dashboard=role==='admin'?'/admin/dashboard':'/shipper/dashboard';
+          need((login.code===302&&pathOf(login)===dashboard)||login.code===200,'Login failed: '+login.code+' '+pathOf(login));
+          const protectedPage=await get(dashboard,'text/html');
+          need(protectedPage.code===200&&!/name=["']password["']/.test(protectedPage.text()),'Authenticated '+role+' dashboard not confirmed; actual '+protectedPage.code);
+          return protectedPage;
+      }
+      pm.variables.set('base_url',base);
+      pm.variables.set('setup_ready','false');
+      pm.variables.set('ship_csrf','');
+      pm.request.headers.remove('X-XSRF-TOKEN');
+      if(id==='API_UC4.2_01')pm.collectionVariables.set('ship_suite_results','[]');
+      try {
+          if(id==='API_UC4.2_03') {
+              await call(cb=>jar.clear(base+'/',cb));
+              const probe=await get('/customer/gio-hang');
+              need(probe.code===401,'Guest setup not confirmed; protected page actual '+probe.code);
+              pm.test(id+' | SETUP: guest session confirmed',function(){});
+          } else {
+              if(id==='API_UC4.2_04') {
+                  await loginRole('admin');
+                  const adminPath=String(pm.collectionVariables.get('admin_users_path')||'/nguoi-dung');
+                  need(adminPath.startsWith('/')&&!adminPath.startsWith('//'),'Invalid admin_users_path');
+                  const adminPage=await get(adminPath,'text/html');
+                  need(adminPage.code===200&&!/name=["']password["']/.test(adminPage.text()),'Admin users route must be accessible to Admin before RBAC test; actual '+adminPage.code+'. Confirm admin_users_path with route:list');
+                  pm.variables.set('admin_users_path',adminPath);
+                  pm.test(id+' | SETUP: admin users route exists and Admin can access',function(){});
+              }
+              const dashboard=await loginRole('shipper');
+              if(id==='API_UC4.2_05') {
+                  const orderId=String(pm.collectionVariables.get('missing_order_id')||'');
+                  need(/^[1-9]\d*$/.test(orderId),'Set missing_order_id to a positive numeric ID confirmed absent in test DB');
+                  pm.variables.set('missing_order_id',orderId);
+                  const detail=await get('/shipper/don-hang/'+orderId+'/chi-tiet');
+                  need(detail.code===404,'STOP: missing-order fixture not confirmed; GET detail actual '+detail.code+'. No PATCH will be sent');
+                  const csrf=tokenFrom(dashboard.text());
+                  pm.variables.set('ship_csrf',csrf);
+                  if(!csrf){const xsrf=await call(cb=>jar.get(base+'/','XSRF-TOKEN',cb));need(typeof xsrf==='string'&&xsrf.length>0,'Missing post-login CSRF');pm.request.headers.upsert({key:'X-XSRF-TOKEN',value:decodeURIComponent(xsrf)});}
+                  pm.test(id+' | SETUP: order detail 404 and fresh authenticated CSRF',function(){});
+              }
+              pm.test(id+' | SETUP: Shipper authenticated and dashboard accessible',function(){});
+          }
+          pm.variables.set('setup_ready','true');
+      } catch(error) {
+          pm.test(id+' | SETUP FAILED',function(){throw new Error(String(error.message||error));});
+          console.error('Fix fixture, route or cookie allowlist; main request was not sent.');
+          pm.execution.skipRequest();
+      }
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      const id='API_UC4.2_04';
+      const checks=[];
+      function check(name,fn){pm.test(id+' | '+name,function(){try{fn();checks.push({name,passed:true});}catch(e){checks.push({name,passed:false,message:e.message});throw e;}});}
+      function need(condition,message){if(!condition)throw new Error(message);}
+      let payload=null;try{payload=pm.response.json();}catch(e){}
+      const status=pm.response.code;
+      const type=pm.response.headers.get('Content-Type')||'';
+      check('SETUP completed',()=>need(pm.variables.get('setup_ready')==='true','Setup incomplete'));
+      if(id==='API_UC4.2_01') {
+          check('Authenticated notification endpoint responds HTTP 200',()=>need(status===200,'Expected 200; actual '+status));
+          check('Response body is not empty or login form',()=>{
+              const body=pm.response.text();need(body.trim().length>0,'Empty response');
+              need(!/name=["']password["']/.test(body),'Received login form, not notification response');
+          });
+          check('Response is JSON data or an HTML notification page',()=>{
+              if(/application\/json/i.test(type))need(payload!==null&&typeof payload==='object','Expected JSON array/object');
+              else need(/text\/html/i.test(type)&&/thông\s*báo/i.test(pm.response.text().replace(/<[^>]*>/g,' ')),'Expected HTML page mentioning notifications');
+          });
+      } else if(id==='API_UC4.2_02') {
+          check('Unread count endpoint responds 200 JSON',()=>need(status===200&&/application\/json/i.test(type),'Expected 200 JSON; actual '+status+' '+type));
+          check('Configured unread counter is a non-negative integer',()=>{
+              const key=String(pm.collectionVariables.get('unread_count_key')||'count');
+              const count=key==='$'?payload:key.split('.').reduce((v,k)=>v===null||v===undefined?undefined:v[k],payload);
+              need(Number.isInteger(count)&&count>=0,'Expected integer >=0 at '+key+'; inspect response and controller to confirm unread_count_key');
+          });
+      } else if(id==='API_UC4.2_03') {
+          check('Guest access to Shipper dashboard is denied: 401',()=>need(status===401,'Expected 401 with Accept application/json; actual '+status));
+          check('Guest response is JSON authentication error',()=>need(/application\/json/i.test(type)&&payload&&typeof payload.message==='string'&&payload.message.length>0,'Expected JSON message'));
+      } else if(id==='API_UC4.2_04') {
+          check('Shipper is forbidden from Admin users route: 403',()=>need(status===403,'Expected 403; actual '+status+'. Confirm CheckRole contract before classifying as app defect'));
+      } else if(id==='API_UC4.2_05') {
+          check('Missing order update returns 404',()=>need(status===404,'Expected 404 for missing order; actual '+status));
+          check('No successful update result',()=>need(!(payload&&payload.success===true),'Unexpected success=true'));
+      }
+      const record={caseId:id,status,contentType:type,responseTimeMs:pm.response.responseTime,checks,result:checks.every(c=>c.passed)?'PASSED_ASSERTIONS':'FAILED',scope:'HTTP assertions only. Notification count key and 403 middleware contract require source confirmation. No DB invariants or notification ownership proven.'};
+      let results=[];try{results=JSON.parse(pm.collectionVariables.get('ship_suite_results')||'[]');}catch(e){}
+      results.push(record);pm.collectionVariables.set('ship_suite_results',JSON.stringify(results,null,2));
+      console.log('FLOWERSTORE_SHIP_RESULT',JSON.stringify(record));
+    language: text/javascript
+settings:
+  followRedirects: false
+  disableCookies: false
+order: 4000

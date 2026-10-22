@@ -1,0 +1,14 @@
+$kind: http-request
+name: 2.9 [Hợp lệ] Đăng xuất tài khoản an toàn (POST /logout)
+url: "{{base_url}}/logout"
+method: POST
+headers:
+  Accept: application/json
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 hoặc 302: Đăng xuất thành công", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302]);
+      });
+    language: text/javascript
+order: 9000

@@ -1,0 +1,65 @@
+$kind: collection
+description: |
+  9 authentication cases based on supplied controllers and SRS. Run locally, cookie allowlist 127.0.0.1. Set existing role credentials in Variables. Does not claim complete RBAC coverage: Staff and cross-role denials not included. 3000ms proposed baseline threshold. Invalid credentials use controller 302 /login and flash generic error. Logout tests authenticated access before logout, guest access afterward and replay of pre-logout cookies. Local fixture cookies never logged in result. Script validated with mock responses only; actual results pending.
+
+  # UC1.2 — Đăng nhập và xác thực, 9 ca Postman
+
+  ## Chạy
+
+  1. Giữ Laravel chạy ở http://127.0.0.1:8000 bằng php artisan serve.
+  2. Import từng file API_UC1_2_XX.postman_collection.json nếu muốn chạy riêng. Hoặc import FlowerStore_Login_01_09.postman_collection.json để Run toàn bộ chín ca trong một lần. Không cần import cả hai cách.
+  3. Cookies > Domains Allowlist: thêm 127.0.0.1, không thêm http:// hay :8000. Không bật Disable cookie jar. Collection đã tắt tự theo chuyển hướng.
+  4. Trong collection Variables kiểm tra tài khoản thực tế, mật khẩu và vai trò: customer_username=khachhang, admin_username=admin1, shipper_username=shipper1; mật khẩu mẫu đều 123456. Đây là fixture cần xác nhận tồn tại, đúng mật khẩu và đúng vai trò; không phải tài khoản mà collection tự tạo. Nếu tài khoản của bạn khác, đổi các biến này. wrong_password phải khác mật khẩu thật.
+  5. Mở request > Send để chạy riêng; hoặc collection > Run, chọn đủ 9 ca, Iterations=1, Delay=500 ms. Dùng local run. Không bật dừng khi assertion fail nếu muốn thu đủ kết quả.
+  6. Xem Test Results/Runner; lưu ảnh và xuất kết quả nếu Postman có Export results. Có thể xem login_suite_results trong Variables và FLOWERSTORE_LOGIN_RESULT trong Console. Không ghi Passed trước khi có kết quả thực tế.
+
+  ## Các ca
+
+  | ID | Dữ liệu/điều kiện | Kiểm tra chính |
+  |---|---|---|
+  | API_UC1.2_01 | khachhang / 123456, vai trò KHACH_HANG | POST 302 /customer/dashboard; GET /customer/gio-hang bằng phiên mới trả 200; POST <=3000 ms |
+  | API_UC1.2_02 | admin1 / 123456, vai trò ADMIN | POST 302 /admin/dashboard; GET dashboard bằng phiên mới trả 200; POST <=3000 ms |
+  | API_UC1.2_03 | shipper1 / 123456, vai trò SHIPPER | POST 302 /shipper/dashboard; GET dashboard bằng phiên mới trả 200; POST <=3000 ms |
+  | API_UC1.2_04 | username rỗng và password rỗng | 422 JSON; lỗi đúng ten_dang_nhap và password; GET trang bảo vệ với Accept JSON trả 401 |
+  | API_UC1.2_05 | username gồm 5 khoảng trắng, password hợp lệ | 422 JSON, chỉ lỗi ten_dang_nhap; không có quyền truy cập trang bảo vệ |
+  | API_UC1.2_06 | username absent_<GUID>, password 123456 | 302 /login; GET login hiển thị lỗi chung; trang bảo vệ trả 401 |
+  | API_UC1.2_07 | username khách hàng có thật, password sai | 302 /login; GET login hiển thị cùng lỗi chung; trang bảo vệ trả 401 |
+  | API_UC1.2_08 | username và password cùng là ' OR '1'='1 | 302 /login; lỗi chung; không vượt xác thực, trang bảo vệ trả 401 |
+  | API_UC1.2_09 | Đăng nhập khách hàng trong bước chuẩn bị rồi POST /logout | Trước logout trang bảo vệ 200; logout 302 có Location; sau logout 401; phục hồi cookie cũ vẫn 401 |
+
+  Trường mật khẩu đăng nhập là **password**, khác **mat_khau** của đăng ký. Các POST gửi _token và giữ cookie; có Referer /login để back() trở về đúng trang khi thông tin sai.
+
+  ## Vì sao kiểm tra 302 và 422 khác nhau?
+
+  Theo controller đã cung cấp, request thiếu dữ liệu bị Request::validate từ chối và Accept application/json nhận lỗi 422. Nếu dữ liệu đủ nhưng Auth::attempt thất bại, controller trả back()->withErrors; bài test kiểm tra 302 về /login rồi GET /login để xác minh thông báo “Tên đăng nhập hoặc mật khẩu không đúng.”. Không coi mọi 200/302/422 là Passed.
+
+  customer/dashboard là trang có thể công khai nên kiểm tra phiên khách hàng dùng /customer/gio-hang. Probe chưa đăng nhập gửi Accept application/json và mong đợi 401 từ middleware xác thực. Nếu middleware trong phiên bản ứng dụng khác, lưu phản hồi thực tế, kiểm tra route/middleware trước khi sửa Expected.
+
+  ## Ca đăng xuất
+
+  Không giả định logout phải về /login: controller hiện tại trả về customer/dashboard công khai. Test kiểm tra 302 có Location, sau đó kiểm tra quyền truy cập trang được bảo vệ. Sau login, CSRF có thể thay đổi: script lấy token mới từ HTML trang được bảo vệ hoặc XSRF-TOKEN cookie để gửi X-XSRF-TOKEN. Không dùng token cũ trước login một cách mặc định.
+
+  Cookie trước logout được giữ trong biến cục bộ của request, không đưa vào summary. Sau logout, script kiểm tra phiên hiện tại bị từ chối, rồi xóa cookie mới và khôi phục cookie cũ để kiểm tra server thực sự không còn chấp nhận phiên đó. Cuối cùng xóa cookie thử nghiệm. Không xuất/chia sẻ log chứa cookie phiên.
+
+  ## Phạm vi và giới hạn kết luận
+
+  - Chín ca này kiểm tra đăng nhập, điều hướng theo ba vai trò đã có fixture, các lỗi đầu vào, một payload SQL và đăng xuất. **Chưa bao phủ toàn bộ RBAC**, chưa có đăng nhập NHAN_VIEN và chưa kiểm tra mọi truy cập chéo vai trò.
+  - Chưa kiểm tra remember-me, hết hạn phiên theo thời gian, rate limiting/brute force hay toàn bộ tập SQL Injection. Ca 08 Passed chỉ chứng minh payload đã dùng không vượt xác thực trong lần chạy này.
+  - Mục tiêu <=3000 ms chỉ áp dụng POST login ca 01–03, là ngưỡng đề xuất baseline; không thay báo cáo tải JMeter. Các probe phụ có thời gian riêng, không cộng vào thời gian POST được assertion kiểm tra.
+  - Không đăng ký hoặc chỉnh sửa tài khoản trong bộ này. Login/logout thay đổi phiên và cookie; sử dụng các tài khoản kiểm thử được phép.
+  - Tài khoản không tồn tại dùng GUID để giảm trùng; fixture vẫn cần đúng. Không kết luận hệ thống lỗi chỉ vì admin1/shipper1 không có trên DB của bạn.
+  - Nếu setup cookie/CSRF/credential lỗi, POST chính bị bỏ qua. Đây là lỗi chuẩn bị, chưa phải kết quả chức năng.
+  - Đã kiểm tra cấu trúc, cú pháp và luồng script bằng phản hồi giả lập: ca đúng, sai điều hướng, bypass SQL giả lập, server chấp nhận lại phiên cũ, CSRF fallback và setup thất bại. **Chưa thực thi Postman trên FlowerStore của bạn.**
+
+  Khi có kết quả, gửi toàn bộ dòng Failed và bảng Runner; điền kết quả từ lần chạy thực tế, không lấy kết quả PHPUnit thay cho Postman.
+variables:
+  base_url: http://127.0.0.1:8000
+  customer_username: khachhang
+  customer_password: "123456"
+  admin_username: admin1
+  admin_password: "123456"
+  shipper_username: shipper1
+  shipper_password: "123456"
+  wrong_password: MatKhauSaiHoanToan123
+  customer_protected_path: /customer/gio-hang
+  login_suite_results: "[]"

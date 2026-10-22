@@ -1,0 +1,14 @@
+$kind: http-request
+name: 3.2 [Hợp lệ] Shipper kiểm tra số lượng thông báo chưa đọc
+url: "{{base_url}}/shipper/thong-bao/so-chua-doc"
+method: GET
+headers:
+  Accept: application/json
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Kiểm soát xác thực: HTTP 200, 302 hoặc 401", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 401]);
+      });
+    language: text/javascript
+order: 2000

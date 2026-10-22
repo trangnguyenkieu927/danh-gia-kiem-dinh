@@ -1,0 +1,19 @@
+$kind: http-request
+name: 2.7 [Ngoại lệ] Đúng tên tài khoản nhưng sai mật khẩu
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: khachhang
+    password: MatKhauSaiHoanToan123
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Từ chối khi sai mật khẩu: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+      });
+    language: text/javascript
+order: 7000

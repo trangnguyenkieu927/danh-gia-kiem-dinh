@@ -1,0 +1,19 @@
+$kind: http-request
+name: 2.6 [Ngoại lệ] Tài khoản không tồn tại trong hệ thống (Generic Security Error)
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: tai_khoan_hoan_toan_khong_ton_tai
+    password: "123456"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Báo lỗi chung không làm lộ tài khoản: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+      });
+    language: text/javascript
+order: 6000

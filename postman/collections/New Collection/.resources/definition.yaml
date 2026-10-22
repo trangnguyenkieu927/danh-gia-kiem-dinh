@@ -1,1 +1,4 @@
 $kind: collection
+variables:
+  register_csrf: ""
+  reg01_last_username: ""

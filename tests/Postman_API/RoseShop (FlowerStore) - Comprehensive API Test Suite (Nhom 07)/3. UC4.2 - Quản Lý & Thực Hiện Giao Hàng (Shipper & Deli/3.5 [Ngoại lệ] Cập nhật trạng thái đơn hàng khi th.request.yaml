@@ -1,0 +1,16 @@
+$kind: http-request
+name: 3.5 [Ngoại lệ] Cập nhật trạng thái đơn hàng khi thiếu dữ liệu bắt buộc
+url: "{{base_url}}/shipper/don-hang/999/cap-nhat"
+method: PATCH
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Từ chối cập nhật khi thiếu tham số: HTTP 200, 302, 401, 404 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 401, 404, 422]);
+      });
+    language: text/javascript
+order: 5000

@@ -1,0 +1,168 @@
+$kind: http-request
+description: Each request prepares its own session and CSRF. Cookie allowlist required. Follow-up probes are part of assertions. Configure test credentials in collection Variables.
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+  Referer: "{{base_url}}/login"
+body:
+  type: urlencoded
+  content:
+    _token: "{{login_csrf}}"
+    ten_dang_nhap: "{{login_username}}"
+    password: "{{login_password}}"
+auth:
+  type: noauth
+scripts:
+  - type: beforeRequest
+    code: |-
+      const id = 'API_UC1.2_08';
+      const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\/+$/, '');
+      const jar = pm.cookies.jar();
+      const requireThat = (condition, message) => { if (!condition) throw new Error(message); };
+      const callbackCall = action => new Promise((resolve,reject) => action((error,value) => error ? reject(error) : resolve(value)));
+      const send = request => pm.sendRequest(request);
+      function tokenFrom(html) {
+          const tags = html.match(/<(?:input|meta)\b[^>]*>/gi) || [];
+          for (const tag of tags) {
+              if (/\bname=["']_token["']/.test(tag)) { const m=tag.match(/\bvalue=["']([^"']+)["']/); if(m)return m[1]; }
+              if (/\bname=["']csrf-token["']/.test(tag)) { const m=tag.match(/\bcontent=["']([^"']+)["']/); if(m)return m[1]; }
+          }
+          return '';
+      }
+      function locationPath(response) {
+          return String(response.headers.get('Location') || '').replace(/^https?:\/\/[^/]+/i,'').split(/[?#]/)[0].replace(/\/+$/,'');
+      }
+      function protectedPath() { return String(pm.collectionVariables.get('customer_protected_path') || '/customer/gio-hang'); }
+      function get(path,accept='application/json') { return send({url:base+path,method:'GET',header:{Accept:accept}}); }
+
+      pm.variables.set('base_url', base);
+      pm.variables.set('login_csrf','');
+      pm.variables.set('setup_ready','false');
+      pm.variables.set('old_session_cookies','[]');
+      if(id==='API_UC1.2_01')pm.collectionVariables.set('login_suite_results','[]');
+      try {
+          await callbackCall(cb=>jar.clear(base+'/',cb));
+          const page=await get('/login','text/html');
+          requireThat(page.code===200, 'GET /login expected 200; actual '+page.code);
+          const token=tokenFrom(page.text());
+          requireThat(token, 'No CSRF in login HTML');
+          pm.variables.set('login_csrf',token);
+          let username=String(pm.collectionVariables.get('customer_username')||'');
+          let password=String(pm.collectionVariables.get('customer_password')||'');
+          if(id==='API_UC1.2_02'){username=String(pm.collectionVariables.get('admin_username')||'');password=String(pm.collectionVariables.get('admin_password')||'');}
+          if(id==='API_UC1.2_03'){username=String(pm.collectionVariables.get('shipper_username')||'');password=String(pm.collectionVariables.get('shipper_password')||'');}
+          if(id==='API_UC1.2_04'){username='';password='';}
+          if(id==='API_UC1.2_05')username='     ';
+          if(id==='API_UC1.2_06')username='absent_'+pm.variables.replaceIn('{{$guid}}').replace(/-/g,'');
+          if(id==='API_UC1.2_07')password=String(pm.collectionVariables.get('wrong_password'));
+          if(id==='API_UC1.2_08'){username="' OR '1'='1";password="' OR '1'='1";}
+          if(!['API_UC1.2_04','API_UC1.2_05'].includes(id))requireThat(username&&password,'Missing credential fixture');
+          pm.variables.set('login_username',username);
+          pm.variables.set('login_password',password);
+          if(id==='API_UC1.2_09') {
+              const login=await send({url:base+'/login',method:'POST',header:{Accept:'application/json',Referer:base+'/login'},body:{mode:'urlencoded',urlencoded:[{key:'_token',value:token},{key:'ten_dang_nhap',value:username},{key:'password',value:password}]}});
+              requireThat(login.code===302&&locationPath(login)==='/customer/dashboard','Logout setup: customer login failed; actual '+login.code+' '+locationPath(login));
+              const protectedPage=await get(protectedPath(),'text/html');
+              requireThat(protectedPage.code===200,'Logout setup: protected page must be accessible before logout');
+              const fresh=tokenFrom(protectedPage.text());
+              pm.variables.set('login_csrf',fresh);
+              pm.request.headers.remove('X-XSRF-TOKEN');
+              if(!fresh) {
+                  const xsrf=await callbackCall(cb=>jar.get(base+'/','XSRF-TOKEN',cb));
+                  requireThat(xsrf,'No fresh CSRF or XSRF-TOKEN after login');
+                  pm.request.headers.upsert({key:'X-XSRF-TOKEN',value:decodeURIComponent(xsrf)});
+              }
+              const cookies=await callbackCall(cb=>jar.getAll(base+'/',cb));
+              requireThat(cookies&&cookies.length,'No authenticated cookies captured');
+              pm.variables.set('old_session_cookies',JSON.stringify(cookies.map(c=>({name:c.name||c.key,value:c.value})).filter(c=>c.name)));
+              pm.test(id+' | SETUP: login and protected page 200 before logout',function(){});
+          }
+          pm.variables.set('setup_ready','true');
+          pm.test(id+' | SETUP: fresh guest session and CSRF',function(){});
+      } catch(error) {
+          pm.test(id+' | SETUP FAILED',function(){throw new Error(String(error.message||error));});
+          console.error('Check credentials, app, cookie domain allowlist and CSRF.');
+          pm.execution.skipRequest();
+      }
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      const id = 'API_UC1.2_08';
+      const base = String(pm.collectionVariables.get('base_url') || 'http://127.0.0.1:8000').replace(/\/+$/, '');
+      const jar = pm.cookies.jar();
+      const requireThat = (condition, message) => { if (!condition) throw new Error(message); };
+      const callbackCall = action => new Promise((resolve,reject) => action((error,value) => error ? reject(error) : resolve(value)));
+      const send = request => pm.sendRequest(request);
+      function tokenFrom(html) {
+          const tags = html.match(/<(?:input|meta)\b[^>]*>/gi) || [];
+          for (const tag of tags) {
+              if (/\bname=["']_token["']/.test(tag)) { const m=tag.match(/\bvalue=["']([^"']+)["']/); if(m)return m[1]; }
+              if (/\bname=["']csrf-token["']/.test(tag)) { const m=tag.match(/\bcontent=["']([^"']+)["']/); if(m)return m[1]; }
+          }
+          return '';
+      }
+      function locationPath(response) {
+          return String(response.headers.get('Location') || '').replace(/^https?:\/\/[^/]+/i,'').split(/[?#]/)[0].replace(/\/+$/,'');
+      }
+      function protectedPath() { return String(pm.collectionVariables.get('customer_protected_path') || '/customer/gio-hang'); }
+      function get(path,accept='application/json') { return send({url:base+path,method:'GET',header:{Accept:accept}}); }
+
+      const checks=[];
+      function check(name,fn) {
+          pm.test(id+' | '+name,function(){try{fn();checks.push({name,passed:true});}catch(e){checks.push({name,passed:false,message:e.message});throw e;}});
+      }
+      async function probeGuest(label) {
+          const response=await get(protectedPath());
+          check(label,function(){requireThat(response.code===401,'Expected 401 JSON for unauthenticated access; actual '+response.code+' '+locationPath(response));});
+      }
+      const response=pm.response;
+      check('SETUP completed',()=>requireThat(pm.variables.get('setup_ready')==='true','Setup incomplete'));
+      try {
+          if(['API_UC1.2_01','API_UC1.2_02','API_UC1.2_03'].includes(id)) {
+              const target={'API_UC1.2_01':'/customer/dashboard','API_UC1.2_02':'/admin/dashboard','API_UC1.2_03':'/shipper/dashboard'}[id];
+              check('HTTP 302 to correct role dashboard',()=>requireThat(response.code===302&&locationPath(response)===target,'Expected 302 '+target+'; actual '+response.code+' '+locationPath(response)));
+              check('Login response <=3000 ms (proposed)',()=>requireThat(response.responseTime<=3000,'Actual '+response.responseTime+' ms'));
+              const targetPage=await get(id==='API_UC1.2_01'?protectedPath():target,'text/html');
+              check('Authenticated session accesses role protected page: 200',()=>requireThat(targetPage.code===200,'Actual '+targetPage.code+' '+locationPath(targetPage)));
+          } else if(['API_UC1.2_04','API_UC1.2_05'].includes(id)) {
+              check('HTTP 422 JSON validation',()=>requireThat(response.code===422&&/application\/json/i.test(response.headers.get('Content-Type')||''),'Expected 422 JSON; actual '+response.code));
+              let errors=null;try{errors=response.json().errors;}catch(e){}
+              const expected=id==='API_UC1.2_04'?['password','ten_dang_nhap']:['ten_dang_nhap'];
+              check('Correct required-field errors only',()=>{
+                  requireThat(errors&&JSON.stringify(Object.keys(errors).sort())===JSON.stringify(expected),'Wrong errors fields');
+                  expected.forEach(k=>requireThat(Array.isArray(errors[k])&&errors[k].length>0,'No messages for '+k));
+              });
+              await probeGuest('No authenticated access after validation failure');
+          } else if(['API_UC1.2_06','API_UC1.2_07','API_UC1.2_08'].includes(id)) {
+              // AuthenticatedSessionController returns back()->withErrors, not JSON 422 on invalid credentials.
+              check('Invalid credentials redirect 302 to /login',()=>requireThat(response.code===302&&locationPath(response)==='/login','Expected 302 /login; actual '+response.code+' '+locationPath(response)));
+              const loginPage=await get('/login','text/html');
+              check('Login page displays generic authentication error',()=>{
+                  const text=loginPage.text().replace(/<[^>]*>/g,' ').replace(/\s+/g,' ');
+                  requireThat(loginPage.code===200&&text.includes('Tên đăng nhập hoặc mật khẩu không đúng.'),'Missing generic error or login page not 200');
+              });
+              await probeGuest(id==='API_UC1.2_08'?'This SQL payload does not bypass authentication':'Invalid credentials do not create authenticated access');
+          } else if(id==='API_UC1.2_09') {
+              check('Logout responds 302 with Location',()=>requireThat(response.code===302&&response.headers.get('Location'),'Expected logout 302 and Location; actual '+response.code));
+              // Current implementation redirects to public customer/dashboard; do not assume /login.
+              await probeGuest('Current browser session cannot access protected page after logout');
+              const oldCookies=JSON.parse(pm.variables.get('old_session_cookies')||'[]');
+              requireThat(oldCookies.length,'No pre-logout cookies available for replay');
+              await callbackCall(cb=>jar.clear(base+'/',cb));
+              for(const c of oldCookies)await callbackCall(cb=>jar.set(base+'/',c.name,c.value,cb));
+              await probeGuest('Replaying pre-logout cookies cannot restore authenticated access');
+              await callbackCall(cb=>jar.clear(base+'/',cb));
+          }
+      } catch(error) {
+          check('Follow-up requests and script completed',()=>{throw error;});
+      }
+      const record={caseId:id,status:response.code,location:response.headers.get('Location')||'',responseTimeMs:response.responseTime,username:pm.variables.get('login_username'),checks,result:checks.every(x=>x.passed)?'PASSED_ASSERTIONS':'FAILED',limitation:'Does not cover Staff, all cross-role denials, remember-me or all SQL injection payloads.'};
+      let results=[];try{results=JSON.parse(pm.collectionVariables.get('login_suite_results')||'[]');}catch(e){}
+      results.push(record);pm.collectionVariables.set('login_suite_results',JSON.stringify(results,null,2));
+      console.log('FLOWERSTORE_LOGIN_RESULT',JSON.stringify(record));
+    language: text/javascript
+settings:
+  followRedirects: false
+  disableCookies: false
+order: 8000

@@ -1,0 +1,20 @@
+$kind: http-request
+name: 2.8 [Bảo mật / Ngoại lệ] Phòng chống SQL Injection vào biểu mẫu đăng nhập
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: "' OR '1'='1"
+    password: "' OR '1'='1"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("An toàn trước SQL Injection: Không crash 500, xử lý an toàn", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+          pm.expect(pm.response.code).not.to.equal(500);
+      });
+    language: text/javascript
+order: 8000

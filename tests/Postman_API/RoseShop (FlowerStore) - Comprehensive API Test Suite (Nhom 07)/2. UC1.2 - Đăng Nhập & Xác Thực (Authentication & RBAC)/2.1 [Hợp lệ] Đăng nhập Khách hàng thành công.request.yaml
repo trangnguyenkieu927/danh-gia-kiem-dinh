@@ -1,0 +1,21 @@
+$kind: http-request
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: khachhang
+    password: "123456"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 hoặc 302: Khách hàng xác thực thành công", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302]);
+      });
+      pm.test("Thời gian phản hồi đăng nhập < 5000ms", function () {
+          pm.expect(pm.response.responseTime).to.be.below(5000);
+      });
+    language: text/javascript
+order: 1000

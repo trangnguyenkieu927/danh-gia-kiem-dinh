@@ -1,0 +1,64 @@
+$kind: collection
+description: |
+  # Chạy một lượt 6 ca đăng ký bằng Postman
+
+  ## Import và chạy
+
+  1. Giữ ứng dụng chạy tại http://127.0.0.1:8000 bằng `php artisan serve`.
+  2. Trong Postman Desktop, bấm Import > Files và chọn `FlowerStore_Register_01_06.postman_collection.json`. Đây là collection mới; không cần sửa collection cũ bị lỗi tải.
+  3. Mở một request trong collection mới > Cookies > Domains Allowlist (hoặc Manage Domains) > thêm `127.0.0.1`, không thêm http:// hoặc :8000. Việc này cho phép script xóa cookie của đúng domain trước mỗi ca. Không bật Disable cookie jar.
+  4. Collection Variables đã có base_url=http://127.0.0.1:8000, district=Hà Đông, ward=Yên Nghĩa. Chỉ đổi nếu môi trường/danh mục thực tế khác. duplicate_username để trống: ca 06 tự dùng username từ ca 01. Có thể nhập username đã xác nhận tồn tại nếu muốn chạy riêng ca 06.
+  5. Bấm collection > Run; chọn đủ sáu request theo thứ tự 01 tới 06; Iterations=1, Delay=500 ms. Nếu có tùy chọn dừng khi test fail thì tắt để ca 01 Failed không chặn các ca còn lại. Chạy ở máy local, không chọn cloud run cho địa chỉ 127.0.0.1.
+  6. Bấm Run collection, lưu/chụp kết quả Runner, từng assertion và response cần phân tích. Nếu có Export results hãy xuất JSON. Không sửa Expected để làm xanh.
+
+  ## Bộ này làm gì?
+
+  Sáu request POST là sáu ca chính. Before request của mỗi ca tự xóa cookie, GET /register lấy CSRF mới, rồi gửi POST. Vì vậy thực tế có thêm sáu GET chuẩn bị (khi chuẩn bị đều thành công). Setup thất bại thì POST tương ứng bị bỏ qua, không được tính là đã kiểm thử chức năng.
+
+  01: Username/email sinh mới, SĐT ngẫu nhiên 10 số, mật khẩu 123456, xác nhận 123456. Kiểm tra 302 /login theo SRS và thời gian <=3000 ms theo ngưỡng đề xuất. Lỗi hiện tại về /customer/dashboard sẽ được ghi FAILED. Cookie mới giúp không dùng nhầm phiên đã đăng nhập từ lần chạy trước.
+
+  02: Không có dữ liệu nghiệp vụ; chỉ gửi _token để đi qua bảo vệ CSRF. Kiểm tra 422 JSON và đủ tám trường bắt buộc được backend kiểm tra. Đây không phải body rỗng tuyệt đối vì vẫn có CSRF.
+
+  03: Chỉ sai mật khẩu 5 ký tự, hai giá trị mật khẩu khớp nhau; BR-6.
+
+  04: Chỉ sai SĐT 091234567 (9 chữ số); BR-5.
+
+  05: Chỉ sai xác nhận mật khẩu, 123456 và 654321; BR-7.
+
+  06: Chỉ trùng tên đăng nhập, dùng lại ứng viên từ ca 01; BR-2. 302 ở ca 01 chưa chứng minh lưu DB; ca 06 phải trả đúng lỗi unique mới chứng minh việc tên đó bị từ chối. Không coi việc gán biến fixture là bằng chứng dữ liệu đã tồn tại.
+
+  Ca 02–06 kiểm tra chính xác HTTP 422, JSON errors, đúng các trường lỗi và thông báo của ca đơn lỗi. Nếu cấu trúc phản hồi hoặc câu chữ khác, giữ kết quả và kiểm tra code/SRS trước khi chỉnh. Không chấp nhận chung 200/302/422.
+
+  ## Kết quả và giới hạn
+
+  - collection Variables có `suite_results` chứa tóm tắt từ các POST đã chạy; Postman Console có dòng FLOWERSTORE_REGISTER_RESULT cho từng ca. Username ca 01 nằm ở reg01_last_username. Không ghi mật khẩu trong bản tóm tắt.
+  - Ca 01 không kiểm tra thông báo trên giao diện /login vì không theo redirect; không kết luận đã bao phủ toàn bộ luồng SRS.
+  - Bộ này không truy vấn DB. Sau chạy cần đối chiếu tài khoản/hồ sơ nếu báo cáo muốn khẳng định việc lưu đúng vai trò hoặc không tạo dữ liệu từ ca bị từ chối.
+  - SĐT ngẫu nhiên có xác suất trùng dữ liệu có sẵn; nếu lỗi trùng SĐT xuất hiện ở ca khác thì chuẩn bị số chưa dùng rồi chạy lại. Không sửa ứng dụng để test Passed.
+  - Ngưỡng 3000 ms chỉ là kiểm tra phản hồi một request theo mục tiêu đề xuất, không phải bằng chứng khả năng chịu tải. Không dùng số này thay báo cáo JMeter.
+  - Lần chạy có thể tạo một tài khoản khách hàng thử nghiệm ở ca 01. Không tự động xóa tài khoản. Chỉ chạy trên môi trường thử nghiệm đã được phép.
+  - Gói đã kiểm tra JSON, cú pháp và luồng script bằng phản hồi giả lập; chưa thực thi trên Postman/FlowerStore của bạn. Không có kết quả Passed thực tế được tạo sẵn.
+
+  ## Đối chiếu DB sau chạy (chỉ đọc)
+
+  Trong terminal dự án: `php artisan tinker`. Thay USERNAME_TU_REG01_LAST_USERNAME bằng giá trị thực tế trong collection Variables:
+
+  ```php
+  $u = \App\Models\NguoiDung::where('ten_dang_nhap', 'USERNAME_TU_REG01_LAST_USERNAME')->first();
+  $u?->only(['ma_nguoi_dung', 'ten_dang_nhap', 'vai_tro']);
+  $u?->khachHang?->only(['ma_khach_hang', 'ten_khach_hang', 'email', 'so_dien_thoai', 'dia_chi']);
+  ```
+
+  Đối chiếu dữ liệu ca bị từ chối theo username/email trong suite_results. Ca 06 dùng username cũ nên kiểm tra không có bản ghi mới theo email mới, đồng thời hồ sơ cũ không đổi. Muốn chứng minh toàn bộ dữ liệu cũ giữ nguyên phải chụp trạng thái trước và sau; bộ này không tự làm bước đó.
+
+  Nếu báo SETUP FAILED: kiểm tra domain allowlist, ứng dụng đang chạy, địa chỉ GET và token. Nếu không có assertion: kiểm tra chọn đúng collection mới và đã chạy đủ request. Không bỏ bước chuẩn bị để chạy POST với CSRF cũ.
+
+  `CODE_01_06.md` chứa đúng các script đã nhúng trong collection để xem lại; không cần dán thủ công.
+variables:
+  base_url: http://127.0.0.1:8000
+  district: Hà Đông
+  ward: Yên Nghĩa
+  duplicate_username: ""
+  reg01_last_username: ""
+  suite_results: "[]"
+  suite_registered_username: ""

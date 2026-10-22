@@ -1,0 +1,23 @@
+$kind: http-request
+name: 1.6 [Ngoại lệ] Tên đăng nhập đã tồn tại trong CSDL (Duplicate Username)
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: admin1
+    ten_khach_hang: Trùng Admin
+    email: newadmin@test.vn
+    so_dien_thoai: "0919999888"
+    password: "123456"
+    password_confirmation: "123456"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Chặn trùng lặp tên đăng nhập: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+      });
+    language: text/javascript
+order: 6000

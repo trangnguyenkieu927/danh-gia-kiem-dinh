@@ -1,16 +1,19 @@
-# Use this workspace to collaborate
 workspace:
-  id: 2960793f-84f8-47bd-8e21-edab994c2b70
+  id: 4f9c283a-4f74-470d-ad96-b547c1358374
 
 # Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
 
 cloudResources:
   collections:
     ../postman/collections/RoseShop (FlowerStore) - Comprehensive API Test Suite (Nhom 07): 287ef38d-51cd-4a85-8a27-8936c05ea712
-    ../postman/collections/RoseShop (FlowerStore) - Bộ kiểm thử UC1.1, UC1.2, UC4.2 (: 00188058-760b-45ba-93d4-2f79cec2ff96
+    ../tests/Postman_API/RoseShop (FlowerStore) - Comprehensive API Test Suite (Nhom 07): f8a7e3d1-92b4-4e12-8c15-flowerstore07-comprehensive
+    ../postman/collections/FlowerStore — UC1.1 API 01–06 (SRS assertions): 91cf6e2e-2394-4397-b414-c2c8e561fb0e
+    ../postman/collections/FlowerStore — UC1.2 Authentication 01–09: 4c842dd8-c0e5-4ba8-8ff5-b6a6a2136a53
+    ../postman/collections/FlowerStore — UC4.2 API 01–05: 057d547c-ff30-4b6f-9752-2eec777509ff
+  globals:
+    ../postman/globals/workspace.globals.yaml: e89f0f02-114e-4c80-8d71-9a4c5838d5b9
 
-# All resources in the `postman/` folder are automatically registered in Local View.
-# Point to additional files outside the `postman/` folder to register them individually. Example:
-#localResources:
-#  collections:
-#    - ../tests/E2E Test Collection/
+localResources:
+  collections:
+    - ../tests/Postman_API/RoseShop (FlowerStore) - Comprehensive API Test Suite
+      (Nhom 07)

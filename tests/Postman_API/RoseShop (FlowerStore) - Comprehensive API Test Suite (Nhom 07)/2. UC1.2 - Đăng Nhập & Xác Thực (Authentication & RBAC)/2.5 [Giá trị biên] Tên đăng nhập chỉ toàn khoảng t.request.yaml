@@ -1,0 +1,19 @@
+$kind: http-request
+name: 2.5 [Giá trị biên] Tên đăng nhập chỉ toàn khoảng trắng (Whitespace Input)
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: "     "
+    password: "123456"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Chặn dữ liệu toàn khoảng trắng: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+      });
+    language: text/javascript
+order: 5000

@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: admin1
+    password: "123456"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 hoặc 302: Admin xác thực thành công", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302]);
+      });
+    language: text/javascript
+order: 2000

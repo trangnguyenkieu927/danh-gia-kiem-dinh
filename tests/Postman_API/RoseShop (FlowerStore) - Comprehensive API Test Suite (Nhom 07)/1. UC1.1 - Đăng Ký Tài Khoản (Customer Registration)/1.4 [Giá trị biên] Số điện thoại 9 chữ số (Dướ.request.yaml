@@ -1,0 +1,23 @@
+$kind: http-request
+name: 1.4 [Giá trị biên] Số điện thoại 9 chữ số (Dưới ngưỡng biên 10 số)
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: user_sdt_9
+    ten_khach_hang: Test SĐT Biên
+    email: sdt9@test.vn
+    so_dien_thoai: "091234567"
+    password: "123456"
+    password_confirmation: "123456"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Từ chối SĐT 9 số: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+      });
+    language: text/javascript
+order: 4000

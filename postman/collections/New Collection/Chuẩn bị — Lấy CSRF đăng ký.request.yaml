@@ -1,0 +1,48 @@
+$kind: http-request
+url: http://127.0.0.1:8000/register
+method: GET
+scripts:
+  - type: afterResponse
+    code: "pm.collectionVariables.unset(\"register_csrf\");\r
+
+      \r
+
+      pm.test(\"Trang đăng ký trả HTTP 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      const html = pm.response.text();\r
+
+      \r
+
+      const match = html.match(\r
+
+      \    /<input\\b[^>]*name=[\"']_token[\"'][^>]*value=[\"']([^\"']+)[\"']/i\r
+
+      );\r
+
+      \r
+
+      const token = match ? match[1] : \"\";\r
+
+      \r
+
+      pm.test(\"Lấy được CSRF token\", function () {\r
+
+      \    pm.expect(token, \"Không tìm thấy input _token\").not.to.equal(\"\");\r
+
+      });\r
+
+      \r
+
+      if (token) {\r
+
+      \    pm.collectionVariables.set(\"register_csrf\", token);\r
+
+      }"
+    language: text/javascript
+order: 2571152049096830

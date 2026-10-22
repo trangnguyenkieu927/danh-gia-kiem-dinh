@@ -1,0 +1,14 @@
+{
+  "test": "JM-REG-003-CAP",
+  "run": "cap5-01",
+  "users": 5,
+  "batch": "cap_eb897b643ef3",
+  "rows": 1000,
+  "firstPhone": "0900100000",
+  "lastPhone": "0900100999",
+  "rampSeconds": 30,
+  "durationSeconds": 180,
+  "pauseMs": 1000,
+  "responseTimeoutMs": 15000,
+  "createdAt": "2026-10-22T10:42:34.188Z"
+}

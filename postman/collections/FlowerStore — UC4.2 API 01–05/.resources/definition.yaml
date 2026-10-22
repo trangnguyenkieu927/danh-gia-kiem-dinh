@@ -1,0 +1,58 @@
+$kind: collection
+description: |
+  5 cases based on uploaded YAML and known ShipperController. Cookie allowlist 127.0.0.1 required. Set existing test credentials. missing_order_id is intentionally blank: confirm absent ID in DB before case 05. Case 05 is NOT missing-body validation; controller auto-advances existing orders. Notification controller and CheckRole source not supplied: unread_count_key=count and expected 403 are provisional contract assumptions, not verified facts. Case 01 checks endpoint and response envelope only; no notification content/ownership/count correctness claim. No live execution performed.
+
+  # UC4.2 — 5 ca Postman dựa trên các request đã gửi
+
+  ## Chạy
+
+  1. Import file API_UC4_2_XX.postman_collection.json để chạy riêng; hoặc file FlowerStore_Shipper_01_05.postman_collection.json để Run cả 5 ca. Không cần import cả hai.
+  2. Giữ php artisan serve tại http://127.0.0.1:8000. Cookies > Domains Allowlist: thêm 127.0.0.1, giữ cookie jar hoạt động. Collection đã tắt theo redirect của request chính.
+  3. Variables: shipper_username=shipper1, shipper_password=123456; ca 04 còn dùng admin_username=admin1, admin_password=123456 để xác nhận route quản lý người dùng tồn tại và Admin truy cập được. Đổi theo tài khoản thử nghiệm đúng vai trò đang có.
+  4. Chạy Send từng ca hoặc Run 1 iteration, delay 500 ms. Ca 05 sẽ Blocked nếu chưa điền missing_order_id; xem phần dưới.
+  5. Lưu Test Results và phản hồi thực tế; chỉ chốt kết quả khi đã đối chiếu các giả định hợp đồng chưa có source. ship_suite_results chứa tóm tắt từ request chính, Console có FLOWERSTORE_SHIP_RESULT.
+
+  ## Mỗi ca kiểm tra gì?
+
+  | Ca | Mục tiêu và assertions |
+  |---|---|
+  | API_UC4.2_01 | Tự đăng nhập Shipper, GET /shipper/thong-bao trả 200, body không rỗng/không phải login; phản hồi là JSON array/object hoặc HTML có nội dung Thông báo. Đây là kiểm tra endpoint/phản hồi cơ bản, chưa chứng minh từng thông báo đúng nội dung hoặc đúng chủ sở hữu. |
+  | API_UC4.2_02 | Tự đăng nhập Shipper, GET /shipper/thong-bao/so-chua-doc trả 200 JSON; giá trị số đếm cấu hình là số nguyên không âm. Chưa đối chiếu số đếm với cache/danh sách thực tế. |
+  | API_UC4.2_03 | Xóa cookie và xác nhận guest, GET /shipper/dashboard với Accept application/json phải trả 401 JSON có message. |
+  | API_UC4.2_04 | Đăng nhập Admin, kiểm tra admin_users_path truy cập được; đổi sang phiên Shipper rồi GET cùng route, mong đợi 403. Thiếu fixture/route hợp lệ sẽ dừng chuẩn bị, không coi 404 là kiểm tra phân quyền thành công. |
+  | API_UC4.2_05 | Đơn không tồn tại: xác nhận ID đã kiểm tra vắng trong DB, đăng nhập Shipper, GET chi tiết phải 404 rồi mới PATCH cùng ID với CSRF mới. Mong đợi PATCH 404 và không có success=true. Không kiểm tra thiếu body vì controller tự chuyển trạng thái. |
+
+  ## Hai giả định cần đối chiếu source/phản hồi
+
+  Chưa được cung cấp ShipperThongBaoController và CheckRole. Vì vậy:
+
+  - unread_count_key mặc định `count` là **cấu hình dự kiến**, chưa khẳng định endpoint thực tế dùng key này. Nếu response là `{ "so_chua_doc": 2 }`, chỉ đổi key khi xác nhận đây là trường số chưa đọc; nếu JSON là số đơn lẻ, đặt `$`; nếu lồng `{ "data": { "count": 2 } }`, đặt `data.count`. Không chọn tùy ý một trường số để làm test xanh.
+  - Ca 04 dự kiến middleware trả 403. Nếu thực tế trả 302, lưu Location và source CheckRole để xác định chính sách từ chối; không gọi ngay là lỗi ứng dụng hoặc tự đổi Expected chấp nhận mọi mã.
+
+  Route admin_users_path mặc định /nguoi-dung theo YAML đã gửi. Nếu không tồn tại, cần route:list xác nhận đường dẫn thật rồi cấu hình lại; không dùng 404 làm bằng chứng từ chối quyền.
+
+  ## Chuẩn bị ID cho ca 05
+
+  Trong terminal dự án chạy php artisan tinker, dùng lệnh chỉ đọc:
+
+  ```php
+  \App\Models\HoaDon::where('ma_hoa_don', 999)->exists();
+  ```
+
+  Nếu trả false, có thể đặt missing_order_id=999 trong Variables của collection đang dùng, trên DB thử nghiệm ổn định trong lúc chạy. Nếu true, chọn số khác và kiểm tra lại. Biến mặc định để trống để tránh PATCH nhầm một đơn đang tồn tại. Trước PATCH, script còn GET chi tiết kiểm tra 404; nếu trả 200/403 hoặc mã khác sẽ dừng.
+
+  Controller cập nhật hiện tại tự thực hiện CONFIRMED -> SHIPPING -> DELIVERED. Vì vậy gửi body trống vào đơn có thật vẫn có thể làm đổi trạng thái. Ca 05 chỉ gửi CSRF tới ID đã xác nhận không tồn tại, không chọn lại đơn 145/105 đã giao.
+
+  ## Giới hạn
+
+  Năm ca này không bao phủ toàn bộ UC4.2: chưa kiểm tra luồng giao thành công, thông báo đến khách hàng, COD, bộ đếm 3 giờ, hồ sơ, đổi mật khẩu, quyền sở hữu đơn và dữ liệu giữ nguyên khi lỗi. Không có kết quả thực thi được tạo sẵn. Đã kiểm tra cấu trúc/cú pháp và các nhánh bằng phản hồi giả lập; cần chạy Postman trên FlowerStore để lấy bằng chứng thực tế.
+variables:
+  base_url: http://127.0.0.1:8000
+  shipper_username: shipper1
+  shipper_password: "123456"
+  admin_username: admin1
+  admin_password: "123456"
+  admin_users_path: /nguoi-dung
+  unread_count_key: count
+  missing_order_id: ""
+  ship_suite_results: "[]"

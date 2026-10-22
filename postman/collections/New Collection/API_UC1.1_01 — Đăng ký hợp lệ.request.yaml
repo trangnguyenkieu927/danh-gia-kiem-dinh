@@ -1,0 +1,78 @@
+$kind: http-request
+url: http://127.0.0.1:8000/register
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    _token: "{{register_csrf}}"
+    ten_dang_nhap: "{{reg_username}}"
+    ten_khach_hang: Nguyễn Đức Trọng
+    email: "{{reg_email}}"
+    so_dien_thoai: "{{reg_phone}}"
+    quan_huyen: Hà Đông
+    xa_phuong: Yên Nghĩa
+    dia_chi_chi_tiet: Xuân Mai Complex
+    mat_khau: "123456"
+    mat_khau_confirmation: "123456"
+scripts:
+  - type: beforeRequest
+    code: |-
+      const id = pm.variables.replaceIn("{{$guid}}").replace(/-/g, "");
+
+      pm.variables.set("reg_username", "api_" + id);
+      pm.variables.set("reg_email", "api_" + id + "@example.com");
+
+      const phone = "09" + String(
+          Math.floor(Math.random() * 100000000)
+      ).padStart(8, "0");
+
+      pm.variables.set("reg_phone", phone);
+
+      // Lưu username để đối chiếu dữ liệu sau chạy.
+      pm.collectionVariables.set("reg01_last_username", "api_" + id);
+  - type: afterResponse
+    code: "pm.test(\"Đăng ký trả HTTP 302\", function () {\r
+
+      \    pm.response.to.have.status(302);\r
+
+      });\r
+
+      \r
+
+      const location = pm.response.headers.get(\"Location\") || \"\";\r
+
+      \r
+
+      pm.test(\"Theo SRS: chuyển về trang Đăng nhập\", function () {\r
+
+      \    pm.expect(location, \"Thiếu Location\").not.to.equal(\"\");\r
+
+      \r
+
+      \    const path = location\r
+
+      \        .replace(/^https?:\\/\\/[^/]+/i, \"\")\r
+
+      \        .split(/[?#]/)[0]\r
+
+      \        .replace(/\\/+$/, \"\");\r
+
+      \r
+
+      \    pm.expect(path).to.equal(\"/login\");\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Thời gian phản hồi không quá 3.000 ms\", function () {\r
+
+      \    pm.expect(pm.response.responseTime).to.be.at.most(3000);\r
+
+      });"
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 2571152049097830
