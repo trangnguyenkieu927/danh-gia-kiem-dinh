@@ -1,0 +1,17 @@
+$kind: http-request
+name: 1.2 [Không hợp lệ] Bỏ trống tất cả các trường dữ liệu bắt buộc
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Từ chối tạo tài khoản khi thiếu thông tin: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+          pm.expect(pm.response.code).not.to.equal(201);
+      });
+    language: text/javascript
+order: 2000

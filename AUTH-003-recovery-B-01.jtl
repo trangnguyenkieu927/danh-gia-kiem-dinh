@@ -1,0 +1,246 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792649068305,10,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649069328,100,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,98,0,1
+1792649071305,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,2,2,null,0,0,0
+1792649070451,1753,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1017,2,2,http://127.0.0.1:8000/login,1752,0,1
+1792649072308,121,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,2,2,http://127.0.0.1:8000/login,120,0,1
+1792649074308,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,3,3,null,0,0,0
+1792649073228,1430,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22413,857,3,3,http://127.0.0.1:8000/customer/gio-hang,1428,0,1
+1792649074670,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,3,3,null,0,0,0
+1792649073432,2567,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1013,3,3,http://127.0.0.1:8000/login,2565,0,1
+1792649075316,792,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,3,3,http://127.0.0.1:8000/login,790,0,1
+1792649075675,451,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,3,3,http://127.0.0.1:8000/login,449,0,1
+1792649077307,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,4,4,null,0,0,0
+1792649077009,1219,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22405,857,4,4,http://127.0.0.1:8000/customer/gio-hang,1218,0,1
+1792649078229,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,4,4,null,0,0,0
+1792649077118,2929,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1013,4,4,http://127.0.0.1:8000/login,2926,0,1
+1792649080306,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-5,text,true,,0,0,5,5,null,0,0,0
+1792649077134,4356,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1013,5,5,http://127.0.0.1:8000/login,4354,0,1
+1792649078324,3244,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,5,5,http://127.0.0.1:8000/login,3243,0,1
+1792649079240,2343,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,5,5,http://127.0.0.1:8000/login,2342,0,2
+1792649083305,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-6,text,true,,0,0,6,6,null,0,0,0
+1792649081048,2358,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,22405,857,6,6,http://127.0.0.1:8000/customer/gio-hang,2357,0,1
+1792649083407,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,6,6,null,0,0,0
+1792649081323,2099,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,4733,122,6,6,http://127.0.0.1:8000/login,2098,0,2
+1792649082492,3544,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22405,857,6,6,http://127.0.0.1:8000/customer/gio-hang,3542,0,2
+1792649086037,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,6,6,null,0,0,0
+1792649086307,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-7,text,true,,0,0,7,7,null,0,0,0
+1792649082572,5020,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-4,text,true,,1556,1013,7,7,http://127.0.0.1:8000/login,5018,0,0
+1792649082587,6488,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1013,7,7,http://127.0.0.1:8000/login,6486,0,1
+1792649084316,4853,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,4733,122,7,7,http://127.0.0.1:8000/login,4852,0,1
+1792649084422,4765,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,7,7,http://127.0.0.1:8000/login,4764,0,1
+1792649089307,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-8,text,true,,0,0,8,8,null,0,0,0
+1792649084424,6269,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-5,text,true,,1556,1013,8,8,http://127.0.0.1:8000/login,6268,0,0
+1792649087038,3672,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,8,8,http://127.0.0.1:8000/login,3671,0,0
+1792649087317,3410,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,4733,122,8,8,http://127.0.0.1:8000/login,3408,0,1
+1792649088599,3473,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,22405,857,8,8,http://127.0.0.1:8000/customer/gio-hang,3472,0,1
+1792649092073,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,8,8,null,0,0,0
+1792649092308,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-9,text,true,,0,0,9,9,null,0,0,0
+1792649090076,3435,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22405,857,9,9,http://127.0.0.1:8000/customer/gio-hang,3434,0,1
+1792649093512,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,9,9,null,0,0,0
+1792649090170,4588,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-6,text,true,,1556,1013,9,9,http://127.0.0.1:8000/login,4587,0,1
+1792649095308,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-10,text,true,,0,0,10,10,null,0,0,0
+1792649090189,6321,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,6319,0,1
+1792649090319,6273,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,6271,0,0
+1792649091707,6277,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,6275,0,1
+1792649097985,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-5,text,true,,0,0,10,10,null,0,0,0
+1792649091722,7721,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1017,10,10,http://127.0.0.1:8000/login,7719,0,1
+1792649091738,9377,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-7,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9374,0,1
+1792649093075,8066,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8065,0,1
+1792649093315,7840,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7840,0,1
+1792649094516,6655,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,6655,0,1
+1792649095759,7241,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7239,0,1
+1792649103000,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-6,text,true,,0,0,10,10,null,0,0,0
+1792649096310,6760,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,6759,0,1
+1792649097520,7052,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7051,0,0
+1792649104574,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,10,10,null,0,0,0
+1792649097598,8483,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-8,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8482,0,1
+1792649098999,7191,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7189,0,2
+1792649100457,7011,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22413,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7010,0,1
+1792649107469,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,10,10,null,0,0,0
+1792649102128,6877,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,6875,0,2
+1792649109006,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-7,text,true,,0,0,10,10,null,0,0,0
+1792649102144,8283,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-4,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8281,0,2
+1792649102160,9758,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-9,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9756,0,2
+1792649102175,11031,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11029,0,2
+1792649104014,9268,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9267,0,1
+1792649104077,10547,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-10,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10546,0,0
+1792649105588,9052,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9052,0,2
+1792649107084,8993,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8991,0,1
+1792649116077,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-8,text,true,,0,0,10,10,null,0,0,0
+1792649107192,10672,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-5,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10670,0,1
+1792649108471,9416,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9415,0,1
+1792649110010,7892,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7892,0,2
+1792649111443,7985,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7983,0,1
+1792649119429,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,10,10,null,0,0,0
+1792649112928,8732,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8730,0,1
+1792649121661,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-9,text,true,,0,0,10,10,null,0,0,0
+1792649114220,8829,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8828,0,1
+1792649123050,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,10,10,null,0,0,0
+1792649114298,10172,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-6,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10171,0,1
+1792649115626,10242,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,10240,0,1
+1792649125869,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-10,text,true,,0,0,10,10,null,0,0,0
+1792649115656,11624,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1017,10,10,http://127.0.0.1:8000/login,11622,0,2
+1792649117078,10475,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10472,0,1
+1792649118870,9924,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,9923,0,2
+1792649128795,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-5,text,true,,0,0,10,10,null,0,0,0
+1792649118901,11450,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11449,0,1
+1792649118917,12832,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-7,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,12830,0,1
+1792649120444,11336,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,11335,0,2
+1792649122676,9126,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9125,0,1
+1792649124052,7898,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7897,0,2
+1792649125473,7911,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7909,0,1
+1792649133385,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-6,text,true,,0,0,10,10,null,0,0,0
+1792649126874,6604,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,6602,0,3
+1792649128293,6718,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,22413,857,10,10,http://127.0.0.1:8000/customer/gio-hang,6715,0,1
+1792649135012,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,10,10,null,0,0,0
+1792649128569,8260,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-8,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8259,0,1
+1792649129809,7130,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7128,0,0
+1792649131354,7147,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7146,0,1
+1792649138502,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,10,10,null,0,0,0
+1792649132759,7121,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7119,0,1
+1792649139880,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-7,text,true,,0,0,10,10,null,0,0,0
+1792649132790,8838,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-4,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8835,0,1
+1792649132805,10237,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-9,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10235,0,1
+1792649132960,11501,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11499,0,1
+1792649134400,10089,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10088,0,1
+1792649134493,11490,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-10,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11487,0,0
+1792649136012,9998,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9997,0,1
+1792649137843,10039,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,10037,0,1
+1792649147883,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-8,text,true,,0,0,10,10,null,0,0,0
+1792649137954,11474,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-5,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11473,0,0
+1792649139512,10032,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10030,0,1
+1792649140882,8687,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8686,0,1
+1792649142640,8415,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8413,0,0
+1792649151055,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,10,10,null,0,0,0
+1792649144047,10019,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,10016,0,1
+1792649154067,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-9,text,true,,0,0,10,10,null,0,0,0
+1792649145465,9916,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,9910,0,1
+1792649155381,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,10,10,null,0,0,0
+1792649145496,11430,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-6,text,true,,1556,1017,10,10,http://127.0.0.1:8000/login,11428,0,1
+1792649146990,11417,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,11413,0,1
+1792649158407,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-10,text,true,,0,0,10,10,null,0,0,0
+1792649147020,13038,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,13036,0,2
+1792649148896,11192,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,11191,0,1
+1792649150436,11049,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,11046,0,1
+1792649161486,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-5,text,true,,0,0,10,10,null,0,0,0
+1792649150560,12717,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,12715,0,1
+1792649150576,14667,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-7,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,14665,0,1
+1792649152064,13306,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,13304,0,1
+1792649155075,10317,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10316,0,1
+1792649156383,9028,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9027,0,2
+1792649157937,9033,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,22413,857,10,10,http://127.0.0.1:8000/customer/gio-hang,9031,0,1
+1792649166971,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-6,text,true,,0,0,10,10,null,0,0,0
+1792649159415,7580,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7578,0,1
+1792649161068,7859,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7855,0,2
+1792649168927,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,10,10,null,0,0,0
+1792649161099,9551,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-8,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9549,0,1
+1792649162501,8178,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8177,0,1
+1792649164288,7748,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7744,0,2
+1792649172036,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,10,10,null,0,0,0
+1792649166245,7457,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7452,0,0
+1792649173703,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-7,text,true,,0,0,10,10,null,0,0,0
+1792649166383,8811,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-4,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8809,0,1
+1792649166399,10460,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-9,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10458,0,1
+1792649166415,12177,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,12176,0,0
+1792649167972,10730,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10728,0,2
+1792649168002,12168,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-10,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,12166,0,1
+1792649169936,10262,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10261,0,1
+1792649171665,9852,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,9850,0,2
+1792649181518,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-8,text,true,,0,0,10,10,null,0,0,0
+1792649171682,11400,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-5,text,true,,1556,1017,10,10,http://127.0.0.1:8000/login,11398,0,1
+1792649173051,10066,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10064,0,1
+1792649174706,8434,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8433,0,1
+1792649176204,8540,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8538,0,1
+1792649184745,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,10,10,null,0,0,0
+1792649177872,8541,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8537,0,1
+1792649186413,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-9,text,true,,0,0,10,10,null,0,0,0
+1792649179604,8359,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8358,0,1
+1792649187964,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,10,10,null,0,0,0
+1792649179711,9932,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-6,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9930,0,1
+1792649181176,10126,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,10125,0,1
+1792649191306,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-10,text,true,,0,0,10,10,null,0,0,0
+1792649181207,11693,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11691,0,2
+1792649182518,10415,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10414,0,2
+1792649184093,10281,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,22413,857,10,10,http://127.0.0.1:8000/customer/gio-hang,10278,0,1
+1792649194374,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-5,text,true,,0,0,10,10,null,0,0,0
+1792649184124,11891,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11889,0,1
+1792649184155,13305,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-7,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,13303,0,1
+1792649185757,11855,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,11853,0,1
+1792649187415,10218,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10217,0,2
+1792649188976,8678,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8677,0,1
+1792649190645,8815,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8811,0,1
+1792649199461,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-6,text,true,,0,0,10,10,null,0,0,0
+1792649192314,7265,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7264,0,1
+1792649193908,7004,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7001,0,1
+1792649200913,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,10,10,null,0,0,0
+1792649193939,8831,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-8,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8829,0,2
+1792649195379,7426,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7425,0,1
+1792649197020,7142,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7139,0,1
+1792649204163,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,10,10,null,0,0,0
+1792649198469,7092,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7088,0,1
+1792649205562,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-7,text,true,,0,0,10,10,null,0,0,0
+1792649198626,8222,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-4,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,8221,0,0
+1792649198641,9903,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-9,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9902,0,1
+1792649198657,12041,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,12038,0,0
+1792649200467,10259,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10258,0,2
+1792649200592,11494,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-10,text,true,,1556,1017,10,10,http://127.0.0.1:8000/login,11493,0,1
+1792649201917,10276,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10274,0,1
+1792649203771,9854,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,9851,0,2
+1792649213626,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-8,text,true,,0,0,10,10,null,0,0,0
+1792649203818,11128,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-5,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11126,0,1
+1792649205164,9811,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9810,0,1
+1792649206565,8427,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8426,0,1
+1792649207859,8536,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8533,0,2
+1792649216396,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,10,10,null,0,0,0
+1792649209547,8406,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8403,0,1
+1792649217954,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-9,text,true,,0,0,10,10,null,0,0,0
+1792649211703,7542,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7539,0,0
+1792649219246,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-2,text,true,,0,0,10,10,null,0,0,0
+1792649211734,9099,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-6,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9096,0,1
+1792649213091,8899,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,22413,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8897,0,1
+1792649221990,1,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-10,text,true,,0,0,10,10,null,0,0,0
+1792649213200,10138,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10137,0,1
+1792649214637,8812,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,8810,0,1
+1792649215961,8822,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8820,0,1
+1792649224783,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-5,text,true,,0,0,10,10,null,0,0,0
+1792649215977,10393,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10392,0,1
+1792649216008,11942,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-7,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,11938,0,1
+1792649217410,10663,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,10662,0,1
+1792649218969,9124,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9122,0,1
+1792649220262,7851,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7850,0,1
+1792649221833,7651,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,7646,0,2
+1792649229485,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-6,text,true,,0,0,10,10,null,0,0,0
+1792649223002,6614,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,6612,0,1
+1792649224349,6654,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,6652,0,1
+1792649231004,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-3,text,true,,0,0,10,10,null,0,0,0
+1792649224459,7952,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-8,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,7949,0,1
+1792649225784,6731,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,6730,0,1
+1792649227375,6505,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,6502,0,1
+1792649233881,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-1,text,true,,0,0,10,10,null,0,0,0
+1792649228953,6432,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,6431,0,1
+1792649235386,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-7,text,true,,0,0,10,10,null,0,0,0
+1792649229077,7708,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-4,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,7706,0,1
+1792649229108,9174,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-9,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,9172,0,1
+1792649229124,10715,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-2,text,true,,1556,1017,10,10,http://127.0.0.1:8000/login,10712,0,0
+1792649230497,9370,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-6,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9369,0,2
+1792649230622,10543,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-10,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10542,0,1
+1792649232020,9244,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-3,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9242,0,1
+1792649233421,9375,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,9373,0,1
+1792649242797,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-8,text,true,,0,0,10,10,null,0,0,0
+1792649233529,10592,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-5,text,true,,1556,1013,10,10,http://127.0.0.1:8000/login,10590,0,1
+1792649234882,9348,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-1,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,9347,0,1
+1792649236392,7856,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-7,text,true,,4733,122,10,10,http://127.0.0.1:8000/login,7855,0,1
+1792649237793,8401,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8399,0,0
+1792649246195,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-4,text,true,,0,0,10,10,null,0,0,0
+1792649239293,8899,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-9,text,true,,22405,857,10,10,http://127.0.0.1:8000/customer/gio-hang,8896,0,1
+1792649248193,0,DATA CHECK,200,Test data valid,AUTH-003-B — Tăng tải 1-9,text,true,,0,0,10,10,null,0,0,0
+1792649240853,8909,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-2,text,true,,22413,857,9,9,http://127.0.0.1:8000/customer/gio-hang,8907,0,1
+1792649240884,10359,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-6,text,true,,1556,1013,8,8,http://127.0.0.1:8000/login,10358,0,1
+1792649242178,10975,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-10,text,true,,22405,857,7,7,http://127.0.0.1:8000/customer/gio-hang,10973,0,1
+1792649242273,12233,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-3,text,true,,1556,1013,6,6,http://127.0.0.1:8000/login,12232,0,1
+1792649243798,10819,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-8,text,true,,4733,122,5,5,http://127.0.0.1:8000/login,10818,0,1
+1792649245130,11058,AUTH GET protected page,200,OK,AUTH-003-B — Tăng tải 1-5,text,true,,22405,857,4,4,http://127.0.0.1:8000/customer/gio-hang,11057,0,1
+1792649245242,12867,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-1,text,true,,1556,1013,3,3,http://127.0.0.1:8000/login,12866,0,1
+1792649245257,14430,AUTH POST login,302,Found,AUTH-003-B — Tăng tải 1-7,text,true,,1556,1013,2,2,http://127.0.0.1:8000/login,14427,0,1
+1792649247200,12520,AUTH GET login,200,OK,AUTH-003-B — Tăng tải 1-4,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,12519,0,2

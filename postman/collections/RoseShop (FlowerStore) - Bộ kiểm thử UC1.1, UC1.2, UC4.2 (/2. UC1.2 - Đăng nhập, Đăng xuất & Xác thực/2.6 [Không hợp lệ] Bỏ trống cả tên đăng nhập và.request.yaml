@@ -1,0 +1,27 @@
+$kind: http-request
+name: 2.6 [Không hợp lệ] Bỏ trống cả tên đăng nhập và mật khẩu
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: ""
+    password: ""
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 422: từ chối đăng nhập", function () {
+          pm.expect(pm.response.code).to.be.oneOf([422]);
+      });
+      pm.test("Phản hồi có lỗi validate tại: ten_dang_nhap, password", function () {
+          const j = pm.response.json();
+          pm.expect(j).to.have.property("errors");
+          ["ten_dang_nhap", "password"].forEach(function (k) { pm.expect(j.errors).to.have.property(k); });
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 6000

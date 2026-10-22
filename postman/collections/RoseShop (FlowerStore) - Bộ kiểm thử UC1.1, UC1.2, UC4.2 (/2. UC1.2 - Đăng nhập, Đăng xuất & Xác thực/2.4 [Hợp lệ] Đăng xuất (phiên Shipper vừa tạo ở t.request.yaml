@@ -1,0 +1,18 @@
+$kind: http-request
+name: 2.4 [Hợp lệ] Đăng xuất (phiên Shipper vừa tạo ở trên)
+url: "{{base_url}}/logout"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 / 204 / 302: đăng xuất thành công", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 204, 302]);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 4000

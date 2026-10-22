@@ -1,0 +1,81 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792649520946,14,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649521964,104,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,102,0,0
+1792649523089,1357,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,1356,0,2
+1792649525461,1369,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1367,0,1
+1792649526844,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649527852,29,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,28,0,1
+1792649528895,1371,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1369,0,1
+1792649531275,1483,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1481,0,1
+1792649532758,1,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649533766,23,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,22,0,1
+1792649534798,1382,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1379,0,1
+1792649537181,1774,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1772,0,2
+1792649538955,1,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649539964,24,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,23,0,1
+1792649540990,1463,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1461,0,1
+1792649543463,1419,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1416,0,1
+1792649544882,1,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649545895,27,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,24,0,1
+1792649546925,1585,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1584,0,1
+1792649549518,1608,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1607,0,1
+1792649551127,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649552141,60,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,59,0,1
+1792649553204,1985,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1984,0,0
+1792649556205,1229,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1227,0,0
+1792649557434,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649558447,26,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,25,0,1
+1792649559478,1386,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1383,0,1
+1792649561866,1386,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1385,0,1
+1792649563252,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649564253,79,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,77,0,1
+1792649565344,1592,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1591,0,1
+1792649567953,2171,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2169,0,0
+1792649570124,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649571131,62,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,60,0,1
+1792649572208,1149,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1148,0,1
+1792649574369,1501,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1497,0,1
+1792649575871,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649576876,96,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,95,0,0
+1792649577984,1575,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,1573,0,1
+1792649580562,1451,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1448,0,1
+1792649582014,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649583018,52,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,51,0,1
+1792649584076,1349,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1347,0,1
+1792649586431,1482,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1481,0,1
+1792649587913,1,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649588927,23,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,21,0,1
+1792649589956,1247,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1246,0,2
+1792649592209,1335,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1334,0,2
+1792649593545,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649594549,26,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,24,0,2
+1792649595590,1433,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1431,0,2
+1792649598034,2368,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2366,0,2
+1792649600402,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649601414,48,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,47,0,1
+1792649602474,1303,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1302,0,2
+1792649604791,1715,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1712,0,1
+1792649606506,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649607514,48,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,48,0,1
+1792649608577,1591,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1590,0,2
+1792649611176,1397,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1394,0,1
+1792649612574,1,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649613589,22,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,21,0,0
+1792649614620,1330,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1329,0,2
+1792649616961,1375,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1374,0,1
+1792649618337,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649619343,89,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,88,0,1
+1792649620446,1400,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1399,0,2
+1792649622860,1516,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1514,0,2
+1792649624377,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649625387,52,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,50,0,1
+1792649626450,1435,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1434,0,1
+1792649628901,1696,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1694,0,0
+1792649630598,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649631605,48,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,46,0,0
+1792649632655,1248,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,1247,0,1
+1792649634914,1333,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1331,0,1
+1792649636247,0,DATA CHECK,200,Test data valid,AUTH-003-C — Sau giảm tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792649637252,55,AUTH GET login,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,53,0,2
+1792649638312,1271,AUTH POST login,302,Found,AUTH-003-C — Sau giảm tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1270,0,1
+1792649640583,2474,AUTH GET protected page,200,OK,AUTH-003-C — Sau giảm tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2472,0,1

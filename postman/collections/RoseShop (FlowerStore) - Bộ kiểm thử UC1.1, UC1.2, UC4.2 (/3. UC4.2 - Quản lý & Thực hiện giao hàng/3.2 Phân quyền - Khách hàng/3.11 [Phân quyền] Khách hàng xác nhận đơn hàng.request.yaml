@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{base_url}}/don-hang/{{order_id_confirm}}/confirm"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 302 / 403: Sai vai trò bị từ chối", function () {
+          pm.expect(pm.response.code).to.be.oneOf([302, 403]);
+      });
+      pm.test("Không được phép trả 200", function () {
+          pm.expect(pm.response.code).to.not.equal(200);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 5000

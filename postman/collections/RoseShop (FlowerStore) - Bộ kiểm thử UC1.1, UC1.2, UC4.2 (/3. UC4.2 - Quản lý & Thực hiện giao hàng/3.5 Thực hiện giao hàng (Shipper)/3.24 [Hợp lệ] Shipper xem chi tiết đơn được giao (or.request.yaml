@@ -1,0 +1,16 @@
+$kind: http-request
+name: 3.24 [Hợp lệ] Shipper xem chi tiết đơn được giao (order_id_ship)
+url: "{{base_url}}/shipper/don-hang/{{order_id_ship}}/chi-tiet"
+method: GET
+headers:
+  Accept: text/html
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200: OK", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200]);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 5000

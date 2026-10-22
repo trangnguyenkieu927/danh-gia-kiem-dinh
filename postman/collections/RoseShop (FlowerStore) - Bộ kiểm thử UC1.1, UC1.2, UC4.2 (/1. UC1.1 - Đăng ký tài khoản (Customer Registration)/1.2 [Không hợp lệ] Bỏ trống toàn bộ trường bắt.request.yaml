@@ -1,0 +1,24 @@
+$kind: http-request
+name: 1.2 [Không hợp lệ] Bỏ trống toàn bộ trường bắt buộc
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 422: từ chối khi thiếu dữ liệu", function () {
+          pm.expect(pm.response.code).to.be.oneOf([422]);
+      });
+      pm.test("Phản hồi có lỗi validate tại: ten_dang_nhap, ten_khach_hang, email, so_dien_thoai, password", function () {
+          const j = pm.response.json();
+          pm.expect(j).to.have.property("errors");
+          ["ten_dang_nhap", "ten_khach_hang", "email", "so_dien_thoai", "password"].forEach(function (k) { pm.expect(j.errors).to.have.property(k); });
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 2000

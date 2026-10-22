@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: "{{customer_user}}"
+    password: "{{customer_pass}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 / 204 / 302: đăng nhập thành công", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 204, 302]);
+      });
+      pm.test("Thời gian phản hồi < 3000ms", function () {
+          pm.expect(pm.response.responseTime).to.be.below(3000);
+      });
+      pm.test("Chuyển hướng đúng vai trò", function () {
+          const l = pm.response.headers.get("Location") || "";
+          pm.expect(l).to.match(/\/customer\/dashboard/);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 1000

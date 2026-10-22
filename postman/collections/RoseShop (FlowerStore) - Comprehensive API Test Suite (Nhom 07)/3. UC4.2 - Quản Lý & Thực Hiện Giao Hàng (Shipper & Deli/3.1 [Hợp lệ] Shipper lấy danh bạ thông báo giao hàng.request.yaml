@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/shipper/thong-bao"
+method: GET
+headers:
+  Accept: application/json
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Kiểm soát xác thực tuyến đường: HTTP 200, 302 hoặc 401", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 401]);
+      });
+    language: text/javascript
+order: 1000

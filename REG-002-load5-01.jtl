@@ -1,0 +1,201 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792660807204,139,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,1,1,http://127.0.0.1:8000/register,137,0,1
+1792660808376,2142,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,1,1,http://127.0.0.1:8000/register,2139,0,1
+1792660811544,136,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,1,1,http://127.0.0.1:8000/register,134,0,1
+1792660812685,1858,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,2,2,http://127.0.0.1:8000/register,1856,0,2
+1792660813200,1446,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,2,2,http://127.0.0.1:8000/register,1445,0,1
+1792660815553,30,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,2,2,http://127.0.0.1:8000/register,29,0,1
+1792660815661,1996,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,2,2,http://127.0.0.1:8000/register,1992,0,1
+1792660816597,2935,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,3,3,http://127.0.0.1:8000/register,2932,0,5
+1792660818658,899,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,898,0,1
+1792660819179,393,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,392,0,0
+1792660820547,100,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,99,0,2
+1792660820563,2014,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,3,3,http://127.0.0.1:8000/register,2011,0,1
+1792660820579,4141,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,4,4,http://127.0.0.1:8000/register,4137,0,1
+1792660821661,4975,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,4,4,http://127.0.0.1:8000/register,4970,0,2
+1792660823578,3086,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,3085,0,1
+1792660825185,1495,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,1494,0,2
+1792660825730,966,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,965,0,1
+1792660827647,105,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,104,0,1
+1792660827677,1872,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,4,4,http://127.0.0.1:8000/register,1869,0,1
+1792660827692,3941,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1297,5,5,http://127.0.0.1:8000/register,3938,0,1
+1792660827708,5893,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5891,0,1
+1792660828754,6628,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,6625,0,1
+1792660830551,4913,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4912,0,2
+1792660831187,4302,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4301,0,1
+1792660832646,2859,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,2858,0,2
+1792660834609,908,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,907,0,1
+1792660836393,26,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,24,0,1
+1792660836472,2021,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,2018,0,1
+1792660836502,3838,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3834,0,1
+1792660836518,5615,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5612,0,0
+1792660836534,7575,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7571,0,0
+1792660837422,9015,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,9013,0,1
+1792660839496,7068,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,7065,0,1
+1792660841353,5240,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5239,0,2
+1792660843141,3480,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3479,0,2
+1792660845110,1534,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1532,0,1
+1792660847451,19,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,18,0,0
+1792660847576,1882,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1881,0,0
+1792660847607,3801,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3798,0,1
+1792660847622,5865,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5861,0,1
+1792660847654,7717,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7712,0,1
+1792660848483,8790,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8787,0,1
+1792660850469,6924,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6921,0,1
+1792660852410,4999,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4997,0,0
+1792660854490,2937,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,2936,0,1
+1792660856372,1070,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1069,0,1
+1792660858287,34,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,33,0,1
+1792660858395,2024,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,2021,0,1
+1792660858411,3977,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3973,0,1
+1792660858442,5805,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5803,0,1
+1792660858457,7932,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7928,0,1
+1792660859330,8931,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8930,0,1
+1792660861423,6921,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6920,0,2
+1792660863390,4970,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4969,0,1
+1792660865262,3113,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3112,0,1
+1792660867394,1003,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1002,0,0
+1792660869268,27,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,26,0,2
+1792660869346,1890,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1888,0,0
+1792660869362,3981,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3977,0,0
+1792660869377,5849,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5848,0,1
+1792660869408,7684,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7681,0,1
+1792660870300,8611,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8608,0,3
+1792660872247,6765,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6764,0,1
+1792660874350,4679,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4678,0,1
+1792660876242,2806,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,2805,0,2
+1792660878093,977,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,976,0,1
+1792660879921,27,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,26,0,1
+1792660880015,2213,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,2210,0,1
+1792660880031,4007,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,4004,0,1
+1792660880062,5801,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5799,0,1
+1792660880078,7859,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7857,0,1
+1792660880949,8967,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8965,0,1
+1792660883236,6797,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6795,0,2
+1792660885051,5002,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5001,0,2
+1792660886874,3198,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3196,0,2
+1792660888952,1141,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1140,0,0
+1792660890919,38,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,36,0,1
+1792660891043,1862,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1859,0,1
+1792660891059,3966,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3961,0,1
+1792660891074,5812,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5808,0,1
+1792660891105,7525,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7523,0,1
+1792660891961,8914,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8911,0,0
+1792660893909,6991,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6990,0,2
+1792660896030,4889,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4888,0,1
+1792660897903,3034,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3032,0,1
+1792660899645,1308,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1308,0,1
+1792660901880,133,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,131,0,1
+1792660901912,1958,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1957,0,0
+1792660901927,3743,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3740,0,1
+1792660901943,5939,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5935,0,0
+1792660901958,7827,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7824,0,1
+1792660903020,8664,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8661,0,1
+1792660904874,6832,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6831,0,0
+1792660906674,5055,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5053,0,2
+1792660908897,2858,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,2857,0,1
+1792660910798,976,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,974,0,1
+1792660912692,97,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,95,0,0
+1792660912708,1899,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1897,0,1
+1792660912738,4159,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,4156,0,0
+1792660912769,6080,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,6077,0,1
+1792660912784,7873,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7870,0,1
+1792660913795,8916,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8913,0,1
+1792660915612,7128,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,7127,0,1
+1792660917911,4848,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4847,0,1
+1792660919857,2916,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,2915,0,1
+1792660921667,1122,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1121,0,1
+1792660923719,83,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,82,0,1
+1792660923750,1971,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1969,0,1
+1792660923766,3802,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3799,0,1
+1792660923782,5869,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5865,0,1
+1792660923798,7962,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7958,0,0
+1792660924809,8987,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8984,0,2
+1792660926733,7088,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,7087,0,1
+1792660928571,5269,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5268,0,1
+1792660930666,3190,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3189,0,0
+1792660932773,1101,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1100,0,1
+1792660934808,116,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,114,0,1
+1792660934824,2548,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,2545,0,1
+1792660934855,4575,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,4571,0,1
+1792660934870,6369,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,6366,0,1
+1792660934886,8525,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8523,0,1
+1792660935938,9548,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,9546,0,1
+1792660938388,7212,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,7211,0,2
+1792660940433,5183,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5182,0,1
+1792660942245,3385,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3384,0,2
+1792660944415,1238,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1237,0,0
+1792660946492,31,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,29,0,1
+1792660946602,1919,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1917,0,1
+1792660946633,3931,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3929,0,0
+1792660946633,6287,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,6284,0,0
+1792660946663,8221,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8220,0,1
+1792660947535,9244,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,9243,0,1
+1792660949534,7370,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,7368,0,1
+1792660951568,5352,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5351,0,1
+1792660953923,3011,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3010,0,1
+1792660955894,1060,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1059,0,1
+1792660957793,21,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,19,0,1
+1792660957918,1938,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1935,0,1
+1792660957934,3775,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3771,0,0
+1792660957949,5582,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5580,0,1
+1792660957965,7574,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7571,0,0
+1792660958824,8584,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8582,0,1
+1792660960863,6659,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6656,0,1
+1792660962720,4824,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4823,0,1
+1792660964543,3018,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3017,0,1
+1792660966544,1031,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1030,0,1
+1792660968416,23,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,22,0,1
+1792660968526,1805,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1802,0,1
+1792660968559,3665,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3661,0,0
+1792660968574,5554,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5551,0,1
+1792660968590,7439,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7437,0,1
+1792660969450,8471,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8469,0,1
+1792660971343,6682,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,6681,0,1
+1792660973239,4802,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,4801,0,1
+1792660975135,2927,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,2926,0,1
+1792660977030,1049,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1048,0,2
+1792660978936,21,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,20,0,1
+1792660979044,1870,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1868,0,1
+1792660979044,3813,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3811,0,1
+1792660979076,5630,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5627,0,1
+1792660979092,7635,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7631,0,1
+1792660979970,9175,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,9172,0,1
+1792660981920,7382,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,7380,0,2
+1792660983860,5466,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,5465,0,2
+1792660985721,3619,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,3618,0,2
+1792660987733,1623,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,1623,0,0
+1792660990152,27,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,5,5,http://127.0.0.1:8000/register,25,0,1
+1792660990306,1928,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,1926,0,1
+1792660990337,3853,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,3849,0,1
+1792660990352,5660,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,5658,0,1
+1792660990369,7599,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,7594,0,0
+1792660991196,8842,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,8838,0,1
+1792660993247,6897,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,6895,0,1
+1792660995202,4967,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,4966,0,1
+1792660997020,3169,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,3168,0,1
+1792660998982,1227,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,1226,0,1
+1792661001146,1861,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,1859,0,0
+1792661001176,3766,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,3761,0,1
+1792661001192,5556,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,5553,0,1
+1792661001223,7436,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,7429,0,1
+1792661004014,4672,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,4670,0,1
+1792661005956,2745,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,2744,0,1
+1792661007763,954,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,953,0,1
+1792661009667,108,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,106,0,1
+1792661009698,1966,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,1963,0,1
+1792661009713,3792,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,3789,0,1
+1792661009729,5698,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,3,3,http://127.0.0.1:8000/register,5696,0,1
+1792661010777,6716,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,3,3,http://127.0.0.1:8000/register,6712,0,1
+1792661012667,4943,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,4942,0,1
+1792661016441,1190,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,1189,0,2
+1792661018507,23,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,22,0,0
+1792661018615,1918,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,3,3,http://127.0.0.1:8000/register,1917,0,1
+1792661018645,3782,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,3,3,http://127.0.0.1:8000/register,3779,0,1
+1792661019534,5180,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,3,3,http://127.0.0.1:8000/register,5178,0,1
+1792661021538,3280,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,2,2,http://127.0.0.1:8000/register,3279,0,2
+1792661023430,1406,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,2,2,http://127.0.0.1:8000/register,1404,0,0
+1792661025832,1933,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,2,2,http://127.0.0.1:8000/register,1930,0,1
+1792661025848,3868,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,2,2,http://127.0.0.1:8000/register,3865,0,0
+1792661028782,962,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,1,1,http://127.0.0.1:8000/register,960,0,1
+1792661030751,1993,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,1,1,http://127.0.0.1:8000/register,1988,0,1

@@ -1,215 +1,307 @@
-<testsuites id="" name="" tests="12" failures="3" skipped="0" errors="0" time="26.467437000000004">
-<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T05:43:38.822Z" hostname="uc1.1-register" tests="12" failures="3" skipped="0" time="21.88" errors="0">
-<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js" time="2.098">
+<testsuites id="" name="" tests="12" failures="2" skipped="0" errors="0" time="78.88511099999957">
+<testsuite name="UC1_1_Register.spec.js" timestamp="2026-10-21T08:50:23.883Z" hostname="UC1.1 - Đăng ký (Nguyễn Đức Trọng)" tests="12" failures="2" skipped="0" time="73.781" errors="0">
+<testcase name="UC1.1_UI_001 - Hien thi du 10 truong dang ky" classname="UC1_1_Register.spec.js" time="4.203">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-uc1-1-register\attachments\Biểu-mẫu-đăng-ký-b66c7d2e9269b68cc2882fbc167a6563fba9c653.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Biểu-mẫu-đăng-ký-c8f1a83043dff714747929868af78acecc8a8cd9.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-001---Hien-thi-du-10-truong-dang-ky-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js" time="1.389">
+<testcase name="UC1.1_UI_002 - Nut Dang ky va lien ket Dang nhap" classname="UC1_1_Register.spec.js" time="2.85">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-uc1-1-register\attachments\Nút-và-liên-kết-đăng-ký-55c0a58e5373a1b63bf171b05afd0146465f40d4.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Nút-và-liên-kết-đăng-ký-f5057b44a30a2ee6a0ca160b553e38b73727b703.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-fa7bd-ng-ky-va-lien-ket-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js" time="1.713">
+<testcase name="UC1.1_UI_003 - Ha Noi mac dinh va khong sua duoc" classname="UC1_1_Register.spec.js" time="1.792">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-uc1-1-register\attachments\Thành-phố-mặc-định-Hà-Nội-5d3da434e9e4f1637344ed09bf80a003bf74c494.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Thành-phố-mặc-định-Hà-Nội-94d10eb36b6cf971d8bc68fcf8d5f209d8297b2d.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-9be76--mac-dinh-va-khong-sua-duoc-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_004 - Danh sach va lua chon Quan Huyen" classname="UC1_1_Register.spec.js" time="2.367">
+<testcase name="UC1.1_UI_004 - Danh sach va lua chon Quan Huyen" classname="UC1_1_Register.spec.js" time="1.781">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-uc1-1-register\attachments\Quận-Huyện-đã-chọn-Hà-Đông-782138cde3755dd9426cef6dcc3f9bc72f592a76.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Quận-Huyện-đã-chọn-Hà-Đông-0611cc3688e7bcdec2f67a840be99e3295c7e2a5.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-d991b-sach-va-lua-chon-Quan-Huyen-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_005 - Danh sach Xa Phuong theo Quan Huyen" classname="UC1_1_Register.spec.js" time="2.387">
+<testcase name="UC1.1_UI_005 - Danh sach Xa Phuong theo Quan Huyen" classname="UC1_1_Register.spec.js" time="1.879">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-uc1-1-register\attachments\Hà-Đông---Yên-Nghĩa-f97f88e7183ebfe23bffede968aec01d49f58ac1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Hà-Đông---Yên-Nghĩa-4e8fc85df675ef7692d8f4cfc7357807f6008819.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-5acd7-h-Xa-Phuong-theo-Quan-Huyen-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_006 - Che mat khau va xac nhan mat khau" classname="UC1_1_Register.spec.js" time="2.615">
+<testcase name="UC1.1_UI_006 - Che mat khau va xac nhan mat khau" classname="UC1_1_Register.spec.js" time="1.658">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-uc1-1-register\attachments\Hai-trường-mật-khẩu-ở-chế-độ-che-49eb77c8f58ee06f9120a3799ecd16b864483d92.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Hai-trường-mật-khẩu-ở-chế-độ-che-c2b7c1095c100e398f8b47fb0220fb03d6529a77.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-a9160-t-khau-va-xac-nhan-mat-khau-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_007 - Bo trong Ho va ten" classname="UC1_1_Register.spec.js" time="2.684">
+<testcase name="UC1.1_UI_007 - Bo trong Ho va ten" classname="UC1_1_Register.spec.js" time="2.122">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-uc1-1-register\attachments\Biểu-mẫu-khi-thiếu-Họ-và-tên-c49fdd1268d11bde0270a70a547bc12a1873c4e3.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Biểu-mẫu-khi-thiếu-Họ-và-tên-2de84b85429a5b9e1d7add14c57d093fc53998e6.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-007---Bo-trong-Ho-va-ten-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_008 - Email sai dinh dang" classname="UC1_1_Register.spec.js" time="2.631">
+<testcase name="UC1.1_UI_008 - Email sai dinh dang" classname="UC1_1_Register.spec.js" time="1.979">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-uc1-1-register\attachments\Biểu-mẫu-khi-email-sai-định-dạng-842ae5f72429f9c1249c29fbff0959aeee63a27a.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Biểu-mẫu-khi-email-sai-định-dạng-e34a93eadf741dd42ac0dcae34ea40181510151b.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-008---Email-sai-dinh-dang-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai" classname="UC1_1_Register.spec.js" time="0.281">
+<testcase name="UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai" classname="UC1_1_Register.spec.js" time="30.752">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\test-failed-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-failed-1.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\error-context.md]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\error-context.md]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\trace.zip]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\trace.zip]]
 ]]>
 </system-out>
-<failure message="expect(received).toMatch(expected)" type="expect.toMatch">
-<![CDATA[  [uc1.1-register] › UC1_1_Register.spec.js:976:1 › UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai 
+<failure message="Đăng ký trùng số điện thoại phải quay về trang đăng ký." type="expect.toHaveURL">
+<![CDATA[  [UC1.1 - Đăng ký (Nguyễn Đức Trọng)] › UC1_1_Register.spec.js:853:1 › UC1.1_UI_009 - Dang ky bang so dien thoai da ton tai › Gửi đăng ký và kiểm tra phản hồi giao diện 
 
-    TypeError: expect(received).toMatch(expected)
+    Error: Đăng ký trùng số điện thoại phải quay về trang đăng ký.
 
-    Matcher error: received value must be a string
+    expect(page).toHaveURL(expected) failed
 
-    Received has value: undefined
+    Expected pattern: /\/register\/?$/
+    Received string:  "http://127.0.0.1:8000/customer/dashboard"
+    Timeout: 10000ms
 
-      984 |     existingPhone,
-      985 |     'Cần đặt PW_EXISTING_PHONE bằng số điện thoại đã tồn tại trong CSDL test.'
-    > 986 |   ).toMatch(/^[0-9]{10}$/);
-          |     ^
-      987 |
-      988 |   // Tên đăng nhập và email mới để chỉ kiểm tra trùng số điện thoại.
-      989 |   const suffix = `${Date.now()}_${Math.floor(Math.random() * 100000)}`;
-        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:986:5
+    Call log:
+      - Đăng ký trùng số điện thoại phải quay về trang đăng ký. with timeout 10000ms
+        23 × locator resolved to <html lang="vi">…</html>
+           - unexpected value "http://127.0.0.1:8000/customer/dashboard"
 
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\error-context.md
+      912 |     await expect
+      913 |       .soft(page, 'Đăng ký trùng số điện thoại phải quay về trang đăng ký.')
+    > 914 |       .toHaveURL(/\/register\/?$/);
+          |        ^
+      915 |
+      916 |     await expect
+      917 |       .soft(form, 'Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin.')
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:914:8
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:891:3
 
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\trace.zip
-    Usage:
+    Test timeout of 30000ms exceeded.
 
-        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-uc1-1-register\trace.zip
+    Error: Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin.
 
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
-</testcase>
-<testcase name="UC1.1_UI_010 - Giu thong tin hop le sau loi dang ky" classname="UC1_1_Register.spec.js" time="1.011">
-<system-out>
-<![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\test-failed-1.png]]
+    expect(locator).toBeVisible() failed
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\error-context.md]]
+    Locator: locator('form').filter({ has: locator('input[name="ten_dang_nhap"]') })
+    Expected: visible
+    Error: element(s) not found
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\trace.zip]]
-]]>
-</system-out>
-<failure message="Đặt PW_EXISTING_USERNAME bằng tên đăng nhập đã tồn tại." type="expect.toBeTruthy">
-<![CDATA[  [uc1.1-register] › UC1_1_Register.spec.js:1117:1 › UC1.1_UI_010 - Giu thong tin hop le sau loi dang ky 
+    Call log:
+      - Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin. locator('form').filter({ has: locator('input[name="ten_dang_nhap"]') }) with timeout 10000ms
+      - waiting for locator('form').filter({ has: locator('input[name="ten_dang_nhap"]') })
+      - Protocol error (Runtime.callFunctionOn): Internal server error, session closed.
 
-    Error: Đặt PW_EXISTING_USERNAME bằng tên đăng nhập đã tồn tại.
 
-    expect(received).toBeTruthy()
+      916 |     await expect
+      917 |       .soft(form, 'Biểu mẫu đăng ký phải hiển thị để người dùng sửa thông tin.')
+    > 918 |       .toBeVisible();
+          |        ^
+      919 |
+      920 |     const phoneError = page.locator('p').filter({
+      921 |       hasText: /số điện thoại.*(đã|tồn tại|trùng|sử dụng)/i,
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:918:8
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:891:3
 
+    Error: Phải hiển thị thông báo về số điện thoại đã tồn tại.
+
+    expect(locator).toBeVisible() failed
+
+    Locator:  locator('p').filter({ hasText: /số điện thoại.*(đã|tồn tại|trùng|sử dụng)/i }).first()
+    Expected: visible
     Received: undefined
 
-      1126 |     existingUsername,
-      1127 |     'Đặt PW_EXISTING_USERNAME bằng tên đăng nhập đã tồn tại.'
-    > 1128 |   ).toBeTruthy();
-           |     ^
-      1129 |
-      1130 |   expect(
-      1131 |     newPhone,
-        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1128:5
 
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\test-failed-1.png
+      927 |         'Phải hiển thị thông báo về số điện thoại đã tồn tại.'
+      928 |       )
+    > 929 |       .toBeVisible();
+          |        ^
+      930 |
+      931 |     await expect
+      932 |       .soft(page.getByText('Đăng ký tài khoản thành công', { exact: true }))
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:929:8
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:891:3
+
+    Error: expect(locator).not.toBeVisible() failed
+
+    Locator:  getByText('Đăng ký tài khoản thành công', { exact: true })
+    Expected: not visible
+    Received: visible
+
+
+      931 |     await expect
+      932 |       .soft(page.getByText('Đăng ký tài khoản thành công', { exact: true }))
+    > 933 |       .not.toBeVisible();
+          |            ^
+      934 |   });
+      935 |
+      936 |   await test.step('Lưu kết quả thực tế', async () => {
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:933:12
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:891:3
+
+    Error: page.screenshot: Target page, context or browser has been closed
+
+      114 |   const screenshotPath = testInfo.outputPath(fileName);
+      115 |
+    > 116 |   await page.screenshot({ path: screenshotPath, fullPage: true });
+          |              ^
+      117 |   await testInfo.attach(title, {
+      118 |     path: screenshotPath,
+      119 |     contentType: 'image/png',
+        at attachScreenshot (D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:116:14)
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:942:11
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:936:3
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\error-context.md
+    attachment #4: Địa chỉ trang sau đăng ký (text/plain) ──────────────────────────────────────────
+    http://127.0.0.1:8000/customer/dashboard
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\trace.zip
+    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\trace.zip
     Usage:
 
-        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-uc1-1-register\trace.zip
+        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-00-350b1-ng-so-dien-thoai-da-ton-tai-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\trace.zip
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 </testcase>
-<testcase name="UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap" classname="UC1_1_Register.spec.js" time="0.999">
+<testcase name="UC1.1_UI_010 - Giu thong tin hop le sau loi dang ky" classname="UC1_1_Register.spec.js" time="3.389">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\test-failed-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Biểu-mẫu-sau-lỗi-trùng-tên-đăng-nhập-a92c35d74dde0702376013a3fec38d8766d035e8.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\error-context.md]]
-
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\trace.zip]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-f7e10--tin-hop-le-sau-loi-dang-ky-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
-<failure message="expect(received).toMatch(expected)" type="expect.toMatch">
-<![CDATA[  [uc1.1-register] › UC1_1_Register.spec.js:1270:1 › UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap 
+</testcase>
+<testcase name="UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap" classname="UC1_1_Register.spec.js" time="19.759">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Trang-thực-tế-sau-khi-đăng-ký-11b240063295995b32d47ab816e2ddf92154655d.png]]
 
-    TypeError: expect(received).toMatch(expected)
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-failed-1.png]]
 
-    Matcher error: received value must be a string
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\error-context.md]]
 
-    Received has value: undefined
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\trace.zip]]
+]]>
+</system-out>
+<failure message="Phải hiển thị thông báo đăng ký tài khoản thành công." type="expect.toBeVisible">
+<![CDATA[  [UC1.1 - Đăng ký (Nguyễn Đức Trọng)] › UC1_1_Register.spec.js:1067:1 › UC1.1_UI_011 - Dang ky thanh cong va chuyen ve Dang nhap › Đối chiếu thông báo và điều hướng theo SRS 
 
-      1279 |     newPhone,
-      1280 |     'Đặt PW_NEW_PHONE bằng số điện thoại mới gồm đúng 10 chữ số.'
-    > 1281 |   ).toMatch(/^[0-9]{10}$/);
-           |     ^
-      1282 |
-      1283 |   const suffix = `${Date.now()}_${Math.floor(Math.random() * 100000)}`;
-      1284 |
-        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1281:5
+    Error: Phải hiển thị thông báo đăng ký tài khoản thành công.
 
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\test-failed-1.png
+    expect(locator).toBeVisible() failed
+
+    Locator: getByText('Đăng ký tài khoản thành công', { exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Phải hiển thị thông báo đăng ký tài khoản thành công. getByText('Đăng ký tài khoản thành công', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Đăng ký tài khoản thành công', { exact: true })
+
+
+      1130 |         'Phải hiển thị thông báo đăng ký tài khoản thành công.'
+      1131 |       )
+    > 1132 |       .toBeVisible({ timeout: 5_000 });
+           |        ^
+      1133 |
+      1134 |     await expect
+      1135 |       .soft(
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1132:8
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1126:3
+
+    Error: Theo SRS, đăng ký thành công phải chuyển về trang Đăng nhập.
+
+    expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/login\/?$/
+    Received string:  "http://127.0.0.1:8000/customer/dashboard"
+    Timeout: 5000ms
+
+    Call log:
+      - Theo SRS, đăng ký thành công phải chuyển về trang Đăng nhập. with timeout 5000ms
+        13 × locator resolved to <html lang="vi">…</html>
+           - unexpected value "http://127.0.0.1:8000/customer/dashboard"
+
+
+      1137 |         'Theo SRS, đăng ký thành công phải chuyển về trang Đăng nhập.'
+      1138 |       )
+    > 1139 |       .toHaveURL(/\/login\/?$/, { timeout: 5_000 });
+           |        ^
+      1140 |   });
+      1141 | });
+      1142 |
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1139:8
+        at D:\trích lỏ\danh-gia-kiem-dinh\e2e\UC1_1_Register.spec.js:1126:3
+
+    attachment #3: Trang thực tế sau khi đăng ký (image/png) ───────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Trang-thực-tế-sau-khi-đăng-ký-11b240063295995b32d47ab816e2ddf92154655d.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\error-context.md
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
-    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\trace.zip
+    Error Context: ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\error-context.md
+
+    attachment #6: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\trace.zip
     Usage:
 
-        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-uc1-1-register\trace.zip
+        npx playwright show-trace ..\test-results\UC1_1_Register-UC1-1-UI-01-98466-cong-va-chuyen-ve-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\trace.zip
 
     ────────────────────────────────────────────────────────────────────────────────────────────────
 ]]>
 </failure>
 </testcase>
-<testcase name="UC1.1_UI_012 - Chuyen sang trang Dang nhap" classname="UC1_1_Register.spec.js" time="1.705">
+<testcase name="UC1.1_UI_012 - Chuyen sang trang Dang nhap" classname="UC1_1_Register.spec.js" time="1.617">
 <system-out>
 <![CDATA[
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-uc1-1-register\attachments\Trang-Đăng-nhập-sau-khi-nhấn-liên-kết-45f270e6ebff83e25769752443dc8c36c7c7d2c6.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\attachments\Trang-Đăng-nhập-sau-khi-nhấn-liên-kết-238b66429b33563783b2bcbe32993bf730c98529.png]]
 
-[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-uc1-1-register\test-finished-1.png]]
+[[ATTACHMENT|..\..\test-results\UC1_1_Register-UC1-1-UI-012---Chuyen-sang-trang-Dang-nhap-UC1-1---Đăng-ký-Nguyễn-Đức-Trọng-\test-finished-1.png]]
 ]]>
 </system-out>
 </testcase>

@@ -1,0 +1,20 @@
+$kind: http-request
+name: 2.5 [Hợp lệ] Sau khi đăng xuất, truy cập lại Dashboard Shipper bị chuyển về /login
+url: "{{base_url}}/shipper/dashboard"
+method: GET
+headers:
+  Accept: text/html
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 302: bị chặn", function () {
+          pm.expect(pm.response.code).to.be.oneOf([302]);
+      });
+      pm.test("Chuyển hướng về trang đăng nhập", function () {
+          const l = pm.response.headers.get("Location") || "";
+          pm.expect(l).to.match(/\/login/);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 5000

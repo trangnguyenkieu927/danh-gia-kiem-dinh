@@ -1,0 +1,21 @@
+$kind: http-request
+name: 3.33 [Ngoại lệ] check-timeout với mã hoá đơn không tồn tại
+url: "{{base_url}}/shipper/don-hang/HD_KHONG_TON_TAI/check-timeout"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 404 / 422: không tìm thấy", function () {
+          pm.expect(pm.response.code).to.be.oneOf([404, 422]);
+      });
+      pm.test("Không lỗi 500", function () {
+          pm.expect(pm.response.code).to.not.equal(500);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 14000

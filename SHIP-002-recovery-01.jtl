@@ -1,0 +1,8 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792664381388,34,AUTH GET login,Non HTTP response code: java.net.SocketException,Missing CSRF token; inspect HTML and session,JM-SHIP-002 — 5 sessions 1-1,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketException,2699,0,1,1,http://127.0.0.1:8000/login,0,0,2
+1792664387793,53,AUTH GET login,200,OK,JM-SHIP-002 — 5 sessions 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,51,0,1
+1792664388873,1289,AUTH POST login,302,Found,JM-SHIP-002 — 5 sessions 1-1,text,true,,1551,1016,1,1,http://127.0.0.1:8000/login,1288,0,1
+1792664391176,4938,AUTH GET protected page,200,OK,JM-SHIP-002 — 5 sessions 1-1,text,true,,30085,857,1,1,http://127.0.0.1:8000/shipper/dashboard,4934,0,2
+1792664397116,2576,SHIP GET detail,200,OK,JM-SHIP-002 — 5 sessions 1-1,text,true,,31486,869,1,1,http://127.0.0.1:8000/shipper/don-hang/105/chi-tiet,2574,0,2
+1792664400706,1978,SHIP PATCH SHIPPING,200,OK,JM-SHIP-002 — 5 sessions 1-1,text,true,,1204,1036,1,1,http://127.0.0.1:8000/shipper/don-hang/105/cap-nhat,1976,0,1
+1792664403702,2865,SHIP PATCH DELIVERED,200,OK,JM-SHIP-002 — 5 sessions 1-1,text,true,,1198,1036,1,1,http://127.0.0.1:8000/shipper/don-hang/105/cap-nhat,2863,0,0

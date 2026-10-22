@@ -1,0 +1,18 @@
+$kind: http-request
+name: 3.27 [Hợp lệ] Shipper kiểm tra quá hạn (check-timeout) theo mã hoá đơn
+url: "{{base_url}}/shipper/don-hang/{{ma_hoa_don_ship}}/check-timeout"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 / 204 / 302: xử lý check-timeout", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 204, 302]);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 8000

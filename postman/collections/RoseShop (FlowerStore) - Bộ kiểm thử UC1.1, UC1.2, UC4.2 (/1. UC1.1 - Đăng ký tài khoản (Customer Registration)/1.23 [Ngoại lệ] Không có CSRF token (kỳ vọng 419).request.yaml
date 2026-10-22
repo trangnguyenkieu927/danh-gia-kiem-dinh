@@ -1,0 +1,31 @@
+$kind: http-request
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: khach_{{uniq}}
+    ten_khach_hang: Nguyễn Văn Test
+    email: khach_{{uniq}}@example.test
+    so_dien_thoai: 09{{uniq}}
+    password: "123456"
+    password_confirmation: "123456"
+    quan_huyen: Nam Từ Liêm
+    xa_phuong: Trung Văn
+    dia_chi_chi_tiet: Số 10 Phố Hoa
+scripts:
+  - type: beforeRequest
+    code: pm.variables.set("skip_csrf", "1");
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 419: Laravel chặn request thiếu CSRF token", function () {
+          pm.expect(pm.response.code).to.be.oneOf([419]);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 23000

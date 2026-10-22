@@ -1,0 +1,11 @@
+const fs = require('node:fs');
+const [batch, countText = '10000', startText = '0900000000'] = process.argv.slice(2);
+if (!batch || !/^[A-Za-z0-9_]{1,20}$/.test(batch)) throw new Error('Usage: node generate-register-data.cjs BATCH COUNT START_PHONE');
+const count = Number(countText), start = Number(startText);
+if (!Number.isInteger(count) || count < 1 || count > 100000 || !/^0[0-9]{9}$/.test(startText) || start + count - 1 > 999999999) throw new Error('Invalid count or 10-digit phone range starting 0');
+const file = `data/register-${batch}.csv`;
+if (fs.existsSync(file)) throw new Error('Batch already exists. Choose a new batch and an unused phone range.');
+const lines = ['ten_dang_nhap,ten_khach_hang,email,so_dien_thoai,quan_huyen,xa_phuong,dia_chi_chi_tiet,mat_khau'];
+for (let i=0; i<count; i++) lines.push([`jm_${batch}_${i}`, 'Nguyễn Đức Trọng', `jm_${batch}_${i}@example.com`, String(start+i).padStart(10,'0'), 'Hà Đông', 'Yên Nghĩa', 'Xuân Mai Complex', '123456'].join(','));
+fs.writeFileSync(file, lines.join('\n')+'\n', {encoding:'utf8',flag:'wx'});
+console.log(file);

@@ -1,0 +1,7 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792663582992,123,AUTH GET login,200,OK,JM-SHIP-001 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,120,0,2
+1792663584146,1205,AUTH POST login,302,Found,JM-SHIP-001 1-1,text,true,,1551,1016,1,1,http://127.0.0.1:8000/login,1204,0,1
+1792663586371,5990,AUTH GET protected page,200,OK,JM-SHIP-001 1-1,text,true,,31073,857,1,1,http://127.0.0.1:8000/shipper/dashboard,5985,0,1
+1792663593371,2663,SHIP GET detail,200,OK,JM-SHIP-001 1-1,text,true,,24240,869,1,1,http://127.0.0.1:8000/shipper/don-hang/145/chi-tiet,2661,0,1
+1792663597050,1872,SHIP PATCH SHIPPING,200,OK,JM-SHIP-001 1-1,text,true,,1204,1036,1,1,http://127.0.0.1:8000/shipper/don-hang/145/cap-nhat,1870,0,1
+1792663599961,2174,SHIP PATCH DELIVERED,200,OK,JM-SHIP-001 1-1,text,true,,1198,1036,1,1,http://127.0.0.1:8000/shipper/don-hang/145/cap-nhat,2172,0,1

@@ -1,0 +1,20 @@
+$kind: http-request
+name: 3.25 [Hợp lệ] Shipper cập nhật trạng thái đơn sang trạng thái hợp lệ ({{ship_status_valid}})
+url: "{{base_url}}/shipper/don-hang/{{order_id_ship}}/cap-nhat"
+method: PATCH
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    trang_thai: "{{ship_status_valid}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200 / 204 / 302: cập nhật thành công", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 204, 302]);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 6000

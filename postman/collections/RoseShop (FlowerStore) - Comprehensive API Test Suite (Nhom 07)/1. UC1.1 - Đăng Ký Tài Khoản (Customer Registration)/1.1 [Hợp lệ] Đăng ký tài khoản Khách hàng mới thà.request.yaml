@@ -1,0 +1,36 @@
+$kind: http-request
+name: 1.1 [Hợp lệ] Đăng ký tài khoản Khách hàng mới thành công
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: "{{rand_user}}"
+    ten_khach_hang: Nguyễn Văn Test
+    email: "{{rand_email}}"
+    so_dien_thoai: "{{rand_phone}}"
+    mat_khau: "123456"
+    mat_khau_confirmation: "123456"
+    quan_huyen: Nam Từ Liêm
+    xa_phuong: Trung Văn
+    dia_chi_chi_tiet: Số 10 Phố Hoa
+scripts:
+  - type: beforeRequest
+    code: |-
+      const rand = Math.floor(Math.random() * 90000) + 10000;
+      pm.variables.set('rand_user', 'khach_' + rand);
+      pm.variables.set('rand_email', 'khach_' + rand + '@example.test');
+      pm.variables.set('rand_phone', '098' + rand + '12');
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200, 201 hoặc 302: Đăng ký hợp lệ", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 201, 302]);
+      });
+      pm.test("Thời gian phản hồi đăng ký < 5000ms", function () {
+          pm.expect(pm.response.responseTime).to.be.below(5000);
+      });
+    language: text/javascript
+order: 1000

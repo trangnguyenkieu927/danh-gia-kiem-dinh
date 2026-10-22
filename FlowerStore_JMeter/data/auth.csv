@@ -1,0 +1,10 @@
+username,password,dashboard,protected_path
+khachhang,123456,/customer/dashboard,/customer/gio-hang
+user1,123456,/customer/dashboard,/customer/gio-hang
+user2,123456,/customer/dashboard,/customer/gio-hang
+user3,123456,/customer/dashboard,/customer/gio-hang
+user4,123456,/customer/dashboard,/customer/gio-hang
+user6,123456,/customer/dashboard,/customer/gio-hang
+user7,123456,/customer/dashboard,/customer/gio-hang
+user8,123456,/customer/dashboard,/customer/gio-hang
+user9,123456,/customer/dashboard,/customer/gio-hang

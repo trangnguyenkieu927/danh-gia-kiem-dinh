@@ -1,0 +1,18 @@
+$kind: http-request
+url: "{{base_url}}/shipper/don-hang/{{order_id_ship}}/da-den-noi"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 401: Guest nhận 401 Unauthenticated", function () {
+          pm.expect(pm.response.code).to.be.oneOf([401]);
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 5000

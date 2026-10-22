@@ -2,6 +2,13 @@
 workspace:
   id: 2960793f-84f8-47bd-8e21-edab994c2b70
 
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/RoseShop (FlowerStore) - Comprehensive API Test Suite (Nhom 07): 287ef38d-51cd-4a85-8a27-8936c05ea712
+    ../postman/collections/RoseShop (FlowerStore) - Bộ kiểm thử UC1.1, UC1.2, UC4.2 (: 00188058-760b-45ba-93d4-2f79cec2ff96
+
 # All resources in the `postman/` folder are automatically registered in Local View.
 # Point to additional files outside the `postman/` folder to register them individually. Example:
 #localResources:

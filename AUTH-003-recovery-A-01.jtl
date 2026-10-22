@@ -1,0 +1,83 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792648798986,13,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648800007,115,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,113,0,2
+1792648801150,1901,AUTH POST login,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,AUTH-003-A — Trước tải 1-1,text,false,username=khachhang; expected 302 to /customer/dashboard; actual Non HTTP response code: java.net.SocketException; Location=; response=Non HTTP response message: Socket closed,2699,0,1,1,http://127.0.0.1:8000/login,0,0,2
+1792648807197,12,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648808225,92,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,91,0,1
+1792648809344,1790,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,1789,0,1
+1792648812160,1447,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1444,0,0
+1792648813619,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648814634,27,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,26,0,0
+1792648815664,1304,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1303,0,0
+1792648817970,1534,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1531,0,1
+1792648819505,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648820517,80,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,79,0,1
+1792648821606,1780,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1779,0,2
+1792648824399,1324,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1320,0,1
+1792648825723,1,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648826732,29,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,28,0,1
+1792648827771,1262,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1260,0,0
+1792648830038,1616,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1614,0,1
+1792648831655,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648832660,24,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,23,0,1
+1792648833691,1605,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1603,0,1
+1792648836305,1641,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1640,0,1
+1792648837947,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648838956,20,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,18,0,1
+1792648839986,1269,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1266,0,1
+1792648842261,1749,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1748,0,1
+1792648844011,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648845012,62,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,61,0,1
+1792648846088,1233,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1231,0,1
+1792648848329,1651,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1649,0,1
+1792648849980,1,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648850982,26,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,25,0,0
+1792648852011,1480,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1477,0,0
+1792648854493,1548,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1547,0,1
+1792648856042,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648857045,102,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,101,0,1
+1792648858152,1547,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1546,0,0
+1792648860708,1537,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1536,0,2
+1792648862246,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648863249,68,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,64,0,1
+1792648864322,1403,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,1402,0,1
+1792648866740,1304,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1300,0,1
+1792648868045,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648869056,64,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,63,0,2
+1792648870134,1277,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1276,0,1
+1792648872426,1455,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1453,0,1
+1792648873882,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648874890,31,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,30,0,2
+1792648875935,1920,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1918,0,2
+1792648878868,1778,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1776,0,1
+1792648880646,1,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648881655,71,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,70,0,1
+1792648882729,1347,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1346,0,1
+1792648885087,1436,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1433,0,1
+1792648886524,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648887529,35,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,33,0,1
+1792648888569,1425,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1423,0,1
+1792648891003,1806,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1804,0,1
+1792648892809,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648893817,37,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,36,0,1
+1792648894871,1650,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1647,0,1
+1792648897528,1477,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1474,0,1
+1792648899005,1,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648900016,95,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,93,0,2
+1792648901123,1538,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1536,0,1
+1792648903672,1554,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1550,0,1
+1792648905226,1,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648906228,73,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,71,0,1
+1792648907309,2295,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,2294,0,1
+1792648910616,1703,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1701,0,1
+1792648912320,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648913327,66,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,64,0,1
+1792648914404,1321,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1320,0,1
+1792648916738,1387,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1385,0,1
+1792648918127,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648919136,66,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,65,0,1
+1792648920212,1334,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,1333,0,2
+1792648922561,2069,AUTH GET protected page,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2065,0,2
+1792648924629,0,DATA CHECK,200,Test data valid,AUTH-003-A — Trước tải 1-1,text,true,,0,0,1,1,null,0,0,0
+1792648925640,57,AUTH GET login,200,OK,AUTH-003-A — Trước tải 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,56,0,2
+1792648926701,1649,AUTH POST login,302,Found,AUTH-003-A — Trước tải 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,1647,0,2

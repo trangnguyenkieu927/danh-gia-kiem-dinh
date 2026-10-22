@@ -1,0 +1,192 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792661319357,106,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,1,1,http://127.0.0.1:8000/register,104,0,1
+1792661320495,2188,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,2,2,http://127.0.0.1:8000/register,2187,0,1
+1792661322348,427,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,2,2,http://127.0.0.1:8000/register,425,0,1
+1792661323696,29,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,2,2,http://127.0.0.1:8000/register,28,0,1
+1792661323788,1927,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,3,3,http://127.0.0.1:8000/register,1924,0,1
+1792661324726,2921,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,4,4,http://127.0.0.1:8000/register,2919,0,1
+1792661325351,2326,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,2325,0,1
+1792661326725,970,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,969,0,0
+1792661328361,100,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,98,0,1
+1792661328658,35,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,4,4,http://127.0.0.1:8000/register,33,0,1
+1792661328689,2296,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,2293,0,1
+1792661328705,4348,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,5,5,http://127.0.0.1:8000/register,4346,0,1
+1792661329468,5564,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,6,6,http://127.0.0.1:8000/register,5560,0,1
+1792661329704,7177,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,7,7,http://127.0.0.1:8000/register,7175,0,2
+1792661331352,5641,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,5638,0,2
+1792661331994,5018,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,5017,0,1
+1792661334054,2987,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,2986,0,2
+1792661334351,2704,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,2703,0,1
+1792661336041,1035,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,1034,0,2
+1792661337358,25,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,24,0,1
+1792661337886,25,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,7,7,http://127.0.0.1:8000/register,24,0,1
+1792661337996,2063,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,8,8,http://127.0.0.1:8000/register,2061,0,1
+1792661338028,3997,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1299,8,8,http://127.0.0.1:8000/register,3994,0,1
+1792661338044,5841,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,9,9,http://127.0.0.1:8000/register,5838,0,1
+1792661338059,8711,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,8708,0,1
+1792661338091,10583,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,10580,0,1
+1792661338387,12093,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,12089,0,2
+1792661338916,13647,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,13645,0,1
+1792661340356,12229,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,12228,0,1
+1792661341073,11525,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,11524,0,1
+1792661343027,9592,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,9591,0,1
+1792661343354,9284,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,9283,0,1
+1792661344900,7751,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,7750,0,1
+1792661346354,6310,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,6309,0,1
+1792661347774,4906,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4905,0,0
+1792661349676,3016,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3015,0,1
+1792661351493,1216,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,1215,0,0
+1792661353569,113,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,111,0,1
+1792661353600,2193,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,2191,0,1
+1792661353616,4086,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,4082,0,1
+1792661353632,6540,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,6537,0,0
+1792661353648,8434,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,8432,0,0
+1792661353663,10316,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,10313,0,1
+1792661353678,12369,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,12365,0,0
+1792661353693,14353,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,14348,0,1
+1792661353694,15017,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-4,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661353724,15015,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-7,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661354695,15001,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-1,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,0
+1792661356807,15003,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-8,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661358716,15008,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-5,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661361188,12712,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,12711,0,2
+1792661363093,10828,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,10827,0,1
+1792661364984,8952,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,8951,0,1
+1792661367048,6902,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,6902,0,2
+1792661369053,4912,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4911,0,1
+1792661369727,4253,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4252,0,1
+1792661369743,4256,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4256,0,1
+1792661370696,3320,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3319,0,2
+1792661372830,1200,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,1199,0,1
+1792661374737,16,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,15,0,0
+1792661374910,1843,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,1841,0,1
+1792661374925,3783,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,3778,0,1
+1792661374941,5804,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,5802,0,1
+1792661374956,7937,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,7932,0,1
+1792661374972,9807,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,9805,0,1
+1792661374988,11719,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,11716,0,1
+1792661375003,13716,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,13713,0,1
+1792661375019,15015,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-1,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661375034,15015,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-8,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661375766,15002,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-5,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661377763,15004,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-3,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661379714,14949,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,14947,0,1
+1792661381757,12923,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,12922,0,2
+1792661383896,10820,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,10819,0,1
+1792661385785,8959,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,8957,0,2
+1792661387722,7058,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,7057,0,1
+1792661389720,5089,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,5088,0,2
+1792661391037,3787,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3786,0,1
+1792661391053,3787,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3786,0,1
+1792661391770,3086,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3085,0,0
+1792661393781,1099,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,1098,0,1
+1792661395668,1940,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,1938,0,2
+1792661395683,3826,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,3820,0,2
+1792661395731,5797,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,5793,0,1
+1792661395746,8134,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,8127,0,1
+1792661395793,9961,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,9959,0,1
+1792661395825,11729,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,11722,0,1
+1792661395827,14205,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,14202,0,0
+1792661395856,15010,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-8,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661395871,15011,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-5,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661395887,15010,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-3,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661398612,15007,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-9,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661400518,15012,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-2,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661402534,13322,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,13321,0,1
+1792661404890,10981,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,10980,0,1
+1792661406765,9120,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,9119,0,1
+1792661408557,7347,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,7347,0,2
+1792661411039,4882,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4880,0,1
+1792661411868,4070,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4069,0,1
+1792661411884,4079,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4078,0,1
+1792661411900,4085,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4084,0,1
+1792661414636,1364,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,1363,0,1
+1792661416547,113,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,110,0,2
+1792661416860,2236,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,2234,0,1
+1792661416876,4144,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,4141,0,1
+1792661416891,6117,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,6114,0,1
+1792661416907,8381,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,8378,0,1
+1792661416938,10252,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,10249,0,0
+1792661416953,12135,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,12131,0,1
+1792661416968,14453,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,14448,0,1
+1792661416999,15008,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-3,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661417015,15008,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-9,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661417671,15006,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-2,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661420105,15010,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-10,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661422024,15013,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-6,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661424013,13204,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,13200,0,1
+1792661426291,10948,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,10946,0,1
+1792661428191,9067,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,9066,0,1
+1792661430099,7178,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,7177,0,1
+1792661432425,4871,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4870,0,2
+1792661433021,4297,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4296,0,1
+1792661433037,4301,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,4299,0,1
+1792661433679,3675,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3675,0,1
+1792661436131,1238,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,1237,0,0
+1792661438049,94,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,93,0,2
+1792661438221,1972,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,1970,0,2
+1792661438252,3768,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,3762,0,1
+1792661438267,5918,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,5916,0,1
+1792661438283,7702,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,7696,0,1
+1792661438299,9666,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,9665,0,1
+1792661438331,11414,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,11408,0,1
+1792661438346,13672,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,13670,0,1
+1792661438362,15011,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-2,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661438377,15012,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-10,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,0
+1792661439148,15009,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-6,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661441197,15011,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-4,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,10,10,http://127.0.0.1:8000/register,0,0,1
+1792661443024,14971,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,14968,0,1
+1792661445191,12820,REG GET form,200,OK,JM-REG-001 1-1,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,12818,0,1
+1792661446987,11132,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,11131,0,1
+1792661448967,9170,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,9169,0,1
+1792661450747,7413,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,7412,0,2
+1792661453029,5147,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,5146,0,1
+1792661454375,3819,REG GET form,200,OK,JM-REG-001 1-2,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3818,0,1
+1792661454391,3827,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3826,0,1
+1792661455169,3065,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,3062,0,1
+1792661457224,1026,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,10,10,http://127.0.0.1:8000/register,1025,0,0
+1792661458997,1859,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,1857,0,1
+1792661459027,3643,REG POST strict SRS redirect,302,Found,JM-REG-001 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,10,10,http://127.0.0.1:8000/register,3637,0,1
+1792661459121,5793,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,9,9,http://127.0.0.1:8000/register,5792,0,1
+1792661459152,7825,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,9,9,http://127.0.0.1:8000/register,7818,0,1
+1792661459167,9702,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,9,9,http://127.0.0.1:8000/register,9701,0,1
+1792661459183,11583,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,9,9,http://127.0.0.1:8000/register,11577,0,1
+1792661459199,13592,REG POST strict SRS redirect,302,Found,JM-REG-001 1-2,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,9,9,http://127.0.0.1:8000/register,13590,0,1
+1792661459229,15003,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-10,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,8,8,http://127.0.0.1:8000/register,0,0,2
+1792661459244,15004,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-6,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,8,8,http://127.0.0.1:8000/register,0,0,1
+1792661459260,15003,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-4,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,8,8,http://127.0.0.1:8000/register,0,0,1
+1792661461869,15008,REG GET form,Non HTTP response code: java.net.SocketTimeoutException,Missing CSRF token; inspect HTML and session,JM-REG-001 1-7,text,false,Expected HTTP 200; got Non HTTP response code: java.net.SocketTimeoutException,2709,0,8,8,http://127.0.0.1:8000/register,0,0,0
+1792661465917,12763,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,12761,0,1
+1792661467993,10704,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,10703,0,2
+1792661469871,8842,REG GET form,200,OK,JM-REG-001 1-3,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,8841,0,1
+1792661471769,6957,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,6956,0,1
+1792661475245,3500,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,3499,0,1
+1792661475261,3498,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,3497,0,1
+1792661475276,3496,REG GET form,200,OK,JM-REG-001 1-4,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,3495,0,1
+1792661477881,905,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,8,8,http://127.0.0.1:8000/register,904,0,1
+1792661479691,2273,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,8,8,http://127.0.0.1:8000/register,2271,0,1
+1792661479708,4152,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,8,8,http://127.0.0.1:8000/register,4148,0,0
+1792661479723,5903,REG POST strict SRS redirect,302,Found,JM-REG-001 1-3,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,8,8,http://127.0.0.1:8000/register,5901,0,1
+1792661479740,8629,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,7,7,http://127.0.0.1:8000/register,8628,0,0
+1792661479755,10519,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,7,7,http://127.0.0.1:8000/register,10514,0,1
+1792661479771,12293,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,7,7,http://127.0.0.1:8000/register,12290,0,1
+1792661479786,14629,REG POST strict SRS redirect,302,Found,JM-REG-001 1-4,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,7,7,http://127.0.0.1:8000/register,14623,0,1
+1792661479802,15010,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketTimeoutException,Non HTTP response message: Read timed out,JM-REG-001 1-7,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketTimeoutException ,2709,0,6,6,http://127.0.0.1:8000/register,0,0,1
+1792661482970,13371,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,6,6,http://127.0.0.1:8000/register,13369,0,1
+1792661484875,11485,REG GET form,200,OK,JM-REG-001 1-5,text,true,,13351,125,6,6,http://127.0.0.1:8000/register,11484,0,1
+1792661489376,6999,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,6,6,http://127.0.0.1:8000/register,6997,0,1
+1792661491277,5117,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,6,6,http://127.0.0.1:8000/register,5116,0,1
+1792661493075,3338,REG GET form,200,OK,JM-REG-001 1-6,text,true,,13351,125,6,6,http://127.0.0.1:8000/register,3337,0,1
+1792661495827,604,REG GET form,200,OK,JM-REG-001 1-7,text,true,,13351,125,6,6,http://127.0.0.1:8000/register,603,0,1
+1792661497356,1889,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,6,6,http://127.0.0.1:8000/register,1886,0,1
+1792661497371,4198,REG POST strict SRS redirect,302,Found,JM-REG-001 1-5,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,6,6,http://127.0.0.1:8000/register,4196,0,1
+1792661497387,6021,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,5,5,http://127.0.0.1:8000/register,6019,0,0
+1792661497402,7915,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,5,5,http://127.0.0.1:8000/register,7912,0,1
+1792661497418,9883,REG POST strict SRS redirect,302,Found,JM-REG-001 1-6,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,5,5,http://127.0.0.1:8000/register,9881,0,0
+1792661497433,12188,REG POST strict SRS redirect,302,Found,JM-REG-001 1-7,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,4,4,http://127.0.0.1:8000/register,12183,0,0
+1792661500248,9394,REG GET form,200,OK,JM-REG-001 1-8,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,9393,0,0
+1792661504410,5249,REG GET form,200,OK,JM-REG-001 1-9,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,5247,0,1
+1792661506318,3360,REG GET form,200,OK,JM-REG-001 1-10,text,true,,13351,125,3,3,http://127.0.0.1:8000/register,3359,0,0
+1792661510650,1962,REG POST strict SRS redirect,302,Found,JM-REG-001 1-8,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,3,3,http://127.0.0.1:8000/register,1960,0,1
+1792661510665,3792,REG POST strict SRS redirect,302,Found,JM-REG-001 1-9,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1301,2,2,http://127.0.0.1:8000/register,3789,0,1
+1792661510681,6004,REG POST strict SRS redirect,302,Found,JM-REG-001 1-10,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/customer/dashboard,1556,1303,1,1,http://127.0.0.1:8000/register,6002,0,0

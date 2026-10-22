@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792662642722,93,REG GET form,200,OK,JM-REG-003 — 20 users 1-1,text,true,,13351,125,1,1,http://127.0.0.1:8000/register,91,0,0
+1792662643865,326,REG POST strict SRS redirect,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,JM-REG-003 — 20 users 1-1,text,false,Expected 302 to /login; actual Non HTTP response code: java.net.SocketException ,2699,0,1,1,http://127.0.0.1:8000/register,0,0,1
+1792662649271,96,REG GET form,200,OK,JM-REG-003 — 20 users 1-1,text,true,,13351,125,1,1,http://127.0.0.1:8000/register,94,0,2
+1792662650395,1100,REG POST strict SRS redirect,302,Found,JM-REG-003 — 20 users 1-1,text,false,Expected 302 to /login; actual 302 http://127.0.0.1:8000/register,1506,1289,1,1,http://127.0.0.1:8000/register,1099,0,2

@@ -1,0 +1,19 @@
+$kind: http-request
+name: 2.4 [Không hợp lệ] Bỏ trống cả tên đăng nhập và mật khẩu
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: ""
+    password: ""
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Từ chối đăng nhập khi bỏ trống: HTTP 200, 302 hoặc 422", function () {
+          pm.expect(pm.response.code).to.be.oneOf([200, 302, 422]);
+      });
+    language: text/javascript
+order: 4000

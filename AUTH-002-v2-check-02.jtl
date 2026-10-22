@@ -1,0 +1,37 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1792643606564,951,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643608601,414,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,411,0,44
+1792643610260,3189,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1017,1,1,http://127.0.0.1:8000/login,3186,0,5
+1792643614619,2146,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22413,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2140,0,1
+1792643616792,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643617815,161,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,159,0,2
+1792643618986,2819,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,2816,0,2
+1792643622810,1918,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,1915,0,2
+1792643624731,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643625744,177,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,173,0,1
+1792643626928,3256,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,3252,0,3
+1792643631193,2599,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2594,0,2
+1792643633795,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643634808,175,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,173,0,2
+1792643635992,2615,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,2612,0,1
+1792643639614,2437,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2432,0,2
+1792643642055,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643643062,188,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,185,0,2
+1792643644262,3045,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,3042,0,3
+1792643648314,2522,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2516,0,2
+1792643650837,0,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643651840,175,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,172,0,2
+1792643653022,2099,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,2095,0,3
+1792643656127,3500,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,3492,0,1
+1792643659629,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643660639,178,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,175,0,2
+1792643661828,2774,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,2771,0,2
+1792643665619,2047,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2041,0,2
+1792643667669,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643668678,200,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,196,0,2
+1792643669883,5440,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,5437,0,2
+1792643676337,2951,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2945,0,2
+1792643679290,1,DATA CHECK,200,Test data valid,JM-AUTH-002 1-1,text,true,,0,0,1,1,null,0,0,0
+1792643680293,319,AUTH GET login,200,OK,JM-AUTH-002 1-1,text,true,,4733,122,1,1,http://127.0.0.1:8000/login,313,0,1
+1792643681618,2978,AUTH POST login,302,Found,JM-AUTH-002 1-1,text,true,,1556,1013,1,1,http://127.0.0.1:8000/login,2973,0,2
+1792643685611,2797,AUTH GET protected page,200,OK,JM-AUTH-002 1-1,text,true,,22405,857,1,1,http://127.0.0.1:8000/customer/gio-hang,2792,0,2

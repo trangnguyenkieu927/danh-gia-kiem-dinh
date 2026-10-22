@@ -1,0 +1,26 @@
+$kind: http-request
+url: "{{base_url}}/login"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: tai_khoan_hoan_toan_khong_ton_tai
+    password: "{{customer_pass}}"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 422: từ chối", function () {
+          pm.expect(pm.response.code).to.be.oneOf([422]);
+      });
+      pm.test("Không cấp phiên đăng nhập (không chuyển tới dashboard)", function () {
+          const l = pm.response.headers.get("Location") || "";
+          pm.expect(l).to.not.match(/dashboard/);
+      });
+      pm.collectionVariables.set("login_fail_msg", JSON.stringify(pm.response.json().errors));
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 11000

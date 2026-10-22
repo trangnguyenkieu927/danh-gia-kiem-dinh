@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="DCJI557AK5PzIrjkq7UTjH17fhiW6WR9mYJ6BPYD">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        <link rel="preload" as="style" href="http://127.0.0.1:8000/build/assets/app-jA0XXRzs.css" /><link rel="modulepreload" as="script" href="http://127.0.0.1:8000/build/assets/app-DsIK1Lmc.js" /><link rel="stylesheet" href="http://127.0.0.1:8000/build/assets/app-jA0XXRzs.css" /><script type="module" src="http://127.0.0.1:8000/build/assets/app-DsIK1Lmc.js"></script>    </head>
+    <body class="font-sans text-gray-900 antialiased">
+    <div class="min-h-screen flex flex-col items-center pt-6 bg-auth-gradient">
+
+        <div class="mt-4">
+            <a href="/">
+                <img
+    src="http://127.0.0.1:8000/img/logo.png"
+    alt="Logo"
+    style="width:180px;height:auto;"
+    
+>            </a>
+        </div>
+
+        <div class="-mt-2 text-center">
+            <h1 class="text-2xl font-extrabold text-rose-600">RoseShop</h1>
+        </div>
+
+        <div class="w-full sm:max-w-md mt-3 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg border border-rose-50">
+            <form method="POST" action="http://127.0.0.1:8000/login">
+        <input type="hidden" name="_token" value="DCJI557AK5PzIrjkq7UTjH17fhiW6WR9mYJ6BPYD" autocomplete="off">
+        <!-- Tên đăng nhập -->
+        <div>
+            <label class="block font-medium text-sm text-gray-700" for="ten_dang_nhap">
+    Tên đăng nhập
+</label>
+            <input  class="border-gray-300 focus:border-rose-300 focus:ring-rose-300 rounded-md shadow-sm block mt-1 w-full" id="ten_dang_nhap" type="text" name="ten_dang_nhap" required="required" autofocus="autofocus" autocomplete="username">
+                    </div>
+
+        <!-- Mật khẩu -->
+        <div class="mt-4">
+            <label class="block font-medium text-sm text-gray-700" for="password">
+    Mật khẩu
+</label>
+            <input  class="border-gray-300 focus:border-rose-300 focus:ring-rose-300 rounded-md shadow-sm block mt-1 w-full" id="password" type="password" name="password" required="required" autocomplete="current-password">
+                    </div>
+
+        <!-- Ghi nhớ -->
+        <div class="block mt-4">
+            <label for="remember_me" class="inline-flex items-center">
+                <input id="remember_me" type="checkbox"
+                    class="rounded border-gray-300 text-rose-600 shadow-sm focus:ring-rose-300"
+                    name="remember">
+                <span class="ms-2 text-sm text-gray-600">Ghi nhớ đăng nhập</span>
+            </label>
+        </div>
+
+        <div class="flex items-center justify-between mt-4">
+            <!-- Nút đăng ký -->
+            <a href="http://127.0.0.1:8000/register"
+                class="text-sm text-rose-600 hover:text-rose-800 underline">
+                Chưa có tài khoản? Đăng ký
+            </a>
+
+            <button type="submit" class="inline-flex items-center px-4 py-2 btn-rose border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest focus:outline-none focus:ring-2 focus:ring-rose-300 focus:ring-offset-2 transition ease-in-out duration-150">
+    Đăng nhập
+</button>
+        </div>
+    </form>
+        </div>
+
+    </div>
+</body>
+</html>

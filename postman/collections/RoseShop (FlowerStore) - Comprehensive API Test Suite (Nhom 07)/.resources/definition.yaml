@@ -1,0 +1,7 @@
+$kind: collection
+description: |-
+  Bộ kiểm thử API tự động toàn diện cho 3 Use Case (UC1.1, UC1.2, UC4.2) theo đúng chuẩn Đánh giá & Kiểm định chất lượng phần mềm của Giảng viên TS. Mai Xuân Tráng & Trợ lý Nguyễn Chí Công.
+
+  Bao gồm đầy đủ 4 tầng kiểm thử: Hợp lệ (Happy path), Không hợp lệ (Invalid Data), Giá trị biên (Boundary Values) và Ngoại lệ (Exceptions / RBAC / Security).
+variables:
+  base_url: http://127.0.0.1:8000

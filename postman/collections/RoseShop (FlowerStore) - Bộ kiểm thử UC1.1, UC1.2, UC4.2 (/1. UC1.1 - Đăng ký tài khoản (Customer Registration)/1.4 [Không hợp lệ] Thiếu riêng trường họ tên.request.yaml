@@ -1,0 +1,32 @@
+$kind: http-request
+url: "{{base_url}}/register"
+method: POST
+headers:
+  Accept: application/json
+  X-Fresh-Session: "1"
+body:
+  type: urlencoded
+  content:
+    ten_dang_nhap: khach_{{uniq}}
+    email: khach_{{uniq}}@example.test
+    so_dien_thoai: 09{{uniq}}
+    password: "123456"
+    password_confirmation: "123456"
+    quan_huyen: Nam Từ Liêm
+    xa_phuong: Trung Văn
+    dia_chi_chi_tiet: Số 10 Phố Hoa
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 422: từ chối khi thiếu họ tên", function () {
+          pm.expect(pm.response.code).to.be.oneOf([422]);
+      });
+      pm.test("Phản hồi có lỗi validate tại: ten_khach_hang", function () {
+          const j = pm.response.json();
+          pm.expect(j).to.have.property("errors");
+          ["ten_khach_hang"].forEach(function (k) { pm.expect(j.errors).to.have.property(k); });
+      });
+    language: text/javascript
+settings:
+  followRedirects: false
+order: 4000
